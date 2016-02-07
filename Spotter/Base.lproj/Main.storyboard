@@ -35,10 +35,64 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sideMenuCell" id="6oa-c4-vrl" customClass="sideMenuCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Profile" id="6oa-c4-vrl" customClass="sideMenuCell">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6oa-c4-vrl" id="YRU-pr-ce5">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Home" id="lce-dz-rNB" customClass="sideMenuCell">
+                                <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lce-dz-rNB" id="V6D-Pf-tjY">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Reservations" id="A15-3q-IZG" customClass="sideMenuCell">
+                                <rect key="frame" x="0.0" y="116" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A15-3q-IZG" id="9BB-L5-vhu">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Selling" id="Drk-eV-cxp" customClass="sideMenuCell">
+                                <rect key="frame" x="0.0" y="160" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Drk-eV-cxp" id="eAI-PV-NzN">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="PZs-2n-HTq" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="sfY-cc-Psn"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Payment" id="KCp-o0-OZJ" customClass="sideMenuCell">
+                                <rect key="frame" x="0.0" y="204" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KCp-o0-OZJ" id="iy0-eo-0bz">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="History" id="Xjy-bx-Ux7" customClass="sideMenuCell">
+                                <rect key="frame" x="0.0" y="248" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xjy-bx-Ux7" id="EUV-JR-jkc">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="74H-W0-2ME" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="PNK-GL-IXX"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Settings" id="NiJ-dx-Nzo" customClass="sideMenuCell">
+                                <rect key="frame" x="0.0" y="292" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NiJ-dx-Nzo" id="AOd-P3-GvJ">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
@@ -57,13 +111,10 @@
                             </attributes>
                         </fragment>
                     </attributedString>
-                    <connections>
-                        <segue destination="74H-W0-2ME" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="KGy-Ug-kks"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnK-of-d25" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="515" y="-123"/>
+            <point key="canvasLocation" x="515" y="87"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sy1-Px-XfY">
@@ -74,12 +125,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="74H-W0-2ME" kind="relationship" relationship="rootViewController" id="G7H-r7-681"/>
+                        <segue destination="74H-W0-2ME" kind="relationship" relationship="rootViewController" id="zM3-Qf-eOI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zU-gs-ChD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="515" y="1150"/>
+            <point key="canvasLocation" x="515" y="816"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tab-Dn-Xco">
@@ -103,10 +154,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ivi-vo-l3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1403" y="1150"/>
+            <point key="canvasLocation" x="1425" y="1050"/>
+        </scene>
+        <!--Selling-->
+        <scene sceneID="fYi-B5-Mop">
+            <objects>
+                <viewController id="PZs-2n-HTq" customClass="Selling" customModule="Spotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fCJ-mk-lpZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="rb3-tZ-18Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uy3-Fv-orI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6SQ-DC-O9N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1425" y="208"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KGy-Ug-kks"/>
+        <segue reference="PNK-GL-IXX"/>
     </inferredMetricsTieBreakers>
 </document>

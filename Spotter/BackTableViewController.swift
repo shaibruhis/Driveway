@@ -12,7 +12,7 @@ class BackTableViewController: UITableViewController {
     var menuArray = [String]()
     
     override func viewDidLoad() {
-        menuArray = ["Reserved Space for Name And Pic", "Home", "Reservation", "Selling", "Payment", "History", "Settings"]
+        menuArray = ["Profile", "Home", "Reservations", "Selling", "Payment", "History", "Settings"]
     }
     
     override func tableView(tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -20,7 +20,7 @@ class BackTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var sideMenuCell = tableView.dequeueReusableCellWithIdentifier("sideMenuCell", forIndexPath: indexPath) as UITableViewCell
+        var sideMenuCell = tableView.dequeueReusableCellWithIdentifier(menuArray[indexPath.row], forIndexPath: indexPath) as UITableViewCell
         
         sideMenuCell.textLabel?.text = menuArray[indexPath.row]
         

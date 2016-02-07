@@ -17,6 +17,8 @@ class ViewController: UIViewController {
         
         menuIcon.target = self.revealViewController()
         menuIcon.action = Selector("revealToggle:")
+        
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
 
     override func didReceiveMemoryWarning() {
