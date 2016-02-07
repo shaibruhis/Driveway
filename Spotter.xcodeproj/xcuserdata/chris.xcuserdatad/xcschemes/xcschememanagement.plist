@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Driveway.xcscheme</key>
+		<key>Spotter.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>B3EE40411C588F5000BBC88F</key>
+		<key>83E89BE51C66D29A00E446FA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>83E89BF91C66D29A00E446FA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>83E89C041C66D29A00E446FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
