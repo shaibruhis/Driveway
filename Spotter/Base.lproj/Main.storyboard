@@ -98,8 +98,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Menu Icon" id="HRv-ZV-LRg"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="Open" destination="HRv-ZV-LRg" id="NUr-PK-Ztc"/>
-                        <outlet property="menuIcon" destination="HRv-ZV-LRg" id="QKo-t4-Irb"/>
+                        <outlet property="menuIcon" destination="HRv-ZV-LRg" id="FnW-il-8Mp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ivi-vo-l3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -108,6 +107,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="G7H-r7-681"/>
+        <segue reference="KGy-Ug-kks"/>
     </inferredMetricsTieBreakers>
 </document>
