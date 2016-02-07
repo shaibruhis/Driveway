@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B3EE40411C588F5000BBC88F"
-               BuildableName = "Driveway.app"
-               BlueprintName = "Driveway"
-               ReferencedContainer = "container:Driveway.xcodeproj">
+               BlueprintIdentifier = "83E89BE51C66D29A00E446FA"
+               BuildableName = "Spotter.app"
+               BlueprintName = "Spotter"
+               ReferencedContainer = "container:Spotter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,14 +28,34 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "83E89BF91C66D29A00E446FA"
+               BuildableName = "SpotterTests.xctest"
+               BlueprintName = "SpotterTests"
+               ReferencedContainer = "container:Spotter.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "83E89C041C66D29A00E446FA"
+               BuildableName = "SpotterUITests.xctest"
+               BlueprintName = "SpotterUITests"
+               ReferencedContainer = "container:Spotter.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B3EE40411C588F5000BBC88F"
-            BuildableName = "Driveway.app"
-            BlueprintName = "Driveway"
-            ReferencedContainer = "container:Driveway.xcodeproj">
+            BlueprintIdentifier = "83E89BE51C66D29A00E446FA"
+            BuildableName = "Spotter.app"
+            BlueprintName = "Spotter"
+            ReferencedContainer = "container:Spotter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B3EE40411C588F5000BBC88F"
-            BuildableName = "Driveway.app"
-            BlueprintName = "Driveway"
-            ReferencedContainer = "container:Driveway.xcodeproj">
+            BlueprintIdentifier = "83E89BE51C66D29A00E446FA"
+            BuildableName = "Spotter.app"
+            BlueprintName = "Spotter"
+            ReferencedContainer = "container:Spotter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B3EE40411C588F5000BBC88F"
-            BuildableName = "Driveway.app"
-            BlueprintName = "Driveway"
-            ReferencedContainer = "container:Driveway.xcodeproj">
+            BlueprintIdentifier = "83E89BE51C66D29A00E446FA"
+            BuildableName = "Spotter.app"
+            BlueprintName = "Spotter"
+            ReferencedContainer = "container:Spotter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
