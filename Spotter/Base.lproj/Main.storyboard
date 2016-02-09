@@ -135,10 +135,10 @@
             </objects>
             <point key="canvasLocation" x="515" y="816"/>
         </scene>
-        <!--Firebase Test-->
+        <!--I-->
         <scene sceneID="00O-Fh-90S">
             <objects>
-                <viewController id="Qxr-4e-yCg" customClass="FirebaseTest" customModule="Spotter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Qxr-4e-yCg" customClass="I" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sTx-tc-z0W"/>
                         <viewControllerLayoutGuide type="bottom" id="J78-wD-Ogr"/>
