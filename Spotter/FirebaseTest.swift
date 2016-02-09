@@ -10,29 +10,32 @@ import Foundation
 import Firebase
 
 class FirebaseTest : UIViewController {
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var username: UITextField!
     override func viewDidLoad() {
-        
-        
-        
-        
-        
-        
         // Create a reference to a Firebase location
+        
+    }
+    
+    @IBAction func submit(sender: UIButton) {
         var ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/")
         // Write data to Firebase
-        ref.setValue("Do you have data? You'll love Firebase.")
+        ref.setValue("Connected to Firebase")
         
-        ref.createUser("test@example.com", password: "12345",
+        ref.createUser(username.text, password: password.text,
             withValueCompletionBlock: { error, result in
                 
                 if error != nil {
                     // There was an error creating the account
-                } else {
+                }
+                else {
                     let uid = result["uid"] as? String
                     print("Successfully created user account with uid: \(uid)")
-                }
-        })
+                }//else
+        })//ref.setValue
     }
+
+    
 
 }
 
