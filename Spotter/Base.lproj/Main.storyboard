@@ -135,10 +135,10 @@
             </objects>
             <point key="canvasLocation" x="515" y="816"/>
         </scene>
-        <!--I-->
+        <!--Firebase Test-->
         <scene sceneID="00O-Fh-90S">
             <objects>
-                <viewController id="Qxr-4e-yCg" customClass="I" sceneMemberID="viewController">
+                <viewController id="Qxr-4e-yCg" customClass="FirebaseTest" customModule="Spotter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sTx-tc-z0W"/>
                         <viewControllerLayoutGuide type="bottom" id="J78-wD-Ogr"/>
@@ -146,6 +146,13 @@
                     <view key="view" contentMode="scaleToFill" id="89v-5H-5VF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W6k-24-Qvu">
+                                <rect key="frame" x="110" y="134" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -197,6 +204,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="PNK-GL-IXX"/>
+        <segue reference="zM3-Qf-eOI"/>
     </inferredMetricsTieBreakers>
 </document>
