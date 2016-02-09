@@ -1,0 +1,6 @@
+framework module Pods_Spotter {
+  umbrella header "Pods-Spotter-umbrella.h"
+
+  export *
+  module * { export * }
+}
