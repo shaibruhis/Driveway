@@ -96,6 +96,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Qxr-4e-yCg" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="MyH-nH-CHL"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -131,6 +134,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zU-gs-ChD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="515" y="816"/>
+        </scene>
+        <!--Firebase Test-->
+        <scene sceneID="00O-Fh-90S">
+            <objects>
+                <viewController id="Qxr-4e-yCg" customClass="FirebaseTest" customModule="Spotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sTx-tc-z0W"/>
+                        <viewControllerLayoutGuide type="bottom" id="J78-wD-Ogr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="89v-5H-5VF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Dv-q3-dtL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1425" y="1762"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tab-Dn-Xco">

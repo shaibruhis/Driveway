@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0DD566FE1C699FC40016643D /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD566FD1C699FC40016643D /* Firebase.swift */; };
+		0DD566FE1C699FC40016643D /* FirebaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD566FD1C699FC40016643D /* FirebaseTest.swift */; };
 		313AA101784AE2E0A3849EFB /* Pods_Spotter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848CCE3F8AE4E3108DFA2DCA /* Pods_Spotter.framework */; };
 		8360AC7F1C670F2C00D9747C /* Selling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360AC7E1C670F2C00D9747C /* Selling.swift */; };
 		8360AC811C67103600D9747C /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360AC801C67103600D9747C /* History.swift */; };
@@ -41,7 +41,7 @@
 
 /* Begin PBXFileReference section */
 		04CC864E548E7E652923DC4F /* Pods-Spotter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spotter/Pods-Spotter.debug.xcconfig"; sourceTree = "<group>"; };
-		0DD566FD1C699FC40016643D /* Firebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
+		0DD566FD1C699FC40016643D /* FirebaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseTest.swift; sourceTree = "<group>"; };
 		81E584F28AF02E9A285B4276 /* Pods-Spotter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spotter/Pods-Spotter.release.xcconfig"; sourceTree = "<group>"; };
 		8360AC7E1C670F2C00D9747C /* Selling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Selling.swift; sourceTree = "<group>"; };
 		8360AC801C67103600D9747C /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 				83E89BEB1C66D29A00E446FA /* ViewController.swift */,
 				83E89BED1C66D29A00E446FA /* Main.storyboard */,
 				8360AC801C67103600D9747C /* History.swift */,
-				0DD566FD1C699FC40016643D /* Firebase.swift */,
+				0DD566FD1C699FC40016643D /* FirebaseTest.swift */,
 				8360AC7E1C670F2C00D9747C /* Selling.swift */,
 				83E6964E1C66F19A007EB221 /* BackTableViewController.swift */,
 				83E89BF01C66D29A00E446FA /* Assets.xcassets */,
@@ -361,7 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DD566FE1C699FC40016643D /* Firebase.swift in Sources */,
+				0DD566FE1C699FC40016643D /* FirebaseTest.swift in Sources */,
 				8360AC811C67103600D9747C /* History.swift in Sources */,
 				83E6964F1C66F19A007EB221 /* BackTableViewController.swift in Sources */,
 				83E89BEC1C66D29A00E446FA /* ViewController.swift in Sources */,
