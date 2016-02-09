@@ -87,9 +87,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Spotter/Bolts.framework"
   install_framework "Pods-Spotter/Braintree.framework"
   install_framework "Pods-Spotter/FBSDKCoreKit.framework"
+  install_framework "Pods-Spotter/Firebase.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Spotter/Bolts.framework"
   install_framework "Pods-Spotter/Braintree.framework"
   install_framework "Pods-Spotter/FBSDKCoreKit.framework"
+  install_framework "Pods-Spotter/Firebase.framework"
 fi
