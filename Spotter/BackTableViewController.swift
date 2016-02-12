@@ -20,10 +20,14 @@ class BackTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var sideMenuCell = tableView.dequeueReusableCellWithIdentifier(menuArray[indexPath.row], forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("sideMenuCell", forIndexPath: indexPath) as UITableViewCell
         
-        sideMenuCell.textLabel?.text = menuArray[indexPath.row]
-        
-        return sideMenuCell
+        cell.textLabel?.text = menuArray[indexPath.row]
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let segueIdentifier = "\(menuArray[indexPath.row]) Segue"
+        performSegueWithIdentifier(segueIdentifier, sender: nil)
     }
 }

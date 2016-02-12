@@ -1,0 +1,43 @@
+PODS:
+  - Bolts (1.6.0):
+    - Bolts/AppLinks (= 1.6.0)
+    - Bolts/Tasks (= 1.6.0)
+  - Bolts/AppLinks (1.6.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.6.0)
+  - Braintree (4.2.1):
+    - Braintree/Card (= 4.2.1)
+    - Braintree/Core (= 4.2.1)
+    - Braintree/PayPal (= 4.2.1)
+    - Braintree/UI (= 4.2.1)
+  - Braintree/Card (4.2.1):
+    - Braintree/Core
+  - Braintree/Core (4.2.1)
+  - Braintree/PayPal (4.2.1):
+    - Braintree/Core
+    - Braintree/PayPalOneTouch
+  - Braintree/PayPalDataCollector (4.2.1)
+  - Braintree/PayPalOneTouch (4.2.1):
+    - Braintree/PayPalDataCollector
+  - Braintree/UI (4.2.1):
+    - Braintree/Card
+    - Braintree/Core
+  - FBSDKCoreKit (4.9.1):
+    - Bolts (~> 1.5)
+  - Firebase (2.5.0)
+  - GoogleMaps (1.11.1)
+
+DEPENDENCIES:
+  - Braintree
+  - FBSDKCoreKit (~> 4.9)
+  - Firebase (>= 2.5.0)
+  - GoogleMaps
+
+SPEC CHECKSUMS:
+  Bolts: f52a250053bb517ca874523c3913776359ab3def
+  Braintree: 5b4cc4f546bf52a536481ebc7667ba32cccf06bf
+  FBSDKCoreKit: aee20b6d9855f15b618d4fddd1a5ad45f5a4a59d
+  Firebase: 744617c0733b45198f9486ebd5cac64ec2d10d79
+  GoogleMaps: c947160008f414c66707a5ea60f35e92055c7670
+
+COCOAPODS: 0.39.0
