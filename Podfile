@@ -19,5 +19,6 @@ target 'Spotter' do
   pod 'FBSDKCoreKit', '~> 4.9'
   pod 'Braintree'
   pod ‘Firebase’, ‘>= 2.5.0’
+  pod 'GoogleMaps'
 end
 

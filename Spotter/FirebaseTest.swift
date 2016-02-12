@@ -9,10 +9,11 @@
 import Foundation
 import Firebase
 
-class FirebaseTest : UIViewController {
+class FirebaseTest : BaseViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var username: UITextField!
     override func viewDidLoad() {
+        super.viewDidLoad()
         // Create a reference to a Firebase location
         
     }
