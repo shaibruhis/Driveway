@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="REZ-J5-CjW">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wTw-ra-U3S">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="REZ-J5-CjW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="RF3-Wj-GeX">
+                        <barButtonItem key="leftBarButtonItem" title="Menu Icon" id="pl9-rC-5Yf"/>
+                    </navigationItem>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="gLY-x8-UhU">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Y5c-Qn-zvg" kind="relationship" relationship="viewControllers" id="kuZ-Sg-N3W"/>
+                        <segue destination="zNG-mF-8gY" kind="relationship" relationship="viewControllers" id="FHG-rf-u0z"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VeY-W4-2H0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1753" y="434"/>
+        </scene>
+        <!--Listings-->
+        <scene sceneID="ejc-DP-nLw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y5c-Qn-zvg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Listings" id="4ah-AS-8WN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BT8-EZ-NrI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bSl-hL-coz" kind="relationship" relationship="rootViewController" id="wwR-b3-NtH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RsH-Kv-Suy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2573" y="117"/>
+        </scene>
+        <!--Listings View Controller-->
+        <scene sceneID="Y4r-Uc-tUR">
+            <objects>
+                <viewController id="bSl-hL-coz" customClass="ListingsViewController" customModule="Spotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Vu-q7-hhQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fdv-mT-jLV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4xo-Oo-mLh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="cSC-pm-dqD">
+                        <barButtonItem key="leftBarButtonItem" title="Menu Icon" id="9w9-HC-00j"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outletCollection property="menuIconCollection" destination="9w9-HC-00j" collectionClass="NSMutableArray" id="6TI-hK-wNj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FTJ-vI-Nbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3325" y="117"/>
+        </scene>
+        <!--Sold Spots-->
+        <scene sceneID="ZXC-Ut-cjc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zNG-mF-8gY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Sold Spots" id="gGl-hh-dSY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Svf-1K-c8o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jPf-Bk-Yk3" kind="relationship" relationship="rootViewController" id="amg-uF-GVQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uYU-Oc-y5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2561" y="795"/>
+        </scene>
+        <!--Sold Spots View Controller-->
+        <scene sceneID="T3I-Ee-Y7j">
+            <objects>
+                <viewController id="jPf-Bk-Yk3" customClass="SoldSpotsViewController" customModule="Spotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OCr-Mz-mtZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ItM-cg-IM5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JAC-7J-ggn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="gaQ-pO-yOl">
+                        <barButtonItem key="leftBarButtonItem" title="Menu Icon" id="Fqn-jh-cD3"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outletCollection property="menuIconCollection" destination="Fqn-jh-cD3" collectionClass="NSMutableArray" id="peg-1x-s4O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YSI-yP-wSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3325" y="795"/>
+        </scene>
+    </scenes>
+</document>

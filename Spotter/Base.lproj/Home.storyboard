@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qsa-z9-3wC">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Sy1-Px-XfY">
+            <objects>
+                <navigationController id="Qsa-z9-3wC" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6eH-xw-OeD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="74H-W0-2ME" kind="relationship" relationship="rootViewController" id="zM3-Qf-eOI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0zU-gs-ChD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1143" y="-180"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="tab-Dn-Xco">
+            <objects>
+                <viewController id="74H-W0-2ME" customClass="MapViewController" customModule="Spotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eaM-xU-eKu"/>
+                        <viewControllerLayoutGuide type="bottom" id="eFY-h1-Wfm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Wa-nZ-2nr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KlQ-It-gar">
+                        <barButtonItem key="leftBarButtonItem" title="Menu Icon" id="HRv-ZV-LRg"/>
+                    </navigationItem>
+                    <connections>
+                        <outletCollection property="menuIconCollection" destination="HRv-ZV-LRg" collectionClass="NSMutableArray" id="eve-1c-pDQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ivi-vo-l3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1793" y="-180"/>
+        </scene>
+    </scenes>
+</document>
