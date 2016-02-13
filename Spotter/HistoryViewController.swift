@@ -1,5 +1,5 @@
 //
-//  Selling.swift
+//  HistoryViewController.swift
 //  Spotter
 //
 //  Created by Christopher Chan on 2/6/16.
@@ -8,8 +8,9 @@
 
 import Foundation
 
-class Selling : UIViewController {
+class HistoryViewController : BaseViewController {
     override func viewDidLoad() {
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        super.viewDidLoad()
+
     }
 }

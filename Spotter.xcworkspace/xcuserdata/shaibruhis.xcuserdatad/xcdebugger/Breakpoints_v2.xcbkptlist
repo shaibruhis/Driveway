@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Spotter/MapViewController.swift"
-            timestampString = "476923618.633761"
+            filePath = "Spotter/SWRevealViewController.m"
+            timestampString = "477022896.988211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "loadMap()"
+            startingLineNumber = "699"
+            endingLineNumber = "699"
+            landmarkName = "-loadView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
