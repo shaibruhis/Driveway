@@ -103,47 +103,6 @@
             </objects>
             <point key="canvasLocation" x="1148.5" y="686"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Xpq-t6-JFU">
-            <objects>
-                <viewController id="sbx-d6-l82" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="p4P-YY-A8T"/>
-                        <viewControllerLayoutGuide type="bottom" id="RbV-f4-Ctd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Z5X-kT-r7h">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="VgZ-ae-cWY">
-                        <barButtonItem key="leftBarButtonItem" title="Menu Icon" id="99D-Ru-UIi"/>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lzn-c9-MN2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="691" y="1665"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Icq-2e-Ceb">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3rW-5E-OpJ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2PZ-7F-CnD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="sbx-d6-l82" kind="relationship" relationship="rootViewController" id="Zu3-mx-F6p"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AG2-Wx-uSt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="31" y="1665"/>
-        </scene>
         <!--Profile-->
         <scene sceneID="j8G-c5-L4R">
             <objects>
@@ -178,6 +137,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VPx-db-oSC"/>
+        <segue reference="igL-g5-7Qd"/>
     </inferredMetricsTieBreakers>
 </document>
