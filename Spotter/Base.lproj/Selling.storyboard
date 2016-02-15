@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="REZ-J5-CjW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="REZ-J5-CjW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
@@ -55,11 +55,22 @@
                     <view key="view" contentMode="scaleToFill" id="4xo-Oo-mLh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="34j-1B-Bre">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="cSC-pm-dqD">
                         <barButtonItem key="leftBarButtonItem" title="Menu Icon" id="9w9-HC-00j"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="X2d-qK-qgI">
+                            <connections>
+                                <segue destination="CqI-Pk-vCI" kind="presentation" id="bl5-tt-ieP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -69,6 +80,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTJ-vI-Nbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3325" y="117"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="owW-BQ-MIh">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ozt-iP-PNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="CqI-Pk-vCI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xln-Uf-Tgt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uKO-Nt-goh" kind="relationship" relationship="rootViewController" id="4tU-4N-anN"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="4081" y="117"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="hF5-4r-mFB">
+            <objects>
+                <tableViewController id="uKO-Nt-goh" customClass="SellerEditMenu" customModule="Spotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="G5K-mL-2Pg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="V5u-8p-CeY">
+                            <rect key="frame" x="0.0" y="64" width="600" height="200"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uI8-FR-O6D">
+                                    <rect key="frame" x="0.0" y="8" width="600" height="192"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sellerListingEditCell" id="Lw1-Cp-TuB">
+                                <rect key="frame" x="0.0" y="292" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lw1-Cp-TuB" id="yCf-4W-DOR">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uKO-Nt-goh" id="NxL-Rq-umP"/>
+                            <outlet property="delegate" destination="uKO-Nt-goh" id="i69-UE-77A"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="flX-De-ktw">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="V3R-s8-Yik">
+                            <connections>
+                                <segue destination="bS9-HR-XeX" kind="unwind" unwindAction="cancelToSellerEditViewController:" id="XPz-Jw-dh7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qBc-6W-lxP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bS9-HR-XeX" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4840" y="117"/>
         </scene>
         <!--Sold Spots-->
         <scene sceneID="ZXC-Ut-cjc">

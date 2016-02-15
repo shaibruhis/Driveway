@@ -21,6 +21,13 @@ class ListingsViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func cancelToSellerEditViewController(segue:UIStoryboardSegue){
+        // Do nothing as we transition back to here when user cancels the "add new listing"
+    }
+    
+    @IBAction func postListing(segue:UIStoryboardSegue){
+        // TODO: add code to add listing to database.
+    }
 
     /*
     // MARK: - Navigation
@@ -31,5 +38,6 @@ class ListingsViewController: BaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }
