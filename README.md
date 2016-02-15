@@ -10,5 +10,6 @@ For everything else that is shared, just place it in Controllers.
 For bridging files and the like, place it under Spotter/Supporting Libraries
 
 ## Coding Convention
-For classes, PascalCase
-For variable names, camelCase
+For classes, PascalCase.
+
+For variable names, camelCase.
