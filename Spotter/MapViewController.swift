@@ -11,21 +11,44 @@ import GoogleMaps
 
 class MapViewController: BaseViewController {
 
+    var mapView = GMSMapView()
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
         loadMap()
     }
     
     func loadMap() {
-        let camera = GMSCameraPosition.cameraWithLatitude(-33.86,
-            longitude: 151.20, zoom: 6)
-        let mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
-        mapView.myLocationEnabled = true
-        mapView.settings.myLocationButton = true
+        mapView = GMSMapView(frame: CGRectZero)
         // Available map types: kGMSTypeNormal, kGMSTypeSatellite, kGMSTypeHybrid,
         // kGMSTypeTerrain, kGMSTypeNone
         mapView.mapType = kGMSTypeHybrid
         self.view = mapView
-        print("\(mapView.myLocation)")
+    }
+}
+
+// MARK: - CLLocationManagerDelegate
+extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .AuthorizedWhenInUse {
+            
+            locationManager.startUpdatingLocation()
+            
+            mapView.myLocationEnabled = true
+            mapView.settings.myLocationButton = true
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            
+            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+            
+            // comment out if we want to follow user's location
+            locationManager.stopUpdatingLocation()
+        }
     }
 }
