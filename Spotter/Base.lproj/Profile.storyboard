@@ -23,7 +23,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outletCollection property="menuIconCollection" destination="0x7-r9-W8M" id="psh-Da-6yT"/>
+                        <outletCollection property="menuIconCollection" destination="0x7-r9-W8M" collectionClass="NSMutableArray" id="psh-Da-6yT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J0i-Ca-PaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
