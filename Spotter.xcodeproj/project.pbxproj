@@ -31,7 +31,6 @@
 		B3A46FCF1C6ECFE30061A185 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A46FCE1C6ECFE30061A185 /* ProfileViewController.swift */; };
 		B3A46FD31C6ED3920061A185 /* SoldSpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A46FD21C6ED3920061A185 /* SoldSpotsViewController.swift */; };
 		B3A46FD51C6ED39D0061A185 /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A46FD41C6ED39D0061A185 /* ListingsViewController.swift */; };
-		B3A46FD81C70802A0061A185 /* ParkingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A46FD71C70802A0061A185 /* ParkingSpot.swift */; };
 		B3E2B29E1C6C2C9900B3FA0C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E2B29D1C6C2C9900B3FA0C /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +86,6 @@
 		B3A46FCE1C6ECFE30061A185 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B3A46FD21C6ED3920061A185 /* SoldSpotsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoldSpotsViewController.swift; sourceTree = "<group>"; };
 		B3A46FD41C6ED39D0061A185 /* ListingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
-		B3A46FD71C70802A0061A185 /* ParkingSpot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingSpot.swift; sourceTree = "<group>"; };
 		B3E2B29D1C6C2C9900B3FA0C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,8 +157,6 @@
 		83E89BE81C66D29A00E446FA /* Spotter */ = {
 			isa = PBXGroup;
 			children = (
-				B3A46FD91C70812E0061A185 /* Models */,
-				B3A46FD61C7080110061A185 /* Views */,
 				B30AFE531C6D68D400FBC36E /* Controllers */,
 				B3A46FB61C6ECB2A0061A185 /* Storyboards */,
 				83E89C171C66D38400E446FA /* Supporting Libraries */,
@@ -221,30 +217,15 @@
 			isa = PBXGroup;
 			children = (
 				83E89BED1C66D29A00E446FA /* Main.storyboard */,
-				B3A46FBF1C6ECE660061A185 /* Profile.storyboard */,
-				B3A46FB71C6ECB490061A185 /* Home.storyboard */,
-				B3A46FC21C6ECE900061A185 /* Reservations.storyboard */,
-				B3A46FBA1C6ECBA10061A185 /* Selling.storyboard */,
-				B3A46FC51C6ECECB0061A185 /* Payment.storyboard */,
 				B3A46FC81C6ECEF30061A185 /* History.storyboard */,
+				B3A46FC51C6ECECB0061A185 /* Payment.storyboard */,
+				B3A46FC21C6ECE900061A185 /* Reservations.storyboard */,
+				B3A46FBF1C6ECE660061A185 /* Profile.storyboard */,
 				B3A46FBC1C6ECBF60061A185 /* Settings.storyboard */,
+				B3A46FBA1C6ECBA10061A185 /* Selling.storyboard */,
+				B3A46FB71C6ECB490061A185 /* Home.storyboard */,
 			);
 			name = Storyboards;
-			sourceTree = "<group>";
-		};
-		B3A46FD61C7080110061A185 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		B3A46FD91C70812E0061A185 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				B3A46FD71C70802A0061A185 /* ParkingSpot.swift */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,7 +421,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DD566FE1C699FC40016643D /* FirebaseTest.swift in Sources */,
-				B3A46FD81C70802A0061A185 /* ParkingSpot.swift in Sources */,
 				8360AC811C67103600D9747C /* HistoryViewController.swift in Sources */,
 				83E6964F1C66F19A007EB221 /* BackTableViewController.swift in Sources */,
 				83E89BEC1C66D29A00E446FA /* MapViewController.swift in Sources */,
