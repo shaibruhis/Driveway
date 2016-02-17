@@ -8,21 +8,32 @@
 
 import Foundation
 
-class SellerEditMenu: UITableViewController{
+class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelegate{
     var menuArray = [String]()
     
     override func viewDidLoad() {
         menuArray = ["Parking Type", "Address", "Space Dimensions", "Price", "Availability"]
     }
     
-    override func tableView(tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
+    @IBAction func cancelToSellerEditMenuViewController(Segue: UIStoryboardSegue){
+        //Do nothing
+    }
+    
+    func tableView(tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuArray.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("sellerListingEditCell", forIndexPath: indexPath) as UITableViewCell
         
         cell.textLabel?.text = menuArray[indexPath.row]
         return cell
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let segueIdentifier = "Seller \(menuArray[indexPath.row]) Segue"
+        performSegueWithIdentifier(segueIdentifier, sender: nil)
+    }
+    
+    // TODO: make the 5 cells fill screen
 }

@@ -21,7 +21,7 @@ class ListingsViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func cancelToSellerEditViewController(segue:UIStoryboardSegue){
+    @IBAction func cancelToListingsViewController(segue:UIStoryboardSegue){
         // Do nothing as we transition back to here when user cancels the "add new listing"
     }
     
