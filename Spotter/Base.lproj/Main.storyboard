@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qL6-YX-1gR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qL6-YX-1gR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
@@ -73,6 +73,7 @@
                         <segue destination="jq3-Cr-PhR" kind="custom" identifier="Reservations Segue" customClass="SWRevealViewControllerSeguePushController" id="gyc-s9-q1I"/>
                         <segue destination="oLl-0F-nQT" kind="custom" identifier="Payment Segue" customClass="SWRevealViewControllerSeguePushController" id="tGZ-Fl-Fp3"/>
                         <segue destination="anS-Xc-hig" kind="custom" identifier="History Segue" customClass="SWRevealViewControllerSeguePushController" id="dJP-oe-S3b"/>
+                        <segue destination="6IA-qE-Abx" kind="custom" identifier="Sign Up Segue" customClass="SWRevealViewControllerSeguePushController" id="pTC-7T-YOs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnK-of-d25" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -102,6 +103,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mUz-g5-JPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1148.5" y="686"/>
+        </scene>
+        <!--SignUp-->
+        <scene sceneID="OD5-eA-gN6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignUp" id="6IA-qE-Abx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ILy-n3-8Cq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1140" y="738"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Xpq-t6-JFU">

@@ -12,7 +12,7 @@ class BackTableViewController: UITableViewController {
     var menuArray = [String]()
     
     override func viewDidLoad() {
-        menuArray = ["Profile", "Home", "Reservations", "Selling", "Payment", "History", "Settings"]
+        menuArray = ["Profile", "Home", "Reservations", "Selling", "Payment", "History", "Settings", "Sign Up"]
     }
     
     override func tableView(tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,3 +31,7 @@ class BackTableViewController: UITableViewController {
         performSegueWithIdentifier(segueIdentifier, sender: nil)
     }
 }
+
+
+
+
