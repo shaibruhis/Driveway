@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D2847811C7429040014E10D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2847801C7429040014E10D /* SignUpViewController.swift */; };
+		0D2847851C7429890014E10D /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D2847841C7429880014E10D /* SignUp.storyboard */; };
 		0DD566FE1C699FC40016643D /* FirebaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD566FD1C699FC40016643D /* FirebaseTest.swift */; };
 		313AA101784AE2E0A3849EFB /* Pods_Spotter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848CCE3F8AE4E3108DFA2DCA /* Pods_Spotter.framework */; };
 		8360AC811C67103600D9747C /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360AC801C67103600D9747C /* HistoryViewController.swift */; };
@@ -55,6 +57,8 @@
 
 /* Begin PBXFileReference section */
 		04CC864E548E7E652923DC4F /* Pods-Spotter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spotter/Pods-Spotter.debug.xcconfig"; sourceTree = "<group>"; };
+		0D2847801C7429040014E10D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0D2847841C7429880014E10D /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		0DD566FD1C699FC40016643D /* FirebaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseTest.swift; sourceTree = "<group>"; };
 		81E584F28AF02E9A285B4276 /* Pods-Spotter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spotter/Pods-Spotter.release.xcconfig"; sourceTree = "<group>"; };
 		8360AC801C67103600D9747C /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 				83E89BEB1C66D29A00E446FA /* MapViewController.swift */,
 				8360AC801C67103600D9747C /* HistoryViewController.swift */,
 				0DD566FD1C699FC40016643D /* FirebaseTest.swift */,
+				0D2847801C7429040014E10D /* SignUpViewController.swift */,
 				83E6964E1C66F19A007EB221 /* BackTableViewController.swift */,
 				B3A46FCA1C6ECFB80061A185 /* ReservationsViewController.swift */,
 				B3A46FCC1C6ECFD00061A185 /* PaymentViewController.swift */,
@@ -234,6 +239,7 @@
 				B3A46FC81C6ECEF30061A185 /* History.storyboard */,
 				B3A46FC51C6ECECB0061A185 /* Payment.storyboard */,
 				B3A46FC21C6ECE900061A185 /* Reservations.storyboard */,
+				0D2847841C7429880014E10D /* SignUp.storyboard */,
 				B3A46FBF1C6ECE660061A185 /* Profile.storyboard */,
 				B3A46FBC1C6ECBF60061A185 /* Settings.storyboard */,
 				B3A46FBA1C6ECBA10061A185 /* Selling.storyboard */,
@@ -353,6 +359,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D2847851C7429890014E10D /* SignUp.storyboard in Resources */,
 				B3A46FC71C6ECECB0061A185 /* Payment.storyboard in Resources */,
 				83E89BF41C66D29A00E446FA /* LaunchScreen.storyboard in Resources */,
 				83E89BF11C66D29A00E446FA /* Assets.xcassets in Resources */,
@@ -442,6 +449,7 @@
 				83E89BEA1C66D29A00E446FA /* AppDelegate.swift in Sources */,
 				B3E2B29E1C6C2C9900B3FA0C /* BaseViewController.swift in Sources */,
 				83FB0BE91C73338600CEE6EC /* ParkingType.swift in Sources */,
+				0D2847811C7429040014E10D /* SignUpViewController.swift in Sources */,
 				B3A46FCF1C6ECFE30061A185 /* ProfileViewController.swift in Sources */,
 				83FB0BE71C71BF6100CEE6EC /* SellerEditMenu.swift in Sources */,
 				B3A46FCD1C6ECFD00061A185 /* PaymentViewController.swift in Sources */,
