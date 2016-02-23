@@ -3,3 +3,4 @@
 *.xcuserstate
 *.xcuserdatad
 Pods/*
+*.pbxproj
