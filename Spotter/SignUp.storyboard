@@ -57,8 +57,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F4D-lP-2oe">
+                                <rect key="frame" x="95" y="287" width="184" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ZipCode" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ht4-Ng-m02">
+                                <rect key="frame" x="95" y="363" width="184" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gNk-L6-gRu">
+                                <rect key="frame" x="95" y="325" width="184" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oty-o4-HLP">
-                                <rect key="frame" x="95" y="295" width="184" height="30"/>
+                                <rect key="frame" x="95" y="401" width="184" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="done:" destination="Ssy-TZ-iHC" eventType="touchUpInside" id="A70-bO-rt4"/>
@@ -72,17 +87,20 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="address" destination="F4D-lP-2oe" id="oXN-l0-lra"/>
+                        <outlet property="city" destination="gNk-L6-gRu" id="zmW-t4-sJZ"/>
                         <outlet property="emailAddress" destination="2AH-mf-RcC" id="UUr-fv-n0N"/>
                         <outlet property="firstName" destination="0bc-i6-R0H" id="f9c-tO-Tr3"/>
                         <outlet property="lastName" destination="Egg-R2-HOp" id="fsk-24-7sK"/>
                         <outlet property="password" destination="W7L-kV-bGu" id="TEN-Hx-pcY"/>
                         <outlet property="phoneNumber" destination="6kw-Cr-qez" id="uBK-9F-EIb"/>
+                        <outlet property="zipCode" destination="ht4-Ng-m02" id="gBO-4c-69h"/>
                         <outletCollection property="menuIconCollection" destination="sHv-bt-JVh" collectionClass="NSMutableArray" id="4fW-h5-VsA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFh-H7-OB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="198" y="193"/>
+            <point key="canvasLocation" x="197.5" y="192.5"/>
         </scene>
     </scenes>
 </document>
