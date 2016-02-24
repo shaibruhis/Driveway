@@ -23,6 +23,7 @@
 		83E89C1B1C66D3CF00E446FA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E89C1A1C66D3CF00E446FA /* SWRevealViewController.m */; };
 		83FB0BE71C71BF6100CEE6EC /* SellerEditMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BE61C71BF6100CEE6EC /* SellerEditMenu.swift */; };
 		83FB0BE91C73338600CEE6EC /* ParkingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BE81C73338600CEE6EC /* ParkingType.swift */; };
+		83FB0BED1C7D719D00CEE6EC /* SellerEditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */; };
 		B3A46FB91C6ECB490061A185 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A46FB71C6ECB490061A185 /* Home.storyboard */; };
 		B3A46FBB1C6ECBA10061A185 /* Selling.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A46FBA1C6ECBA10061A185 /* Selling.storyboard */; };
 		B3A46FBE1C6ECBF60061A185 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A46FBC1C6ECBF60061A185 /* Settings.storyboard */; };
@@ -81,6 +82,7 @@
 		83E89C1A1C66D3CF00E446FA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		83FB0BE61C71BF6100CEE6EC /* SellerEditMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditMenu.swift; sourceTree = "<group>"; };
 		83FB0BE81C73338600CEE6EC /* ParkingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingType.swift; sourceTree = "<group>"; };
+		83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditAddressViewController.swift; sourceTree = "<group>"; };
 		848CCE3F8AE4E3108DFA2DCA /* Pods_Spotter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spotter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3A46FB81C6ECB490061A185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		B3A46FBA1C6ECBA10061A185 /* Selling.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Selling.storyboard; path = Base.lproj/Selling.storyboard; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				B3A46FD21C6ED3920061A185 /* SoldSpotsViewController.swift */,
 				83FB0BE61C71BF6100CEE6EC /* SellerEditMenu.swift */,
 				83FB0BE81C73338600CEE6EC /* ParkingType.swift */,
+				83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */,
 			);
 			name = Selling;
 			sourceTree = "<group>";
@@ -320,7 +323,6 @@
 					83E89BE51C66D29A00E446FA = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = N93J4S57HA;
-
 					};
 					83E89BF91C66D29A00E446FA = {
 						CreatedOnToolsVersion = 7.2;
@@ -444,6 +446,7 @@
 			files = (
 				0DD566FE1C699FC40016643D /* FirebaseTest.swift in Sources */,
 				8360AC811C67103600D9747C /* HistoryViewController.swift in Sources */,
+				83FB0BED1C7D719D00CEE6EC /* SellerEditAddressViewController.swift in Sources */,
 				83E6964F1C66F19A007EB221 /* BackTableViewController.swift in Sources */,
 				83E89BEC1C66D29A00E446FA /* MapViewController.swift in Sources */,
 				83E89BEA1C66D29A00E446FA /* AppDelegate.swift in Sources */,
@@ -644,7 +647,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chris.Spotter;
-
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotter/Spotter-Bridging-Header.h";

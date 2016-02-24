@@ -306,7 +306,25 @@
         <!--Address-->
         <scene sceneID="acg-Nn-7wN">
             <objects>
-                <viewController id="mqw-6Z-rBs" sceneMemberID="viewController">
+                <searchDisplayController id="gVa-47-ohA">
+                    <connections>
+                        <outlet property="delegate" destination="mqw-6Z-rBs" id="rEW-QI-Jkn"/>
+                        <outlet property="searchContentsController" destination="mqw-6Z-rBs" id="XdT-a4-bM3"/>
+                        <outlet property="searchResultsDataSource" destination="mqw-6Z-rBs" id="gXb-pS-mr5"/>
+                        <outlet property="searchResultsDelegate" destination="mqw-6Z-rBs" id="p23-lU-slO"/>
+                    </connections>
+                </searchDisplayController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QMc-ws-U8K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="z59-yk-1tr">
+                    <connections>
+                        <outlet property="delegate" destination="mqw-6Z-rBs" id="wry-7Y-NHF"/>
+                        <outlet property="searchContentsController" destination="mqw-6Z-rBs" id="LAr-1Q-uXa"/>
+                        <outlet property="searchResultsDataSource" destination="mqw-6Z-rBs" id="yiz-hi-9Mo"/>
+                        <outlet property="searchResultsDelegate" destination="mqw-6Z-rBs" id="2dy-bT-4hU"/>
+                    </connections>
+                </searchDisplayController>
+                <exit id="CFi-Rc-qN9" userLabel="Exit" sceneMemberID="exit"/>
+                <viewController id="mqw-6Z-rBs" customClass="SellerEditAddressViewController" customModule="Spotter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VDA-xA-LbH"/>
                         <viewControllerLayoutGuide type="bottom" id="jTl-qS-DQo"/>
@@ -314,7 +332,29 @@
                     <view key="view" contentMode="scaleToFill" id="vPL-Vh-kW8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzU-J2-OzA" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="108" width="600" height="448"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <searchBar contentMode="redraw" placeholder="Nearby Address of Parking Spot" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1n-wI-EVR">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="mqw-6Z-rBs" id="VSo-0k-qUW"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="yzU-J2-OzA" secondAttribute="trailing" id="3AQ-FV-poL"/>
+                            <constraint firstItem="t1n-wI-EVR" firstAttribute="top" secondItem="VDA-xA-LbH" secondAttribute="bottom" id="3a6-0M-x9N"/>
+                            <constraint firstItem="yzU-J2-OzA" firstAttribute="leading" secondItem="vPL-Vh-kW8" secondAttribute="leading" id="Usi-cO-2a1"/>
+                            <constraint firstItem="yzU-J2-OzA" firstAttribute="top" secondItem="t1n-wI-EVR" secondAttribute="bottom" id="V4X-71-6TR"/>
+                            <constraint firstItem="jTl-qS-DQo" firstAttribute="top" secondItem="yzU-J2-OzA" secondAttribute="bottom" id="j8a-vp-kbl"/>
+                            <constraint firstItem="t1n-wI-EVR" firstAttribute="leading" secondItem="vPL-Vh-kW8" secondAttribute="leading" id="kmk-uk-UfI"/>
+                            <constraint firstAttribute="trailing" secondItem="t1n-wI-EVR" secondAttribute="trailing" id="sdD-Co-PnK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Address" id="34Q-8B-Sqq">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7gn-YO-WgK">
@@ -323,9 +363,20 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="yzU-J2-OzA" id="3F6-GR-L2G"/>
+                        <outlet property="searchDisplayController" destination="BOG-Sr-uwQ" id="AiP-ch-dGO"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QMc-ws-U8K" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="CFi-Rc-qN9" userLabel="Exit" sceneMemberID="exit"/>
+                <searchDisplayController id="BOG-Sr-uwQ">
+                    <connections>
+                        <outlet property="delegate" destination="mqw-6Z-rBs" id="JbE-1C-7bc"/>
+                        <outlet property="searchBar" destination="t1n-wI-EVR" id="CbD-oK-F9L"/>
+                        <outlet property="searchContentsController" destination="mqw-6Z-rBs" id="RUQ-1L-xXv"/>
+                        <outlet property="searchResultsDataSource" destination="mqw-6Z-rBs" id="ggd-gS-ZP6"/>
+                        <outlet property="searchResultsDelegate" destination="mqw-6Z-rBs" id="poN-Os-46d"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="3740" y="-680"/>
         </scene>
