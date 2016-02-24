@@ -1,0 +1,22 @@
+{
+  "name": "DrivewayAWS",
+  "version": "0.0.0",
+  "description": "server code on aws",
+  "main": "index.js",
+  "dependencies": {
+    "express": "~4.13.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shaibruhis/Driveway"
+  },
+  "author": "Corey Ching, Team Driveway",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/shaibruhis/Driveway/issues"
+  }
+}
