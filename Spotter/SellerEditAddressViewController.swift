@@ -53,7 +53,14 @@ extension SellerEditAddressViewController: CLLocationManagerDelegate{
 extension SellerEditAddressViewController: GMSMapViewDelegate{
     
     func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
-        print(coordinate)
+//        print(coordinate)
+        mapView.clear()
+        let marker = GMSMarker(position:coordinate)
+        marker.title = "Placed marker here"
+        marker.map = self.mapView
+        
+        
+        
     }
 }
 
