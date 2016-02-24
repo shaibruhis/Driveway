@@ -9,16 +9,23 @@
 import Foundation
 import Firebase
 
-class SignUpViewController : BaseViewController{
+
+class SignUpViewController : BaseViewController, UISearchBarDelegate {
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var emailAddress: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var addressSearchBar: UISearchBar!
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
+    
+    
     
     @IBAction func done(sender: AnyObject) {
         
@@ -42,7 +49,5 @@ class SignUpViewController : BaseViewController{
                 }
         })
     }
-    
-    
 }
 

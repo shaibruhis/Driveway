@@ -20,5 +20,6 @@ target 'Spotter' do
   pod 'Braintree'
   pod ‘Firebase’, ‘>= 2.5.0’
   pod 'GoogleMaps'
+
 end
 

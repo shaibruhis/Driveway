@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sir-hv-PFP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sir-hv-PFP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
@@ -58,12 +58,19 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oty-o4-HLP">
-                                <rect key="frame" x="95" y="295" width="184" height="30"/>
+                                <rect key="frame" x="95" y="323" width="184" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="done:" destination="Ssy-TZ-iHC" eventType="touchUpInside" id="A70-bO-rt4"/>
                                 </connections>
                             </button>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3N2-Ga-WeK">
+                                <rect key="frame" x="0.0" y="279" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ssy-TZ-iHC" id="aGA-qY-gJ8"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -72,15 +79,26 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="addressSearchBar" destination="3N2-Ga-WeK" id="mtQ-QI-f9L"/>
                         <outlet property="emailAddress" destination="2AH-mf-RcC" id="UUr-fv-n0N"/>
                         <outlet property="firstName" destination="0bc-i6-R0H" id="f9c-tO-Tr3"/>
                         <outlet property="lastName" destination="Egg-R2-HOp" id="fsk-24-7sK"/>
                         <outlet property="password" destination="W7L-kV-bGu" id="TEN-Hx-pcY"/>
                         <outlet property="phoneNumber" destination="6kw-Cr-qez" id="uBK-9F-EIb"/>
+                        <outlet property="searchDisplayController" destination="ESh-PM-rPf" id="hpZ-Tu-hOL"/>
                         <outletCollection property="menuIconCollection" destination="sHv-bt-JVh" collectionClass="NSMutableArray" id="4fW-h5-VsA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFh-H7-OB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="ESh-PM-rPf">
+                    <connections>
+                        <outlet property="delegate" destination="Ssy-TZ-iHC" id="4Ot-NY-btl"/>
+                        <outlet property="searchBar" destination="3N2-Ga-WeK" id="spw-00-Unc"/>
+                        <outlet property="searchContentsController" destination="Ssy-TZ-iHC" id="qme-bG-BjG"/>
+                        <outlet property="searchResultsDataSource" destination="Ssy-TZ-iHC" id="IYn-oK-0a5"/>
+                        <outlet property="searchResultsDelegate" destination="Ssy-TZ-iHC" id="lNL-ws-XTk"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="198" y="193"/>
         </scene>

@@ -36,12 +36,26 @@
                     </view>
                     <navigationItem key="navigationItem" id="KlQ-It-gar">
                         <barButtonItem key="leftBarButtonItem" title="Menu Icon" id="HRv-ZV-LRg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="LbG-7Z-AI6">
+                            <connections>
+                                <action selector="showSearchBarAction:" destination="74H-W0-2ME" id="Son-Lz-Zao"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchDisplayController" destination="EgJ-Hc-f1R" id="hYP-Mz-MYo"/>
                         <outletCollection property="menuIconCollection" destination="HRv-ZV-LRg" collectionClass="NSMutableArray" id="eve-1c-pDQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ivi-vo-l3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="EgJ-Hc-f1R">
+                    <connections>
+                        <outlet property="delegate" destination="74H-W0-2ME" id="Aqr-ju-iEY"/>
+                        <outlet property="searchContentsController" destination="74H-W0-2ME" id="QWT-2z-9U4"/>
+                        <outlet property="searchResultsDataSource" destination="74H-W0-2ME" id="MZ4-mE-gnd"/>
+                        <outlet property="searchResultsDelegate" destination="74H-W0-2ME" id="ytK-J2-NfC"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1793" y="-180"/>
         </scene>

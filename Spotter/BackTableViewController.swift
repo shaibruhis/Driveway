@@ -12,6 +12,7 @@ class BackTableViewController: UITableViewController {
     var menuArray = [String]()
     
     override func viewDidLoad() {
+        // remove Reservations, History for MVP
         menuArray = ["Profile", "Home", "Reservations", "Selling", "Payment", "History", "Settings", "Sign Up"]
     }
     
