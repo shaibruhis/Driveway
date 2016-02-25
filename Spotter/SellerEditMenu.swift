@@ -12,11 +12,9 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
     var menuArray = [String]()
     
     override func viewDidLoad() {
-        menuArray = ["Parking Type", "Address", "Parking Dimensions", "Price", "Availability"]
-    }
-    
-    @IBAction func cancelToSellerEditMenuViewController(Segue: UIStoryboardSegue){
-        //Do nothing
+//        menuArray = ["Parking Type", "Address", "Parking Dimensions", "Price", "Availability"]
+        menuArray = ["Address", "Price"]
+
     }
     
     func tableView(tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,5 +33,14 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
         performSegueWithIdentifier(segueIdentifier, sender: nil)
     }
     
-    // TODO: make the 5 cells fill screen
+    @IBAction func returnToSellerEditMenu(Segue: UIStoryboardSegue){
+        if let sellerEditAddressViewController = Segue.sourceViewController as? SellerEditAddressViewController{
+            SellerEditMenuSingleton.sharedInstance.parkingCoordinates = sellerEditAddressViewController.spotLocation
+        }
+        //TODO: Check for submenu completion every time we return to seller edit menu to place "checks" for completed submenus
+    }
+
+
+    
 }
+//TODO: Make sellereditmenu contain a container view which houses a tableviewcontroller in order to use static cell. Use delegation when cell is selected to change parentView via segue.

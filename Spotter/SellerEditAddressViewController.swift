@@ -13,6 +13,10 @@ import GoogleMaps
 
 class SellerEditAddressViewController: UIViewController {
     @IBOutlet var mapView: GMSMapView!
+    @IBOutlet var saveButton: UIBarButtonItem!
+    
+    var spotLocation: CLLocationCoordinate2D?
+    
     let locationManager = CLLocationManager()
 
     override func viewDidLoad(){
@@ -21,9 +25,15 @@ class SellerEditAddressViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         mapView.mapType = kGMSTypeNormal
         mapView.delegate = self
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if saveButton === sender{
+            
+        }//will not happen if user has not chosen a location
         
     }
-}
+ }
 
 extension SellerEditAddressViewController: CLLocationManagerDelegate{
     // called when user grants or revokes location permission
@@ -48,19 +58,20 @@ extension SellerEditAddressViewController: CLLocationManagerDelegate{
             locationManager.stopUpdatingLocation()
         }
     }
+    
+    
 }
 
 extension SellerEditAddressViewController: GMSMapViewDelegate{
     
     func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
 //        print(coordinate)
+        spotLocation = coordinate
         mapView.clear()
-        let marker = GMSMarker(position:coordinate)
+        let marker = GMSMarker(position:spotLocation!)
         marker.title = "Placed marker here"
         marker.map = self.mapView
-        
-        
-        
+        self.saveButton.enabled = true
     }
 }
 
