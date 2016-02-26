@@ -96,6 +96,8 @@ extension SellerEditAddressViewController: CLLocationManagerDelegate{
 extension SellerEditAddressViewController: GMSMapViewDelegate{
     
     func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
+        fetchedAddressLatitude = coordinate.latitude
+        fetchedAddressLongitude = coordinate.longitude
         placeMarker(coordinate)
     }
 }
