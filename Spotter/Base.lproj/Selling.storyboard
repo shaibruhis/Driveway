@@ -225,12 +225,12 @@
                     <navigationItem key="navigationItem" title="Address" id="34Q-8B-Sqq">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7gn-YO-WgK">
                             <connections>
-                                <segue destination="CFi-Rc-qN9" kind="unwind" unwindAction="returnToSellerEditMenu:" id="AIk-ij-1ln"/>
+                                <segue destination="CFi-Rc-qN9" kind="unwind" unwindAction="returnToSellerEditMenu:" id="NtR-2o-60u"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="Nnp-hk-HAq">
                             <connections>
-                                <segue destination="CFi-Rc-qN9" kind="unwind" unwindAction="returnToSellerEditMenu:" id="Uh6-UZ-Y6D"/>
+                                <segue destination="CFi-Rc-qN9" kind="unwind" identifier="saveAddressSegue" unwindAction="returnToSellerEditMenu:" id="7cO-ey-KOT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
