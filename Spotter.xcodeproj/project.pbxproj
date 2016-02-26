@@ -240,7 +240,6 @@
 				B3A46FCA1C6ECFB80061A185 /* ReservationsViewController.swift */,
 				B3A46FCC1C6ECFD00061A185 /* PaymentViewController.swift */,
 				B3A46FCE1C6ECFE30061A185 /* ProfileViewController.swift */,
-				B31340191C7D93AC003FD1D7 /* SearchResultsController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -267,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				B35DDB6E1C7D45480099BFBC /* MapTasks.swift */,
+				B31340191C7D93AC003FD1D7 /* SearchResultsController.swift */,
 			);
 			name = "Map Helpers";
 			sourceTree = "<group>";

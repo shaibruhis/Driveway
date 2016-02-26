@@ -73,14 +73,5 @@ class MapTasks: NSObject {
             }
         }
     }
-    
-    // If you are creating several markers with the same image, use the same instance of UIImage for each of the markers. This helps improve the performance of your application when displaying many markers.
-    // This image may have multiple frames. Additionally, the alignmentRectInsets property is respected, which is useful if a marker has a shadow or other unusable region.
-    func placeMarker(spotAddress: String, mapView: GMSMapView) {
-        geocodeAddress(spotAddress, withCompletionHandler: nil)
-        let coordinates = CLLocationCoordinate2DMake(fetchedAddressLatitude, fetchedAddressLongitude)
-        let marker = GMSMarker(position: coordinates)
-        marker.title = "hello"  // title will be price in ParkingSpot Model
-        marker.map = mapView
-    }
+
 }

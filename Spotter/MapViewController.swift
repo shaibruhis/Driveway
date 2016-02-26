@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import GoogleMaps
 
-let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
 class MapViewController: BaseViewController {
 
