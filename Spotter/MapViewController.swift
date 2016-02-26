@@ -23,18 +23,10 @@ class MapViewController: BaseViewController {
     
     func loadMap() {
         mapView = GMSMapView(frame: CGRectZero)
-        // Available map types: kGMSTypeNormal, kGMSTypeSatellite, kGMSTypeHybrid,
-        // kGMSTypeTerrain, kGMSTypeNone
+        // Available map types: kGMSTypeNormal, kGMSTypeSatellite, kGMSTypeHybrid, kGMSTypeTerrain, kGMSTypeNone
         mapView.mapType = kGMSTypeHybrid
-        self.view = mapView
-    }
-}
-
-// MARK: - CLLocationManagerDelegate
-extension MapViewController: CLLocationManagerDelegate {
-    // called when user grants or revokes location permission
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == .AuthorizedWhenInUse {
+        
+        if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
             
             locationManager.startUpdatingLocation()
             // draws a light blue dot where the user is located
@@ -42,7 +34,24 @@ extension MapViewController: CLLocationManagerDelegate {
             // adds button to bottom right of map that, when tapped, centers on user's location
             mapView.settings.myLocationButton = true
         }
+        
+        self.view = mapView
     }
+}
+
+// MARK: - CLLocationManagerDelegate
+extension MapViewController: CLLocationManagerDelegate {
+    // called when user grants or revokes location permission
+//    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+//        if status == .AuthorizedWhenInUse {
+//            
+//            locationManager.startUpdatingLocation()
+//            // draws a light blue dot where the user is located
+//            mapView.myLocationEnabled = true
+//            // adds button to bottom right of map that, when tapped, centers on user's location
+//            mapView.settings.myLocationButton = true
+//        }
+//    }
     
     // executed when location manager receives new location data
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
