@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="REZ-J5-CjW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="REZ-J5-CjW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
@@ -97,7 +97,7 @@
             </objects>
             <point key="canvasLocation" x="4006" y="117"/>
         </scene>
-        <!--New Spot Listing-->
+        <!--Edit Spot Listing-->
         <scene sceneID="HWN-JD-l9t">
             <objects>
                 <viewController id="eVF-0H-i0y" customClass="SellerEditMenu" customModule="Spotter" customModuleProvider="target" sceneMemberID="viewController">
@@ -135,15 +135,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="New Spot Listing" id="1Lz-MA-2bt">
+                    <navigationItem key="navigationItem" title="Edit Spot Listing" id="1Lz-MA-2bt">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="BUL-5g-qRR">
                             <connections>
                                 <segue destination="FX1-MA-bT5" kind="unwind" unwindAction="cancelToListingsViewController:" id="wZH-Ji-mAe"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Item" systemItem="done" id="0Ot-iH-jlh"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="saveListingButton" destination="0Ot-iH-jlh" id="1y8-cg-kdc"/>
                         <segue destination="1jH-hT-11f" kind="show" identifier="Seller Price Segue" id="Lgt-tQ-3kc"/>
                         <segue destination="mqw-6Z-rBs" kind="show" identifier="Seller Address Segue" id="bih-Ve-VuG"/>
                     </connections>
@@ -156,7 +158,7 @@
         <!--Price-->
         <scene sceneID="aVD-C2-lWQ">
             <objects>
-                <viewController id="1jH-hT-11f" sceneMemberID="viewController">
+                <viewController id="1jH-hT-11f" customClass="SellerEditPriceViewController" customModule="Spotter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qad-pl-A4R"/>
                         <viewControllerLayoutGuide type="bottom" id="sdn-kZ-no3"/>
@@ -171,6 +173,23 @@
                                     <barButtonItem title="Item" id="NFI-cB-9sW"/>
                                 </items>
                             </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9G-oi-bYu">
+                                <rect key="frame" x="245" y="289" width="14" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price of Parking per half hour:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKf-fd-K7i">
+                                <rect key="frame" x="184" y="256" width="232" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IpM-dA-I43">
+                                <rect key="frame" x="259" y="285" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -180,12 +199,16 @@
                                 <segue destination="TQE-jO-kyb" kind="unwind" unwindAction="returnToSellerEditMenu:" id="Xdi-fe-Mz8"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="6UC-UX-hcf"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="userPriceInput" destination="IpM-dA-I43" id="aDO-17-47s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YBq-wF-MvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="TQE-jO-kyb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5691" y="-16"/>
+            <point key="canvasLocation" x="4411" y="-680"/>
         </scene>
         <!--Address-->
         <scene sceneID="acg-Nn-7wN">

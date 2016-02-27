@@ -8,8 +8,10 @@
 
 import Foundation
 
+
 class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelegate{
     var menuArray = [String]()
+    @IBOutlet var saveListingButton: UIBarButtonItem!
     
     override func viewDidLoad() {
 //        menuArray = ["Parking Type", "Address", "Parking Dimensions", "Price", "Availability"]
@@ -33,11 +35,30 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
         performSegueWithIdentifier(segueIdentifier, sender: nil)
     }
     
+    func checkForCompletion(){
+        if(SellerEditMenuSingleton.sharedInstance.checkAddressCompletion()){
+            // place check mark on the right within the address cell
+        }
+        if(SellerEditMenuSingleton.sharedInstance.checkPriceCompletion()){
+            // place check mark on the right of the price cell
+        }
+        if(SellerEditMenuSingleton.sharedInstance.checkAllCompletion()){
+            self.saveListingButton.enabled = true
+        }
+    }
+    
     @IBAction func returnToSellerEditMenu(Segue: UIStoryboardSegue){
-        if let sellerEditAddressViewController = Segue.sourceViewController as? SellerEditAddressViewController{
-            SellerEditMenuSingleton.sharedInstance.parkingCoordinates = sellerEditAddressViewController.spotLocation
+        if(Segue.identifier == "saveAddressSegue"){
+            if let sellerEditAddressViewController = Segue.sourceViewController as? SellerEditAddressViewController{
+                SellerEditMenuSingleton.sharedInstance.parkingCoordinates = sellerEditAddressViewController.spotLocation
+            } //extra security, just in case for some reason user can press save even without selecting an address
         }
         //TODO: Check for submenu completion every time we return to seller edit menu to place "checks" for completed submenus
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //if save is pressed, then save to firebase
+        //call SellerEditMenuSingleton.resetValues() regardless of save or cancel
     }
 
 

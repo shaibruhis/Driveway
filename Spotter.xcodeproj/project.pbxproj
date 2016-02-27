@@ -25,6 +25,7 @@
 		83FB0BE91C73338600CEE6EC /* ParkingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BE81C73338600CEE6EC /* ParkingType.swift */; };
 		83FB0BED1C7D719D00CEE6EC /* SellerEditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */; };
 		83FD768C1C7F0346004FAA5A /* SellerEditMenuSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD768B1C7F0346004FAA5A /* SellerEditMenuSingleton.swift */; };
+		83FEB1B61C81B6220086150F /* SellerEditPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FEB1B51C81B6220086150F /* SellerEditPrice.swift */; };
 		B313401A1C7D93AC003FD1D7 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31340191C7D93AC003FD1D7 /* SearchResultsController.swift */; };
 		B35DDB6B1C7C441F0099BFBC /* DrivewayMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35DDB6A1C7C441F0099BFBC /* DrivewayMarker.swift */; };
 		B35DDB6F1C7D45480099BFBC /* MapTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35DDB6E1C7D45480099BFBC /* MapTasks.swift */; };
@@ -88,6 +89,7 @@
 		83FB0BE81C73338600CEE6EC /* ParkingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingType.swift; sourceTree = "<group>"; };
 		83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditAddressViewController.swift; sourceTree = "<group>"; };
 		83FD768B1C7F0346004FAA5A /* SellerEditMenuSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditMenuSingleton.swift; sourceTree = "<group>"; };
+		83FEB1B51C81B6220086150F /* SellerEditPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditPrice.swift; sourceTree = "<group>"; };
 		848CCE3F8AE4E3108DFA2DCA /* Pods_Spotter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spotter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B31340191C7D93AC003FD1D7 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		B35DDB6A1C7C441F0099BFBC /* DrivewayMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrivewayMarker.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				83FB0BE81C73338600CEE6EC /* ParkingType.swift */,
 				83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */,
 				83FD768B1C7F0346004FAA5A /* SellerEditMenuSingleton.swift */,
+				83FEB1B51C81B6220086150F /* SellerEditPrice.swift */,
 			);
 			name = Selling;
 			sourceTree = "<group>";
@@ -358,7 +361,7 @@
 				TargetAttributes = {
 					83E89BE51C66D29A00E446FA = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = SVFLC63M2X;
+						DevelopmentTeam = N93J4S57HA;
 					};
 					83E89BF91C66D29A00E446FA = {
 						CreatedOnToolsVersion = 7.2;
@@ -498,6 +501,7 @@
 				B35DDB6B1C7C441F0099BFBC /* DrivewayMarker.swift in Sources */,
 				83E89C1B1C66D3CF00E446FA /* SWRevealViewController.m in Sources */,
 				B3A46FCB1C6ECFB80061A185 /* ReservationsViewController.swift in Sources */,
+				83FEB1B61C81B6220086150F /* SellerEditPrice.swift in Sources */,
 				B35DDB6F1C7D45480099BFBC /* MapTasks.swift in Sources */,
 				B3A46FD51C6ED39D0061A185 /* ListingsViewController.swift in Sources */,
 			);
@@ -686,7 +690,7 @@
 				INFOPLIST_FILE = Spotter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.42jumpstreet.Spotter;
+				PRODUCT_BUNDLE_IDENTIFIER = jing.Spotter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotter/Spotter-Bridging-Header.h";
@@ -705,7 +709,7 @@
 				INFOPLIST_FILE = Spotter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.42jumpstreet.Spotter;
+				PRODUCT_BUNDLE_IDENTIFIER = jing.Spotter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotter/Spotter-Bridging-Header.h";

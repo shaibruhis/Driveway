@@ -208,7 +208,3 @@ extension SellerEditAddressViewController: LocateOnTheMap {
         }
     }
 }
-
-//TODO: change custom ios target properties and add NSLocationWhenIsUsageDescription (key) with String being the value type and add description for why we need location.
-
-//Something wrong with google api key/bundle identifier -> ClientParameterRequest failed

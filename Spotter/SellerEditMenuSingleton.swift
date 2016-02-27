@@ -21,4 +21,45 @@ class SellerEditMenuSingleton{
         price = nil
         parkingCoordinates = nil
     }
+    
+    
+
+    func checkAddressCompletion() -> Bool{
+        if let nonNilCoordinates = parkingCoordinates{
+            if(CLLocationCoordinate2DIsValid(nonNilCoordinates)){
+                return true
+            }
+            else{
+                print("Invalid Coordinates!")
+                return false
+            }
+        }
+        else{
+            return false
+        }
+    }//else we have empty/nil coordinates, meaning the seller hasn't chosen an address to place their spot.
+    
+    func checkPriceCompletion() -> Bool{
+        if let nonNilPrice = price{
+            if(nonNilPrice >= 0){
+                return true
+            }
+            else{
+                return false
+            }
+        }
+        else{
+            return false
+        }
+    }
+    
+    func checkAllCompletion() -> Bool{
+        if(checkAddressCompletion() == true && checkPriceCompletion() == true){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+        
 }
