@@ -201,7 +201,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="6UC-UX-hcf">
                             <connections>
-                                <segue destination="TQE-jO-kyb" kind="unwind" identifier="savePriceSegue" unwindAction="returnToSellerEditMenu:" id="FEV-sH-C3U"/>
+                                <segue destination="TQE-jO-kyb" kind="unwind" identifier="savePriceSegue" unwindAction="returnToSellerEditMenu:" id="qub-Wc-P41"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

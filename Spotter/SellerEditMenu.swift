@@ -56,6 +56,7 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
         if(Segue.identifier == "savePriceSegue"){
             if let sellerEditPriceViewController = Segue.sourceViewController as? SellerEditPriceViewController{
                 SellerEditMenuSingleton.sharedInstance.price = sellerEditPriceViewController.spotPrice
+                print(SellerEditMenuSingleton.sharedInstance.price)
             }
         }
         
@@ -70,8 +71,7 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //if save is pressed, then save to firebase
-        //call SellerEditMenuSingleton.resetValues() regardless of save or cancel
+//        SellerEditMenuSingleton.sharedInstance.resetValues()
     }
 
 
