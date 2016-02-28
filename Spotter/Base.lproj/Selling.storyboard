@@ -185,7 +185,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IpM-dA-I43">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IpM-dA-I43" customClass="SellerEditPriceTextField" customModule="Spotter" customModuleProvider="target">
                                 <rect key="frame" x="259" y="285" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -196,10 +196,14 @@
                     <navigationItem key="navigationItem" title="Price" id="rES-5F-nSD">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hdn-8a-bQQ">
                             <connections>
-                                <segue destination="TQE-jO-kyb" kind="unwind" unwindAction="returnToSellerEditMenu:" id="Xdi-fe-Mz8"/>
+                                <segue destination="TQE-jO-kyb" kind="unwind" unwindAction="returnToSellerEditMenu:" id="VSz-2d-hpt"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="6UC-UX-hcf"/>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="6UC-UX-hcf">
+                            <connections>
+                                <segue destination="TQE-jO-kyb" kind="unwind" identifier="savePriceSegue" unwindAction="returnToSellerEditMenu:" id="FEV-sH-C3U"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="savePriceButton" destination="6UC-UX-hcf" id="wtQ-Bm-aw9"/>

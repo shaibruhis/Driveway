@@ -53,6 +53,19 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
                 SellerEditMenuSingleton.sharedInstance.parkingCoordinates = sellerEditAddressViewController.spotLocation
             } //extra security, just in case for some reason user can press save even without selecting an address
         }
+        if(Segue.identifier == "savePriceSegue"){
+            if let sellerEditPriceViewController = Segue.sourceViewController as? SellerEditPriceViewController{
+                SellerEditMenuSingleton.sharedInstance.price = sellerEditPriceViewController.spotPrice
+            }
+        }
+        
+        if(SellerEditMenuSingleton.sharedInstance.checkAllCompletion()){
+            saveListingButton.enabled = true
+        }
+        else{
+            saveListingButton.enabled = false
+        }
+        
         //TODO: Check for submenu completion every time we return to seller edit menu to place "checks" for completed submenus
     }
     

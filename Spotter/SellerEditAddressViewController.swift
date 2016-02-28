@@ -39,23 +39,23 @@ class SellerEditAddressViewController: UIViewController {
         searchResultController.delegate = self
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if saveButton === sender{
-            let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/")
-            //Get the data from the Text Box and putting them into Firebase
-
-//            var newUser = ["First Name": firstName.text!, "Last Name": lastName.text!, "Phone Number": phoneNumber.text!, "Email": emailAddress.text!]
-            let newLocation = ["Lat": fetchedAddressLatitude, "Lon": fetchedAddressLongitude]
-            //Make the branch "Users" in the database
-            let locationsRef = ref.childByAppendingPath("Locations")
-            //Auto-Generate a User ID
-            let newLocationRef = locationsRef.childByAutoId()
-            //write the values to the database
-            newLocationRef.setValue(newLocation)
-
-        }//will not happen if user has not chosen a location
-        
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if saveButton === sender{
+//            let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/")
+//            //Get the data from the Text Box and putting them into Firebase
+//
+////            var newUser = ["First Name": firstName.text!, "Last Name": lastName.text!, "Phone Number": phoneNumber.text!, "Email": emailAddress.text!]
+//            let newLocation = ["Lat": fetchedAddressLatitude, "Lon": fetchedAddressLongitude]
+//            //Make the branch "Users" in the database
+//            let locationsRef = ref.childByAppendingPath("Locations")
+//            //Auto-Generate a User ID
+//            let newLocationRef = locationsRef.childByAutoId()
+//            //write the values to the database
+////            newLocationRef.setValue(newLocation)
+//
+//        }//will not happen if user has not chosen a location
+//        
+//    }
  }
 
 extension SellerEditAddressViewController: CLLocationManagerDelegate{

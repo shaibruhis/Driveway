@@ -15,7 +15,7 @@ class SellerEditMenuSingleton{
     private init(){} //Prevents this class from being initialized as it is a singleton
     
     var parkingCoordinates: CLLocationCoordinate2D?
-    var price: Float?
+    var price: String?
     
     func resetValues(){
         price = nil
@@ -41,7 +41,7 @@ class SellerEditMenuSingleton{
     
     func checkPriceCompletion() -> Bool{
         if let nonNilPrice = price{
-            if(nonNilPrice >= 0){
+            if(nonNilPrice.characters.count > 0){
                 return true
             }
             else{
@@ -54,7 +54,7 @@ class SellerEditMenuSingleton{
     }
     
     func checkAllCompletion() -> Bool{
-        if(checkAddressCompletion() == true && checkPriceCompletion() == true){
+        if(checkAddressCompletion() && checkPriceCompletion()){
             return true
         }
         else{
