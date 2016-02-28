@@ -202,6 +202,7 @@
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="6UC-UX-hcf"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="savePriceButton" destination="6UC-UX-hcf" id="wtQ-Bm-aw9"/>
                         <outlet property="userPriceInput" destination="IpM-dA-I43" id="aDO-17-47s"/>
                     </connections>
                 </viewController>
