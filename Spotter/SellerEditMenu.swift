@@ -71,7 +71,7 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        SellerEditMenuSingleton.sharedInstance.resetValues()
+        SellerEditMenuSingleton.sharedInstance.resetValues()
     }
 
 
