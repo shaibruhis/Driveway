@@ -27,11 +27,9 @@ class SellerEditMenuSingleton{
     func checkAddressCompletion() -> Bool{
         if let nonNilCoordinates = parkingCoordinates{
             if(CLLocationCoordinate2DIsValid(nonNilCoordinates)){
-                print("valid address")
                 return true
             }
             else{
-                print("Invalid Coordinates!")
                 return false
             }
         }
@@ -42,13 +40,9 @@ class SellerEditMenuSingleton{
     
     func checkPriceCompletion() -> Bool{
         if(price?.isEmpty == nil){
-            print("empty price")
             return false
         }
-        
-        print("valid price")
         return true
-        
     }
     
     func checkAllCompletion() -> Bool{

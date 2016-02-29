@@ -12,6 +12,7 @@ import Foundation
 class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelegate{
     var menuArray = [String]()
     @IBOutlet var saveListingButton: UIBarButtonItem!
+    @IBOutlet weak var cancelListingButton: UIBarButtonItem!
     
     override func viewDidLoad() {
 //        menuArray = ["Parking Type", "Address", "Parking Dimensions", "Price", "Availability"]
@@ -56,7 +57,12 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        SellerEditMenuSingleton.sharedInstance.resetValues()
+        if sender === cancelListingButton{
+            SellerEditMenuSingleton.sharedInstance.resetValues()
+        }
+        if sender === saveListingButton{
+            SellerEditMenuSingleton.sharedInstance.resetValues()
+        }//need to also post to database
     }
 
 

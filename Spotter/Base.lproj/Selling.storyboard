@@ -109,9 +109,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lyu-3c-lIW">
-                                <rect key="frame" x="0.0" y="64" width="600" height="250"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xwU-YM-rzE">
                                 <rect key="frame" x="0.0" y="316" width="600" height="284"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -131,6 +128,9 @@
                                     <outlet property="delegate" destination="eVF-0H-i0y" id="NSR-89-iee"/>
                                 </connections>
                             </tableView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lyu-3c-lIW">
+                                <rect key="frame" x="0.0" y="64" width="600" height="250"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -138,13 +138,18 @@
                     <navigationItem key="navigationItem" title="Edit Spot Listing" id="1Lz-MA-2bt">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="BUL-5g-qRR">
                             <connections>
-                                <segue destination="FX1-MA-bT5" kind="unwind" unwindAction="cancelToListingsViewController:" id="wZH-Ji-mAe"/>
+                                <segue destination="FX1-MA-bT5" kind="unwind" unwindAction="returnToListingsViewController:" id="ZqE-pW-ioT"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Item" systemItem="done" id="0Ot-iH-jlh"/>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Item" systemItem="done" id="0Ot-iH-jlh">
+                            <connections>
+                                <segue destination="FX1-MA-bT5" kind="unwind" unwindAction="returnToListingsViewController:" id="S0w-4v-aHu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="cancelListingButton" destination="BUL-5g-qRR" id="0Kf-xK-dft"/>
                         <outlet property="saveListingButton" destination="0Ot-iH-jlh" id="1y8-cg-kdc"/>
                         <segue destination="1jH-hT-11f" kind="show" identifier="Seller Price Segue" id="Lgt-tQ-3kc"/>
                         <segue destination="mqw-6Z-rBs" kind="show" identifier="Seller Address Segue" id="bih-Ve-VuG"/>
