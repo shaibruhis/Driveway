@@ -42,24 +42,10 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
         if(SellerEditMenuSingleton.sharedInstance.checkPriceCompletion()){
             // place check mark on the right of the price cell
         }
-        if(SellerEditMenuSingleton.sharedInstance.checkAllCompletion()){
-            self.saveListingButton.enabled = true
-        }
     }
     
     @IBAction func returnToSellerEditMenu(Segue: UIStoryboardSegue){
-        if(Segue.identifier == "saveAddressSegue"){
-            if let sellerEditAddressViewController = Segue.sourceViewController as? SellerEditAddressViewController{
-                SellerEditMenuSingleton.sharedInstance.parkingCoordinates = sellerEditAddressViewController.spotLocation
-            } //extra security, just in case for some reason user can press save even without selecting an address
-        }
-        if(Segue.identifier == "savePriceSegue"){
-            if let sellerEditPriceViewController = Segue.sourceViewController as? SellerEditPriceViewController{
-                SellerEditMenuSingleton.sharedInstance.price = sellerEditPriceViewController.spotPrice
-                print(SellerEditMenuSingleton.sharedInstance.price)
-            }
-        }
-        
+        //call checkforcompletion here
         if(SellerEditMenuSingleton.sharedInstance.checkAllCompletion()){
             saveListingButton.enabled = true
         }
@@ -67,7 +53,6 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
             saveListingButton.enabled = false
         }
         
-        //TODO: Check for submenu completion every time we return to seller edit menu to place "checks" for completed submenus
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

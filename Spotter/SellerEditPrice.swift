@@ -10,8 +10,9 @@ import Foundation
 import UIKit
 
 class SellerEditPriceViewController: UIViewController, UITextFieldDelegate{
-    @IBOutlet weak var userPriceInput: UITextField!
+
     @IBOutlet weak var savePriceButton: UIBarButtonItem!
+    @IBOutlet weak var userPriceInput: UITextField!
     var decimalPointExists: Bool = false
     let currencyFormatter = NSNumberFormatter()
     var spotPrice: String?
@@ -26,7 +27,8 @@ class SellerEditPriceViewController: UIViewController, UITextFieldDelegate{
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if savePriceButton === sender{
-            spotPrice = NSString(format: "%.2f", NSString(string: userPriceInput.text!).floatValue) as String
+            SellerEditMenuSingleton.sharedInstance.price = NSString(format: "%.2f", NSString(string: userPriceInput.text!).floatValue) as String
+            print(SellerEditMenuSingleton.sharedInstance.price)
         }// converting input to valid float, might need to change it to currency instead if this app launches outside of US
     }
     

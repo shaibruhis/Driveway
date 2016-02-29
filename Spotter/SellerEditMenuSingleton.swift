@@ -41,12 +41,13 @@ class SellerEditMenuSingleton{
     }//else we have empty/nil coordinates, meaning the seller hasn't chosen an address to place their spot.
     
     func checkPriceCompletion() -> Bool{
-        if let nonNilPrice = price{
-            if(nonNilPrice.characters.count > 0 && (NSString(string: nonNilPrice).doubleValue) >= 0 ){
-                return true
-            }
+        if(price?.isEmpty == nil){
+            print("empty price")
+            return false
         }
-        return false
+        
+        print("valid price")
+        return true
         
     }
     

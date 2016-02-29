@@ -39,6 +39,12 @@ class SellerEditAddressViewController: UIViewController {
         searchResultController.delegate = self
     }
     
+        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            if saveButton === sender{
+                SellerEditMenuSingleton.sharedInstance.parkingCoordinates = spotLocation
+            }
+        }
+    
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        if saveButton === sender{
 //            let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/")
