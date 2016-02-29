@@ -11,9 +11,7 @@ import Firebase
 
 
 class SignUpViewController : BaseViewController{
-    @IBOutlet weak var city: UITextField!
-    @IBOutlet weak var zipCode: UITextField!
-    @IBOutlet weak var address: UITextField!
+
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
@@ -33,7 +31,7 @@ class SignUpViewController : BaseViewController{
         
         
         let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/")
-        var newUser = ["First Name": firstName.text!, "Last Name": lastName.text!, "Phone Number": phoneNumber.text!, "Email": emailAddress.text!, "Address": address.text!, "City": city.text!, "ZipCode": zipCode.text!]
+        var newUser = ["First Name": firstName.text!, "Last Name": lastName.text!, "Phone Number": phoneNumber.text!, "Email": emailAddress.text!]
         //Get the data from the Text Box and putting them into Firebase
         var usersRef = ref.childByAppendingPath("Users")
         //Make the branch "Users" in the database
