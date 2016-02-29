@@ -99,6 +99,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFh-H7-OB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="ESh-PM-rPf">
+                    <connections>
+                        <outlet property="delegate" destination="Ssy-TZ-iHC" id="4Ot-NY-btl"/>
+                        <outlet property="searchContentsController" destination="Ssy-TZ-iHC" id="qme-bG-BjG"/>
+                        <outlet property="searchResultsDataSource" destination="Ssy-TZ-iHC" id="IYn-oK-0a5"/>
+                        <outlet property="searchResultsDelegate" destination="Ssy-TZ-iHC" id="lNL-ws-XTk"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="197.5" y="192.5"/>
         </scene>

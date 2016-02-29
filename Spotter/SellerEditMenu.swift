@@ -8,8 +8,11 @@
 
 import Foundation
 
+
 class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelegate{
     var menuArray = [String]()
+    @IBOutlet var saveListingButton: UIBarButtonItem!
+    @IBOutlet weak var cancelListingButton: UIBarButtonItem!
     
     override func viewDidLoad() {
 //        menuArray = ["Parking Type", "Address", "Parking Dimensions", "Price", "Availability"]
@@ -33,11 +36,33 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
         performSegueWithIdentifier(segueIdentifier, sender: nil)
     }
     
-    @IBAction func returnToSellerEditMenu(Segue: UIStoryboardSegue){
-        if let sellerEditAddressViewController = Segue.sourceViewController as? SellerEditAddressViewController{
-            SellerEditMenuSingleton.sharedInstance.parkingCoordinates = sellerEditAddressViewController.spotLocation
+    func checkForCompletion(){
+        if(SellerEditMenuSingleton.sharedInstance.checkAddressCompletion()){
+            // place check mark on the right within the address cell
         }
-        //TODO: Check for submenu completion every time we return to seller edit menu to place "checks" for completed submenus
+        if(SellerEditMenuSingleton.sharedInstance.checkPriceCompletion()){
+            // place check mark on the right of the price cell
+        }
+    }
+    
+    @IBAction func returnToSellerEditMenu(Segue: UIStoryboardSegue){
+        //call checkforcompletion here
+        if(SellerEditMenuSingleton.sharedInstance.checkAllCompletion()){
+            saveListingButton.enabled = true
+        }
+        else{
+            saveListingButton.enabled = false
+        }
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if sender === cancelListingButton{
+            SellerEditMenuSingleton.sharedInstance.resetValues()
+        }
+        if sender === saveListingButton{
+            SellerEditMenuSingleton.sharedInstance.resetValues()
+        }//need to also post to database
     }
 
 

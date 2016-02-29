@@ -25,6 +25,10 @@
 		83FB0BE91C73338600CEE6EC /* ParkingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BE81C73338600CEE6EC /* ParkingType.swift */; };
 		83FB0BED1C7D719D00CEE6EC /* SellerEditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */; };
 		83FD768C1C7F0346004FAA5A /* SellerEditMenuSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD768B1C7F0346004FAA5A /* SellerEditMenuSingleton.swift */; };
+		83FEB1B61C81B6220086150F /* SellerEditPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FEB1B51C81B6220086150F /* SellerEditPrice.swift */; };
+		B313401A1C7D93AC003FD1D7 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31340191C7D93AC003FD1D7 /* SearchResultsController.swift */; };
+		B35DDB6B1C7C441F0099BFBC /* DrivewayMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35DDB6A1C7C441F0099BFBC /* DrivewayMarker.swift */; };
+		B35DDB6F1C7D45480099BFBC /* MapTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35DDB6E1C7D45480099BFBC /* MapTasks.swift */; };
 		B3A46FB91C6ECB490061A185 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A46FB71C6ECB490061A185 /* Home.storyboard */; };
 		B3A46FBB1C6ECBA10061A185 /* Selling.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A46FBA1C6ECBA10061A185 /* Selling.storyboard */; };
 		B3A46FBE1C6ECBF60061A185 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A46FBC1C6ECBF60061A185 /* Settings.storyboard */; };
@@ -85,7 +89,11 @@
 		83FB0BE81C73338600CEE6EC /* ParkingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingType.swift; sourceTree = "<group>"; };
 		83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditAddressViewController.swift; sourceTree = "<group>"; };
 		83FD768B1C7F0346004FAA5A /* SellerEditMenuSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditMenuSingleton.swift; sourceTree = "<group>"; };
+		83FEB1B51C81B6220086150F /* SellerEditPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditPrice.swift; sourceTree = "<group>"; };
 		848CCE3F8AE4E3108DFA2DCA /* Pods_Spotter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spotter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B31340191C7D93AC003FD1D7 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
+		B35DDB6A1C7C441F0099BFBC /* DrivewayMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrivewayMarker.swift; sourceTree = "<group>"; };
+		B35DDB6E1C7D45480099BFBC /* MapTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTasks.swift; sourceTree = "<group>"; };
 		B3A46FB81C6ECB490061A185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		B3A46FBA1C6ECBA10061A185 /* Selling.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Selling.storyboard; path = Base.lproj/Selling.storyboard; sourceTree = "<group>"; };
 		B3A46FBD1C6ECBF60061A185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
@@ -169,9 +177,10 @@
 		83E89BE81C66D29A00E446FA /* Spotter */ = {
 			isa = PBXGroup;
 			children = (
+				B35DDB691C7C44050099BFBC /* Model */,
 				B30AFE531C6D68D400FBC36E /* Controllers */,
-				B3A46FB61C6ECB2A0061A185 /* Storyboards */,
 				83E89C171C66D38400E446FA /* Supporting Libraries */,
+				B3A46FB61C6ECB2A0061A185 /* Storyboards */,
 				83E89BE91C66D29A00E446FA /* AppDelegate.swift */,
 				83E89BF01C66D29A00E446FA /* Assets.xcassets */,
 				83E89BF21C66D29A00E446FA /* LaunchScreen.storyboard */,
@@ -201,9 +210,8 @@
 		83E89C171C66D38400E446FA /* Supporting Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				83E89C191C66D3CF00E446FA /* SWRevealViewController.h */,
-				83E89C1A1C66D3CF00E446FA /* SWRevealViewController.m */,
-				83E89C181C66D3CF00E446FA /* Spotter-Bridging-Header.h */,
+				B35DDB711C7D51DA0099BFBC /* Map Helpers */,
+				B35DDB701C7D51C30099BFBC /* Sliding Menu */,
 			);
 			name = "Supporting Libraries";
 			sourceTree = "<group>";
@@ -217,6 +225,7 @@
 				83FB0BE81C73338600CEE6EC /* ParkingType.swift */,
 				83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */,
 				83FD768B1C7F0346004FAA5A /* SellerEditMenuSingleton.swift */,
+				83FEB1B51C81B6220086150F /* SellerEditPrice.swift */,
 			);
 			name = Selling;
 			sourceTree = "<group>";
@@ -236,6 +245,33 @@
 				B3A46FCE1C6ECFE30061A185 /* ProfileViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B35DDB691C7C44050099BFBC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B35DDB6A1C7C441F0099BFBC /* DrivewayMarker.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B35DDB701C7D51C30099BFBC /* Sliding Menu */ = {
+			isa = PBXGroup;
+			children = (
+				83E89C191C66D3CF00E446FA /* SWRevealViewController.h */,
+				83E89C1A1C66D3CF00E446FA /* SWRevealViewController.m */,
+				83E89C181C66D3CF00E446FA /* Spotter-Bridging-Header.h */,
+			);
+			name = "Sliding Menu";
+			sourceTree = "<group>";
+		};
+		B35DDB711C7D51DA0099BFBC /* Map Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B35DDB6E1C7D45480099BFBC /* MapTasks.swift */,
+				B31340191C7D93AC003FD1D7 /* SearchResultsController.swift */,
+			);
+			name = "Map Helpers";
 			sourceTree = "<group>";
 		};
 		B3A46FB61C6ECB2A0061A185 /* Storyboards */ = {
@@ -453,6 +489,7 @@
 				83FD768C1C7F0346004FAA5A /* SellerEditMenuSingleton.swift in Sources */,
 				83E6964F1C66F19A007EB221 /* BackTableViewController.swift in Sources */,
 				83E89BEC1C66D29A00E446FA /* MapViewController.swift in Sources */,
+				B313401A1C7D93AC003FD1D7 /* SearchResultsController.swift in Sources */,
 				83E89BEA1C66D29A00E446FA /* AppDelegate.swift in Sources */,
 				B3E2B29E1C6C2C9900B3FA0C /* BaseViewController.swift in Sources */,
 				83FB0BE91C73338600CEE6EC /* ParkingType.swift in Sources */,
@@ -461,8 +498,11 @@
 				83FB0BE71C71BF6100CEE6EC /* SellerEditMenu.swift in Sources */,
 				B3A46FCD1C6ECFD00061A185 /* PaymentViewController.swift in Sources */,
 				B3A46FD31C6ED3920061A185 /* SoldSpotsViewController.swift in Sources */,
+				B35DDB6B1C7C441F0099BFBC /* DrivewayMarker.swift in Sources */,
 				83E89C1B1C66D3CF00E446FA /* SWRevealViewController.m in Sources */,
 				B3A46FCB1C6ECFB80061A185 /* ReservationsViewController.swift in Sources */,
+				83FEB1B61C81B6220086150F /* SellerEditPrice.swift in Sources */,
+				B35DDB6F1C7D45480099BFBC /* MapTasks.swift in Sources */,
 				B3A46FD51C6ED39D0061A185 /* ListingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -650,7 +690,7 @@
 				INFOPLIST_FILE = Spotter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = chris.Spotter;
+				PRODUCT_BUNDLE_IDENTIFIER = jing.Spotter;
 
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -670,7 +710,7 @@
 				INFOPLIST_FILE = Spotter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = chris.Spotter;
+				PRODUCT_BUNDLE_IDENTIFIER = jing.Spotter;
 
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

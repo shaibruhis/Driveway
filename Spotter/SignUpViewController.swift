@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 
+
 class SignUpViewController : BaseViewController{
     @IBOutlet weak var city: UITextField!
     @IBOutlet weak var zipCode: UITextField!
@@ -19,9 +20,14 @@ class SignUpViewController : BaseViewController{
     @IBOutlet weak var emailAddress: UITextField!
     @IBOutlet weak var password: UITextField!
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
+    
+    
     
     @IBAction func done(sender: AnyObject) {
         
@@ -46,7 +52,5 @@ class SignUpViewController : BaseViewController{
                 }
         })
     }
-    
-    
 }
 
