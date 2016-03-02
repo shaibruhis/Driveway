@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class FirebaseTest : BaseViewController {
+class FirebaseTest : BaseMenuViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var username: UITextField!
     override func viewDidLoad() {

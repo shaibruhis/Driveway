@@ -1,5 +1,5 @@
 //
-//  MapViewController.swift
+//  BaseMapViewController.swift
 //  Spotter
 //
 //  Created by Christopher Chan on 2/6/16.
@@ -12,7 +12,7 @@ import GoogleMaps
 
 //let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
-class MapViewController: BaseViewController {
+class BaseMapViewController: BaseMenuViewController {
 
     var mapView = GMSMapView()
     let locationManager = CLLocationManager()
@@ -20,7 +20,6 @@ class MapViewController: BaseViewController {
     
     var resultsArray = [String]()
 
-    
     let baseURLGeocode = "https://maps.googleapis.com/maps/api/geocode/json?"
     var lookupAddressResults = [String: AnyObject]()
     var fetchedFormattedAddress = String()
@@ -34,11 +33,8 @@ class MapViewController: BaseViewController {
         locationManager.requestWhenInUseAuthorization()
         searchResultController.delegate = self
 
-        
         loadMap()
     }
-    
-    
     
     func geocodeAddress(address: String!, withCompletionHandler completionHandler: ((status: String, success: Bool) -> Void)?) {
         if let lookupAddress = address {
@@ -85,22 +81,12 @@ class MapViewController: BaseViewController {
         }
     }
     
-    func reverseGeocodeCoordinates(coordinate: CLLocationCoordinate2D) {
-        let geocoder = GMSGeocoder()
-        geocoder.reverseGeocodeCoordinate(coordinate) { response, error in
-            if let address = response?.firstResult() {
-                print("\(address)")
-            }
-        }
-    }
-    
     // If you are creating several markers with the same image, use the same instance of UIImage for each of the markers. This helps improve the performance of your application when displaying many markers.
     // This image may have multiple frames. Additionally, the alignmentRectInsets property is respected, which is useful if a marker has a shadow or other unusable region.
-    func placeMarker(spotAddress: String, mapView: GMSMapView) {
-        geocodeAddress(spotAddress, withCompletionHandler: nil)
-        let coordinates = CLLocationCoordinate2DMake(fetchedAddressLatitude, fetchedAddressLongitude)
+    func placeMarker(lon: Double, andLatitude lat: Double, andTitle title: String, andMapView mapView: GMSMapView) {
+        let coordinates = CLLocationCoordinate2DMake(lat, lon)
         let marker = GMSMarker(position: coordinates)
-        marker.title = "hello"  // title will be price in ParkingSpot Model
+        marker.title = title  // title will be price in ParkingSpot Model
         marker.map = mapView
     }
     
@@ -130,7 +116,6 @@ class MapViewController: BaseViewController {
 //        usersCurrentLocationMarker.map = mapView
         
         self.view = mapView
-        populateDriveways()
     }
     
 
@@ -158,48 +143,7 @@ class MapViewController: BaseViewController {
         return tempItems
     }
     
-    
-    // example address: https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
-    func makeAddress(spot: NSDictionary) -> String {
-        let houseNumberPlusStreet = spot["Address"] as? String
-        let city = spot["City"] as? String
-        let state = spot["State"] as? String
-        let spotAddress = "\(houseNumberPlusStreet), \(city), \(state)"
-        return spotAddress
-    }
-    
-    // Add parking markers on map
-    func populateDriveways() {
-        
-        var drivewayList = [NSDictionary]()
-        // Get a reference to our Users
-        let ref = Firebase(url:"https://blinding-fire-154.firebaseio.com/Locations")
-        // Attach a closure to read the data at our posts reference
-        ref.observeEventType(.Value, withBlock: { snapshot in   // Use observeEventType if want to update in real time as database updates
-                        print("\(snapshot.value)")
-//            let drivewayDict = self.convertJSONToDictionary(String(snapshot.value))
-            drivewayList = self.convertJSONToDictionary(snapshot)!
-            print("\(drivewayList)")
-            for spot in drivewayList {
-//                let spotAddress = self.makeAddress(spot)
-//                print ("\(spotAddress)")
-//                self.placeMarker(spotAddress, mapView: self.mapView)
-                print ("\(spot["Lat"]!, spot["Lon"]!)")
-                let lat = spot["Lat"] as! Double
-                let lon = spot["Lon"] as! Double
-                let marker = GMSMarker(position:CLLocationCoordinate2DMake(lat, lon))
-//                let marker = GMSMarker(position:)
-                marker.map = self.mapView
-                
-            }
-            }, withCancelBlock: { error in
-                print(error.description)
-        })
-        // Use observeSingleEventOfType if we only want to populate once
-//        ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
-//            print(snapshot.value)
-//        })
-    }
+
     
     
     @IBAction func showSearchBarAction(sender: AnyObject) {
@@ -207,29 +151,11 @@ class MapViewController: BaseViewController {
         searchController.searchBar.delegate = self
         self.presentViewController(searchController, animated: true, completion: nil)
     }
-    
-    
-//    func searchBar(searchBar: UISearchBar, textDidChange searchText: String){
-//        
-//        let placesClient = GMSPlacesClient()
-//        placesClient.autocompleteQuery(searchText, bounds: nil, filter: nil) { (results, error:NSError?) -> Void in
-//            self.resultsArray.removeAll()
-//            if results == nil {
-//                return
-//            }
-//            for result in results!{
-//                if let result = result as? GMSAutocompletePrediction{
-//                    self.resultsArray.append(result.attributedFullText.string)
-//                }
-//            }
-//            self.searchResultController.reloadDataWithArray(self.resultsArray)
-//        }
-//    }
 }
 
 
 // MARK: - CLLocationManagerDelegate
-extension MapViewController: CLLocationManagerDelegate {
+extension BaseMapViewController: CLLocationManagerDelegate {
     // executed when location manager receives new location data
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
@@ -243,14 +169,14 @@ extension MapViewController: CLLocationManagerDelegate {
 }
 
 // MARK: - GMSMapViewDelegate
-extension MapViewController: GMSMapViewDelegate {
-    func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
-        reverseGeocodeCoordinates(position.target)
-    }
+extension BaseMapViewController: GMSMapViewDelegate {
+//    func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
+//        reverseGeocodeCoordinates(position.target)
+//    }
 }
 
 // MARK: - UISeachBarDelegate
-extension MapViewController: UISearchBarDelegate {
+extension BaseMapViewController: UISearchBarDelegate {
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String){
             
         let placesClient = GMSPlacesClient()
@@ -271,19 +197,11 @@ extension MapViewController: UISearchBarDelegate {
 
 
 // MARK: - LocateOnTheMap
-extension MapViewController: LocateOnTheMap {
+extension BaseMapViewController: LocateOnTheMap {
     func locateWithLongitude(lon: Double, andLatitude lat: Double, andTitle title: String) {
-
         // All the code inside this method is done explicitly from within the main thread. This is because the caller of this method was running in a background thread, and since all UI work (including the map stuff) should be performed on the main queue, we need to switch to UI thread before drawing to the map
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
-            let position = CLLocationCoordinate2DMake(lat, lon)
-            let marker = GMSMarker(position: position)
-
-            //            let camera  = GMSCameraPosition.cameraWithLatitude(lat, longitude: lon, zoom: 10)
-            //            self.mapView.camera = camera
-
-            marker.title = title
-            marker.map = self.mapView
+            self.placeMarker(lon, andLatitude: lat, andTitle: title, andMapView: self.mapView)
         }
     }
 }

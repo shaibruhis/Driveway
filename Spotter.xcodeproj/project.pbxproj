@@ -14,7 +14,7 @@
 		8360AC811C67103600D9747C /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360AC801C67103600D9747C /* HistoryViewController.swift */; };
 		83E6964F1C66F19A007EB221 /* BackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6964E1C66F19A007EB221 /* BackTableViewController.swift */; };
 		83E89BEA1C66D29A00E446FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E89BE91C66D29A00E446FA /* AppDelegate.swift */; };
-		83E89BEC1C66D29A00E446FA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E89BEB1C66D29A00E446FA /* MapViewController.swift */; };
+		83E89BEC1C66D29A00E446FA /* BaseMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E89BEB1C66D29A00E446FA /* BaseMapViewController.swift */; };
 		83E89BEF1C66D29A00E446FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E89BED1C66D29A00E446FA /* Main.storyboard */; };
 		83E89BF11C66D29A00E446FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83E89BF01C66D29A00E446FA /* Assets.xcassets */; };
 		83E89BF41C66D29A00E446FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E89BF21C66D29A00E446FA /* LaunchScreen.storyboard */; };
@@ -23,10 +23,11 @@
 		83E89C1B1C66D3CF00E446FA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E89C1A1C66D3CF00E446FA /* SWRevealViewController.m */; };
 		83FB0BE71C71BF6100CEE6EC /* SellerEditMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BE61C71BF6100CEE6EC /* SellerEditMenu.swift */; };
 		83FB0BE91C73338600CEE6EC /* ParkingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BE81C73338600CEE6EC /* ParkingType.swift */; };
-		83FB0BED1C7D719D00CEE6EC /* SellerEditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */; };
+		83FB0BED1C7D719D00CEE6EC /* SellerAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BEC1C7D719D00CEE6EC /* SellerAddressViewController.swift */; };
 		83FD768C1C7F0346004FAA5A /* SellerEditMenuSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD768B1C7F0346004FAA5A /* SellerEditMenuSingleton.swift */; };
 		83FEB1B61C81B6220086150F /* SellerEditPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FEB1B51C81B6220086150F /* SellerEditPrice.swift */; };
 		B313401A1C7D93AC003FD1D7 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31340191C7D93AC003FD1D7 /* SearchResultsController.swift */; };
+		B341F89B1C86BE6D00ADFFA8 /* BuyerMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341F89A1C86BE6D00ADFFA8 /* BuyerMapViewController.swift */; };
 		B35DDB6B1C7C441F0099BFBC /* DrivewayMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35DDB6A1C7C441F0099BFBC /* DrivewayMarker.swift */; };
 		B35DDB6F1C7D45480099BFBC /* MapTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35DDB6E1C7D45480099BFBC /* MapTasks.swift */; };
 		B3A46FB91C6ECB490061A185 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A46FB71C6ECB490061A185 /* Home.storyboard */; };
@@ -41,7 +42,8 @@
 		B3A46FCF1C6ECFE30061A185 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A46FCE1C6ECFE30061A185 /* ProfileViewController.swift */; };
 		B3A46FD31C6ED3920061A185 /* SoldSpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A46FD21C6ED3920061A185 /* SoldSpotsViewController.swift */; };
 		B3A46FD51C6ED39D0061A185 /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A46FD41C6ED39D0061A185 /* ListingsViewController.swift */; };
-		B3E2B29E1C6C2C9900B3FA0C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E2B29D1C6C2C9900B3FA0C /* BaseViewController.swift */; };
+		B3E2B29E1C6C2C9900B3FA0C /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E2B29D1C6C2C9900B3FA0C /* BaseMenuViewController.swift */; };
+		B3E5A0541C86CCC20049DD72 /* SellerMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5A0531C86CCC20049DD72 /* SellerMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +73,7 @@
 		83E6964E1C66F19A007EB221 /* BackTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackTableViewController.swift; sourceTree = "<group>"; };
 		83E89BE61C66D29A00E446FA /* Spotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E89BE91C66D29A00E446FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		83E89BEB1C66D29A00E446FA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		83E89BEB1C66D29A00E446FA /* BaseMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMapViewController.swift; sourceTree = "<group>"; };
 		83E89BEE1C66D29A00E446FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83E89BF01C66D29A00E446FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83E89BF31C66D29A00E446FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,11 +89,12 @@
 		83E89C1A1C66D3CF00E446FA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		83FB0BE61C71BF6100CEE6EC /* SellerEditMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditMenu.swift; sourceTree = "<group>"; };
 		83FB0BE81C73338600CEE6EC /* ParkingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingType.swift; sourceTree = "<group>"; };
-		83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditAddressViewController.swift; sourceTree = "<group>"; };
+		83FB0BEC1C7D719D00CEE6EC /* SellerAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerAddressViewController.swift; sourceTree = "<group>"; };
 		83FD768B1C7F0346004FAA5A /* SellerEditMenuSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditMenuSingleton.swift; sourceTree = "<group>"; };
 		83FEB1B51C81B6220086150F /* SellerEditPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditPrice.swift; sourceTree = "<group>"; };
 		848CCE3F8AE4E3108DFA2DCA /* Pods_Spotter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spotter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B31340191C7D93AC003FD1D7 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
+		B341F89A1C86BE6D00ADFFA8 /* BuyerMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyerMapViewController.swift; sourceTree = "<group>"; };
 		B35DDB6A1C7C441F0099BFBC /* DrivewayMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrivewayMarker.swift; sourceTree = "<group>"; };
 		B35DDB6E1C7D45480099BFBC /* MapTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTasks.swift; sourceTree = "<group>"; };
 		B3A46FB81C6ECB490061A185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -106,7 +109,8 @@
 		B3A46FCE1C6ECFE30061A185 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B3A46FD21C6ED3920061A185 /* SoldSpotsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoldSpotsViewController.swift; sourceTree = "<group>"; };
 		B3A46FD41C6ED39D0061A185 /* ListingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
-		B3E2B29D1C6C2C9900B3FA0C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B3E2B29D1C6C2C9900B3FA0C /* BaseMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMenuViewController.swift; sourceTree = "<group>"; };
+		B3E5A0531C86CCC20049DD72 /* SellerMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,9 +227,10 @@
 				B3A46FD21C6ED3920061A185 /* SoldSpotsViewController.swift */,
 				83FB0BE61C71BF6100CEE6EC /* SellerEditMenu.swift */,
 				83FB0BE81C73338600CEE6EC /* ParkingType.swift */,
-				83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */,
+				83FB0BEC1C7D719D00CEE6EC /* SellerAddressViewController.swift */,
 				83FD768B1C7F0346004FAA5A /* SellerEditMenuSingleton.swift */,
 				83FEB1B51C81B6220086150F /* SellerEditPrice.swift */,
+				B3E5A0531C86CCC20049DD72 /* SellerMapViewController.swift */,
 			);
 			name = Selling;
 			sourceTree = "<group>";
@@ -234,8 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				83FB0BE51C71BC1C00CEE6EC /* Selling */,
-				B3E2B29D1C6C2C9900B3FA0C /* BaseViewController.swift */,
-				83E89BEB1C66D29A00E446FA /* MapViewController.swift */,
+				B3E2B29D1C6C2C9900B3FA0C /* BaseMenuViewController.swift */,
+				83E89BEB1C66D29A00E446FA /* BaseMapViewController.swift */,
 				8360AC801C67103600D9747C /* HistoryViewController.swift */,
 				0DD566FD1C699FC40016643D /* FirebaseTest.swift */,
 				0D2847801C7429040014E10D /* SignUpViewController.swift */,
@@ -243,6 +248,7 @@
 				B3A46FCA1C6ECFB80061A185 /* ReservationsViewController.swift */,
 				B3A46FCC1C6ECFD00061A185 /* PaymentViewController.swift */,
 				B3A46FCE1C6ECFE30061A185 /* ProfileViewController.swift */,
+				B341F89A1C86BE6D00ADFFA8 /* BuyerMapViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -361,7 +367,7 @@
 				TargetAttributes = {
 					83E89BE51C66D29A00E446FA = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = N93J4S57HA;
+						DevelopmentTeam = SVFLC63M2X;
 					};
 					83E89BF91C66D29A00E446FA = {
 						CreatedOnToolsVersion = 7.2;
@@ -485,13 +491,15 @@
 			files = (
 				0DD566FE1C699FC40016643D /* FirebaseTest.swift in Sources */,
 				8360AC811C67103600D9747C /* HistoryViewController.swift in Sources */,
-				83FB0BED1C7D719D00CEE6EC /* SellerEditAddressViewController.swift in Sources */,
+				B341F89B1C86BE6D00ADFFA8 /* BuyerMapViewController.swift in Sources */,
+				83FB0BED1C7D719D00CEE6EC /* SellerAddressViewController.swift in Sources */,
 				83FD768C1C7F0346004FAA5A /* SellerEditMenuSingleton.swift in Sources */,
 				83E6964F1C66F19A007EB221 /* BackTableViewController.swift in Sources */,
-				83E89BEC1C66D29A00E446FA /* MapViewController.swift in Sources */,
+				83E89BEC1C66D29A00E446FA /* BaseMapViewController.swift in Sources */,
 				B313401A1C7D93AC003FD1D7 /* SearchResultsController.swift in Sources */,
 				83E89BEA1C66D29A00E446FA /* AppDelegate.swift in Sources */,
-				B3E2B29E1C6C2C9900B3FA0C /* BaseViewController.swift in Sources */,
+				B3E5A0541C86CCC20049DD72 /* SellerMapViewController.swift in Sources */,
+				B3E2B29E1C6C2C9900B3FA0C /* BaseMenuViewController.swift in Sources */,
 				83FB0BE91C73338600CEE6EC /* ParkingType.swift in Sources */,
 				0D2847811C7429040014E10D /* SignUpViewController.swift in Sources */,
 				B3A46FCF1C6ECFE30061A185 /* ProfileViewController.swift in Sources */,
@@ -690,8 +698,7 @@
 				INFOPLIST_FILE = Spotter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jing.Spotter;
-
+				PRODUCT_BUNDLE_IDENTIFIER = com.42jumpstreet.Spotter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotter/Spotter-Bridging-Header.h";
@@ -710,8 +717,7 @@
 				INFOPLIST_FILE = Spotter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jing.Spotter;
-
+				PRODUCT_BUNDLE_IDENTIFIER = com.42jumpstreet.Spotter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotter/Spotter-Bridging-Header.h";

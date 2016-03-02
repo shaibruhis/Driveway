@@ -8,7 +8,7 @@
 
 import Foundation
 
-class HistoryViewController : BaseViewController {
+class HistoryViewController : BaseMenuViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 

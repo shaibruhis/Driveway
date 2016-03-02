@@ -21,10 +21,10 @@
             </objects>
             <point key="canvasLocation" x="1143" y="-180"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Buyer Map View Controller-->
         <scene sceneID="tab-Dn-Xco">
             <objects>
-                <viewController id="74H-W0-2ME" customClass="MapViewController" customModule="Spotter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="74H-W0-2ME" customClass="BuyerMapViewController" customModule="Spotter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eaM-xU-eKu"/>
                         <viewControllerLayoutGuide type="bottom" id="eFY-h1-Wfm"/>

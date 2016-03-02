@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReservationsViewController: BaseViewController {
+class ReservationsViewController: BaseMenuViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

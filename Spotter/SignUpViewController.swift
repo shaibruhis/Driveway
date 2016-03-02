@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 
-class SignUpViewController : BaseViewController{
+class SignUpViewController : BaseMenuViewController{
     @IBOutlet weak var city: UITextField!
     @IBOutlet weak var zipCode: UITextField!
     @IBOutlet weak var address: UITextField!

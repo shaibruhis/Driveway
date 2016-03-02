@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListingsViewController: BaseViewController {
+class ListingsViewController: BaseMenuViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

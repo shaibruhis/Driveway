@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SoldSpotsViewController: BaseViewController {
+class SoldSpotsViewController: BaseMenuViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
