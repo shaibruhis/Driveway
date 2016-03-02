@@ -10,16 +10,19 @@ import Foundation
 import Firebase
 
 
-class SignUpViewController : BaseViewController{
-    @IBOutlet weak var city: UITextField!
-    @IBOutlet weak var zipCode: UITextField!
-    @IBOutlet weak var address: UITextField!
+class SignUpViewController : UIViewController{
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
-    @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var emailAddress: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var phoneNumber: UITextField!
+
     
+    
+    
+    
+    
+
 
     
     override func viewDidLoad() {
@@ -28,16 +31,26 @@ class SignUpViewController : BaseViewController{
     }
     
     
+    @IBAction func doneButton(sender: AnyObject) {
     
-    @IBAction func done(sender: AnyObject) {
-        
-        
+        if( firstName.text == "" || lastName.text == "" || phoneNumber.text == "" || emailAddress.text == "" || password.text == ""){
+            let title = "Error"
+            let message = "Missing Information"
+            let okText = "OK"
+            let alert = UIAlertController(title: title, message: message, preferredStyle:  UIAlertControllerStyle.Alert)
+            let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.Cancel, handler: nil)
+            alert.addAction(okayButton)
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        }
+        else{
+            
         let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/")
-        var newUser = ["First Name": firstName.text!, "Last Name": lastName.text!, "Phone Number": phoneNumber.text!, "Email": emailAddress.text!, "Address": address.text!, "City": city.text!, "ZipCode": zipCode.text!]
+        let newUser = ["First Name": firstName.text!, "Last Name": lastName.text!, "Phone Number": phoneNumber.text!, "Email": emailAddress.text!]
         //Get the data from the Text Box and putting them into Firebase
-        var usersRef = ref.childByAppendingPath("Users")
+        let usersRef = ref.childByAppendingPath("Users")
         //Make the branch "Users" in the database
-        var newUsersRef = usersRef.childByAutoId()
+        let newUsersRef = usersRef.childByAutoId()
         //Auto-Generate a User ID
         newUsersRef.setValue(newUser)
         //write the values to the database
@@ -51,6 +64,8 @@ class SignUpViewController : BaseViewController{
                     print("Successfully created user account with uid: \(uid)")
                 }
         })
+            }
     }
+    
 }
 
