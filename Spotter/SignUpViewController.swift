@@ -52,18 +52,21 @@ class SignUpViewController : UIViewController{
                     // There was an error creating the account
                     }
                     else {
-                        let newUser = ["First Name": self.firstName.text!, "Last Name": self.lastName.text!, "Phone Number": self.phoneNumber.text!, "Email": self.emailAddress.text!]
-                        //Get the data from the Text Box and putting them into Firebase
-                        let usersRef = self.ref.childByAppendingPath("Users")
-                        //Make the branch "Users" in the database
-                        let newUsersRef = usersRef.childByAutoId()
-                        //Auto-Generate a User ID
-                        newUsersRef.setValue(newUser)
-                        //write the values to the database
-                        let uid = result["uid"] as? String
-                        print("Successfully created user account with uid: \(uid)")
+                        self.ref.authUser(self.emailAddress.text, password: self.password.text, withCompletionBlock: {error, authData in
+                            if error != nil{
+                                //catch error
+                            }
+                            else{
+                                let newUser = ["First Name": self.firstName.text!, "Last Name": self.lastName.text!, "Phone Number": self.phoneNumber.text!, "Email": self.emailAddress.text!]
+                                self.ref.childByAppendingPath("Users")
+                                .childByAppendingPath(authData.uid).setValue(newUser)
+                                self.performSegueWithIdentifier("Save and Back to Login Segue", sender: nil)
+                            }
+                        
+                        })
                     }
             })//create user
+            
         }//else
     }//done button
     
