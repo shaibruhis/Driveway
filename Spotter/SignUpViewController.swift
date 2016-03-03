@@ -18,7 +18,7 @@ class SignUpViewController : UIViewController{
     @IBOutlet weak var phoneNumber: UITextField!
 
     
-    
+    let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/")
     
     
     
@@ -32,6 +32,7 @@ class SignUpViewController : UIViewController{
     
     
     @IBAction func doneButton(sender: AnyObject) {
+
     
         if( firstName.text == "" || lastName.text == "" || phoneNumber.text == "" || emailAddress.text == "" || password.text == ""){
             let title = "Error"
@@ -44,28 +45,27 @@ class SignUpViewController : UIViewController{
             
         }
         else{
-            
-        let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/")
-        let newUser = ["First Name": firstName.text!, "Last Name": lastName.text!, "Phone Number": phoneNumber.text!, "Email": emailAddress.text!]
-        //Get the data from the Text Box and putting them into Firebase
-        let usersRef = ref.childByAppendingPath("Users")
-        //Make the branch "Users" in the database
-        let newUsersRef = usersRef.childByAutoId()
-        //Auto-Generate a User ID
-        newUsersRef.setValue(newUser)
-        //write the values to the database
-        
-        ref.createUser(emailAddress.text, password: password.text,
-            withValueCompletionBlock: { error, result in
-                if error != nil {
+            ref.createUser(emailAddress.text, password: password.text,
+                withValueCompletionBlock: { error, result in
+                    if error != nil {
+                        print(error)
                     // There was an error creating the account
-                } else {
-                    let uid = result["uid"] as? String
-                    print("Successfully created user account with uid: \(uid)")
-                }
-        })
-            }
-    }
+                    }
+                    else {
+                        let newUser = ["First Name": self.firstName.text!, "Last Name": self.lastName.text!, "Phone Number": self.phoneNumber.text!, "Email": self.emailAddress.text!]
+                        //Get the data from the Text Box and putting them into Firebase
+                        let usersRef = self.ref.childByAppendingPath("Users")
+                        //Make the branch "Users" in the database
+                        let newUsersRef = usersRef.childByAutoId()
+                        //Auto-Generate a User ID
+                        newUsersRef.setValue(newUser)
+                        //write the values to the database
+                        let uid = result["uid"] as? String
+                        print("Successfully created user account with uid: \(uid)")
+                    }
+            })//create user
+        }//else
+    }//done button
     
 }
 
