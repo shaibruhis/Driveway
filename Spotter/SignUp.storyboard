@@ -16,26 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ke1-Wt-Umz">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="O5x-RJ-Tux"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Sign Up" id="aTU-R1-BXP">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="v3j-BG-oEH">
-                                            <connections>
-                                                <segue destination="eVx-Qd-27o" kind="unwind" unwindAction="returnToLoginPage:" id="xxP-lb-h9Y"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="sL5-bs-vTR">
-                                            <connections>
-                                                <action selector="doneButton:" destination="GOE-Hy-OeB" id="32C-LD-UTB"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lGf-GD-ib1">
                                 <rect key="frame" x="219" y="141" width="162" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -64,6 +44,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ke1-Wt-Umz">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Sign Up" id="aTU-R1-BXP">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="v3j-BG-oEH">
+                                            <connections>
+                                                <segue destination="eVx-Qd-27o" kind="unwind" unwindAction="returnToLoginPage:" id="2rt-3l-HBg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="sL5-bs-vTR">
+                                            <connections>
+                                                <action selector="doneButton:" destination="GOE-Hy-OeB" id="32C-LD-UTB"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -92,7 +89,7 @@
                         <outlet property="lastName" destination="lGf-GD-ib1" id="I8y-Sv-gbt"/>
                         <outlet property="password" destination="gsu-6x-Ijy" id="gSx-Y9-rk8"/>
                         <outlet property="phoneNumber" destination="kaL-GC-pQu" id="ACq-AU-a6x"/>
-                        <segue destination="eVx-Qd-27o" kind="unwind" unwindAction="returnToLoginPage:" id="ShD-Jx-8Wb"/>
+                        <segue destination="eVx-Qd-27o" kind="unwind" identifier="Save and Back to Login Segue" unwindAction="returnToLoginPage:" id="oIV-hG-YfC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXb-jN-NAT" userLabel="First Responder" sceneMemberID="firstResponder"/>

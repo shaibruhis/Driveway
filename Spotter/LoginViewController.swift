@@ -49,8 +49,12 @@ class LoginViewController : UIViewController{
                 
             } else {
                 // user is logged in, check authData for data
+                ref.childByAppendingPath("Users")
+                .childByAppendingPath(authData.uid)
+                .observeEventType(.Value, withBlock: { snapshot in
+                    print(snapshot.value)
+                })
                 self.performSegueWithIdentifier("Login To Main Segue", sender: nil)
-                
             }
             
         
