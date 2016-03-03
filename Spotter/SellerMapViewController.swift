@@ -20,7 +20,6 @@ class SellerMapViewController: BaseMapViewController {
         super.viewDidLoad()
         
         addressSearchBar.delegate = self
-        loadMap()
     }
     
     
@@ -48,7 +47,7 @@ class SellerMapViewController: BaseMapViewController {
     }
     
     // GMSMapViewDelegate
-    func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
+    override func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
         fetchedAddressLatitude = coordinate.latitude
         fetchedAddressLongitude = coordinate.longitude
         mapView.clear()

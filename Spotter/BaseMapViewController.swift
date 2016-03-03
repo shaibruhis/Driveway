@@ -28,12 +28,14 @@ class BaseMapViewController: BaseMenuViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.delegate = self
+        loadMap()
+
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         searchResultController.delegate = self
+        // must come after loadMap() because mapView gets set in loadMap()
+        mapView.delegate = self
 
-        loadMap()
     }
     
     func geocodeAddress(address: String!, withCompletionHandler completionHandler: ((status: String, success: Bool) -> Void)?) {
@@ -173,6 +175,9 @@ extension BaseMapViewController: GMSMapViewDelegate {
 //    func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
 //        reverseGeocodeCoordinates(position.target)
 //    }
+    func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
+        print("Implement in base class!")
+    }
 }
 
 // MARK: - UISeachBarDelegate
