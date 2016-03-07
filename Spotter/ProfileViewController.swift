@@ -20,23 +20,12 @@ class ProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        firstName.text = String("")
-        lastName.text = String("")
-        phoneNumber.text = String("")
         ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
-            
-            
+            //Setting the text boxes to display their respective attributes (First, Last, and Phone Number
             self.firstName.text = snapshot.childSnapshotForPath(self.ref.authData.uid).value["First Name"] as? String
             self.lastName.text = snapshot.childSnapshotForPath(self.ref.authData.uid).value["Last Name"] as? String
             self.phoneNumber.text = snapshot.childSnapshotForPath(self.ref.authData.uid).value["Phone Number"] as? String
             
-
-//            if let first =  snapshot.childSnapshotForPath(self.ref.authData.uid).value["First Name"] as? String {
-//                print("\(snapshot.key) was \(first) meters tall")
-//            }
-
-//            snapshot.childSnapshotForPath(self.ref.authData.uid).value["First Name"]
-//            print(snapshot.childSnapshotForPath(self.ref.authData.uid))
         })
         // Do any additional setup after loading the view.
     }
@@ -48,15 +37,18 @@ class ProfileViewController: BaseViewController {
 
     @IBAction func updateButton(sender: AnyObject) {
         
+        //Letting the user type in the text box to update their name
         let userRef = self.ref.childByAppendingPath(self.ref.authData.uid)
         let newFirstName = ["First Name": self.firstName.text!]
         let newLastName = ["Last Name": self.lastName.text!]
         let newPhoneNumber = ["Phone Number": self.phoneNumber.text!]
         
+        //Update
         userRef.updateChildValues(newFirstName)
         userRef.updateChildValues(newLastName)
         userRef.updateChildValues(newPhoneNumber)
         
+        //Display box to show the user that it updated
         let title = "Profile Updated"
         let message = "Success"
         let okText = "OK"
