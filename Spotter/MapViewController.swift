@@ -89,7 +89,7 @@ class MapViewController: BaseViewController {
         let geocoder = GMSGeocoder()
         geocoder.reverseGeocodeCoordinate(coordinate) { response, error in
             if let address = response?.firstResult() {
-                print("\(address)")
+//                print("\(address)")
             }
         }
     }
@@ -176,15 +176,15 @@ class MapViewController: BaseViewController {
         let ref = Firebase(url:"https://blinding-fire-154.firebaseio.com/Locations")
         // Attach a closure to read the data at our posts reference
         ref.observeEventType(.Value, withBlock: { snapshot in   // Use observeEventType if want to update in real time as database updates
-                        print("\(snapshot.value)")
+//                        print("\(snapshot.value)")
 //            let drivewayDict = self.convertJSONToDictionary(String(snapshot.value))
             drivewayList = self.convertJSONToDictionary(snapshot)!
-            print("\(drivewayList)")
+//            print("\(drivewayList)")
             for spot in drivewayList {
 //                let spotAddress = self.makeAddress(spot)
 //                print ("\(spotAddress)")
 //                self.placeMarker(spotAddress, mapView: self.mapView)
-                print ("\(spot["Lat"]!, spot["Lon"]!)")
+//                print ("\(spot["Lat"]!, spot["Lon"]!)")
                 let lat = spot["Lat"] as! Double
                 let lon = spot["Lon"] as! Double
                 let marker = GMSMarker(position:CLLocationCoordinate2DMake(lat, lon))
