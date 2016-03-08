@@ -62,12 +62,10 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
             SellerEditMenuSingleton.sharedInstance.resetValues()
         }
         if sender === saveListingButton{
-            
-            
             let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/")
                 //Get the data from the Text Box and putting them into Firebase
                 
-            let newLocation = ["Lat": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.latitude, "Lon": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.longitude]
+            let newLocation = ["Lat": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.latitude, "Lon": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.longitude, "Price": SellerEditMenuSingleton.sharedInstance.price!]
                 //Make the branch "Users" in the database
             let locationsRef = ref.childByAppendingPath("Locations")
                 //Auto-Generate a User ID
