@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 
 class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelegate{
@@ -61,6 +62,33 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
             SellerEditMenuSingleton.sharedInstance.resetValues()
         }
         if sender === saveListingButton{
+            let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/")
+                //Get the data from the Text Box and putting them into Firebase
+                
+            let newLocation = ["Lat": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.latitude, "Lon": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.longitude, "Price": SellerEditMenuSingleton.sharedInstance.price!, "Owner": ref.authData.uid]
+                //Make the branch "Users" in the database
+            let locationsRef = ref.childByAppendingPath("Locations")
+                //Auto-Generate a User ID
+            let newLocationRef = locationsRef.childByAutoId()
+                //write the values to the database
+            newLocationRef.setValue(newLocation)
+            
+            //then get the auto generated uid and save it to that user's list of owned spots.
+            
+            let userref = Firebase(url: "https://blinding-fire-154.firebaseio.com/Users/" + ref.authData.uid)
+
+
+            userref.childByAppendingPath("SpotsOwned").childByAppendingPath(newLocationRef.key).setValue(newLocationRef.key)
+
+            
+//            let newUser = ["First Name": self.firstName.text!, "Last Name": self.lastName.text!, "Phone Number": self.phoneNumber.text!, "Email": self.emailAddress.text!]
+//            self.ref.childByAppendingPath("Users")
+//                .childByAppendingPath(authData.uid).setValue(newUser)
+//            self.performSegueWithIdentifier("Save and Back to Login Segue", sender: nil)
+            
+            
+            
+            
             SellerEditMenuSingleton.sharedInstance.resetValues()
         }//need to also post to database
     }

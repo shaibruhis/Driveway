@@ -23,7 +23,7 @@ class SellerEditPriceViewController: UIViewController, UITextFieldDelegate{
         userPriceInput.keyboardType = .DecimalPad
         currencyFormatter.numberStyle = .CurrencyStyle
         userPriceInput.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
-    }
+    }// need to put previously entered seller input price as textholder if applicable
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if savePriceButton === sender{

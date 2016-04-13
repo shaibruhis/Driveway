@@ -29,7 +29,7 @@ class MapViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.delegate = self
+        self.mapView.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         searchResultController.delegate = self
@@ -38,7 +38,11 @@ class MapViewController: BaseViewController {
         loadMap()
     }
     
-    
+    @IBAction func returnToMapView(segue:UIStoryboardSegue){
+        // Do nothing as we transition back to here when user cancels the "add new listing"
+    }
+
+
     
     func geocodeAddress(address: String!, withCompletionHandler completionHandler: ((status: String, success: Bool) -> Void)?) {
         if let lookupAddress = address {
@@ -89,7 +93,7 @@ class MapViewController: BaseViewController {
         let geocoder = GMSGeocoder()
         geocoder.reverseGeocodeCoordinate(coordinate) { response, error in
             if let address = response?.firstResult() {
-                print("\(address)")
+//                print("\(address)")
             }
         }
     }
@@ -102,9 +106,9 @@ class MapViewController: BaseViewController {
         let marker = GMSMarker(position: coordinates)
         marker.title = "hello"  // title will be price in ParkingSpot Model
         marker.map = mapView
+        
     }
     
-
     
     func loadMap() {
         mapView = GMSMapView(frame: CGRectZero)
@@ -176,15 +180,15 @@ class MapViewController: BaseViewController {
         let ref = Firebase(url:"https://blinding-fire-154.firebaseio.com/Locations")
         // Attach a closure to read the data at our posts reference
         ref.observeEventType(.Value, withBlock: { snapshot in   // Use observeEventType if want to update in real time as database updates
-                        print("\(snapshot.value)")
+//                        print("\(snapshot.value)")
 //            let drivewayDict = self.convertJSONToDictionary(String(snapshot.value))
             drivewayList = self.convertJSONToDictionary(snapshot)!
-            print("\(drivewayList)")
+//            print("\(drivewayList)")
             for spot in drivewayList {
 //                let spotAddress = self.makeAddress(spot)
 //                print ("\(spotAddress)")
 //                self.placeMarker(spotAddress, mapView: self.mapView)
-                print ("\(spot["Lat"]!, spot["Lon"]!)")
+//                print ("\(spot["Lat"]!, spot["Lon"]!)")
                 let lat = spot["Lat"] as! Double
                 let lon = spot["Lon"] as! Double
                 let marker = GMSMarker(position:CLLocationCoordinate2DMake(lat, lon))
@@ -244,10 +248,19 @@ extension MapViewController: CLLocationManagerDelegate {
 
 // MARK: - GMSMapViewDelegate
 extension MapViewController: GMSMapViewDelegate {
+    func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
+        print("hey")
+        performSegueWithIdentifier("spotListing", sender: self)
+        return true
+    }
+    
     func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
         reverseGeocodeCoordinates(position.target)
-    }
+    }		
+
 }
+
+
 
 // MARK: - UISeachBarDelegate
 extension MapViewController: UISearchBarDelegate {

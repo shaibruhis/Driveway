@@ -10,8 +10,11 @@
 		0D2847811C7429040014E10D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2847801C7429040014E10D /* SignUpViewController.swift */; };
 		0D2847851C7429890014E10D /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D2847841C7429880014E10D /* SignUp.storyboard */; };
 		0DD566FE1C699FC40016643D /* FirebaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD566FD1C699FC40016643D /* FirebaseTest.swift */; };
+		0DD830ED1C86A490001D0673 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD830EC1C86A490001D0673 /* LoginViewController.swift */; };
+		0DD830F21C86BF71001D0673 /* SellerEditMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BE61C71BF6100CEE6EC /* SellerEditMenu.swift */; };
 		313AA101784AE2E0A3849EFB /* Pods_Spotter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848CCE3F8AE4E3108DFA2DCA /* Pods_Spotter.framework */; };
 		8360AC811C67103600D9747C /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360AC801C67103600D9747C /* HistoryViewController.swift */; };
+		83E2FA9E1C88549B00284620 /* UserInfoSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E2FA9D1C88549B00284620 /* UserInfoSingleton.swift */; };
 		83E6964F1C66F19A007EB221 /* BackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E6964E1C66F19A007EB221 /* BackTableViewController.swift */; };
 		83E89BEA1C66D29A00E446FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E89BE91C66D29A00E446FA /* AppDelegate.swift */; };
 		83E89BEC1C66D29A00E446FA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E89BEB1C66D29A00E446FA /* MapViewController.swift */; };
@@ -21,7 +24,6 @@
 		83E89BFF1C66D29A00E446FA /* SpotterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E89BFE1C66D29A00E446FA /* SpotterTests.swift */; };
 		83E89C0A1C66D29A00E446FA /* SpotterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E89C091C66D29A00E446FA /* SpotterUITests.swift */; };
 		83E89C1B1C66D3CF00E446FA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E89C1A1C66D3CF00E446FA /* SWRevealViewController.m */; };
-		83FB0BE71C71BF6100CEE6EC /* SellerEditMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BE61C71BF6100CEE6EC /* SellerEditMenu.swift */; };
 		83FB0BE91C73338600CEE6EC /* ParkingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BE81C73338600CEE6EC /* ParkingType.swift */; };
 		83FB0BED1C7D719D00CEE6EC /* SellerEditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */; };
 		83FD768C1C7F0346004FAA5A /* SellerEditMenuSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD768B1C7F0346004FAA5A /* SellerEditMenuSingleton.swift */; };
@@ -66,8 +68,10 @@
 		0D2847801C7429040014E10D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0D2847841C7429880014E10D /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		0DD566FD1C699FC40016643D /* FirebaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseTest.swift; sourceTree = "<group>"; };
+		0DD830EC1C86A490001D0673 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		81E584F28AF02E9A285B4276 /* Pods-Spotter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spotter/Pods-Spotter.release.xcconfig"; sourceTree = "<group>"; };
 		8360AC801C67103600D9747C /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		83E2FA9D1C88549B00284620 /* UserInfoSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoSingleton.swift; sourceTree = "<group>"; };
 		83E6964E1C66F19A007EB221 /* BackTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackTableViewController.swift; sourceTree = "<group>"; };
 		83E89BE61C66D29A00E446FA /* Spotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E89BE91C66D29A00E446FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -242,7 +246,9 @@
 				83E6964E1C66F19A007EB221 /* BackTableViewController.swift */,
 				B3A46FCA1C6ECFB80061A185 /* ReservationsViewController.swift */,
 				B3A46FCC1C6ECFD00061A185 /* PaymentViewController.swift */,
+				0DD830EC1C86A490001D0673 /* LoginViewController.swift */,
 				B3A46FCE1C6ECFE30061A185 /* ProfileViewController.swift */,
+				83E2FA9D1C88549B00284620 /* UserInfoSingleton.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -484,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DD566FE1C699FC40016643D /* FirebaseTest.swift in Sources */,
+				83E2FA9E1C88549B00284620 /* UserInfoSingleton.swift in Sources */,
 				8360AC811C67103600D9747C /* HistoryViewController.swift in Sources */,
 				83FB0BED1C7D719D00CEE6EC /* SellerEditAddressViewController.swift in Sources */,
 				83FD768C1C7F0346004FAA5A /* SellerEditMenuSingleton.swift in Sources */,
@@ -493,9 +500,10 @@
 				83E89BEA1C66D29A00E446FA /* AppDelegate.swift in Sources */,
 				B3E2B29E1C6C2C9900B3FA0C /* BaseViewController.swift in Sources */,
 				83FB0BE91C73338600CEE6EC /* ParkingType.swift in Sources */,
+				0DD830ED1C86A490001D0673 /* LoginViewController.swift in Sources */,
+				0DD830F21C86BF71001D0673 /* SellerEditMenu.swift in Sources */,
 				0D2847811C7429040014E10D /* SignUpViewController.swift in Sources */,
 				B3A46FCF1C6ECFE30061A185 /* ProfileViewController.swift in Sources */,
-				83FB0BE71C71BF6100CEE6EC /* SellerEditMenu.swift in Sources */,
 				B3A46FCD1C6ECFD00061A185 /* PaymentViewController.swift in Sources */,
 				B3A46FD31C6ED3920061A185 /* SoldSpotsViewController.swift in Sources */,
 				B35DDB6B1C7C441F0099BFBC /* DrivewayMarker.swift in Sources */,
@@ -690,8 +698,7 @@
 				INFOPLIST_FILE = Spotter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jing.Spotter;
-
+				PRODUCT_BUNDLE_IDENTIFIER = com.chris.Spotter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotter/Spotter-Bridging-Header.h";
@@ -710,8 +717,7 @@
 				INFOPLIST_FILE = Spotter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jing.Spotter;
-
+				PRODUCT_BUNDLE_IDENTIFIER = com.chris.Spotter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotter/Spotter-Bridging-Header.h";
