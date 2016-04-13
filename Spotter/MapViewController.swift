@@ -29,7 +29,7 @@ class MapViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.delegate = self
+        self.mapView.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         searchResultController.delegate = self
@@ -38,7 +38,11 @@ class MapViewController: BaseViewController {
         loadMap()
     }
     
-    
+    @IBAction func returnToMapView(segue:UIStoryboardSegue){
+        // Do nothing as we transition back to here when user cancels the "add new listing"
+    }
+
+
     
     func geocodeAddress(address: String!, withCompletionHandler completionHandler: ((status: String, success: Bool) -> Void)?) {
         if let lookupAddress = address {
@@ -102,9 +106,9 @@ class MapViewController: BaseViewController {
         let marker = GMSMarker(position: coordinates)
         marker.title = "hello"  // title will be price in ParkingSpot Model
         marker.map = mapView
+        
     }
     
-
     
     func loadMap() {
         mapView = GMSMapView(frame: CGRectZero)
@@ -244,10 +248,19 @@ extension MapViewController: CLLocationManagerDelegate {
 
 // MARK: - GMSMapViewDelegate
 extension MapViewController: GMSMapViewDelegate {
+    func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
+        print("hey")
+        performSegueWithIdentifier("spotListing", sender: self)
+        return true
+    }
+    
     func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
         reverseGeocodeCoordinates(position.target)
-    }
+    }		
+
 }
+
+
 
 // MARK: - UISeachBarDelegate
 extension MapViewController: UISearchBarDelegate {
