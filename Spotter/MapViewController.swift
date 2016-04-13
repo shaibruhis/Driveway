@@ -29,7 +29,6 @@ class MapViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.mapView.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         searchResultController.delegate = self
@@ -134,6 +133,7 @@ class MapViewController: BaseViewController {
 //        usersCurrentLocationMarker.map = mapView
         
         self.view = mapView
+        self.mapView.delegate = self
         populateDriveways()
     }
     
@@ -192,7 +192,7 @@ class MapViewController: BaseViewController {
                 let lat = spot["Lat"] as! Double
                 let lon = spot["Lon"] as! Double
                 let marker = GMSMarker(position:CLLocationCoordinate2DMake(lat, lon))
-//                let marker = GMSMarker(position:)
+                marker.title = "hello"
                 marker.map = self.mapView
                 
             }
