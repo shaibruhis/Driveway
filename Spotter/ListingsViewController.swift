@@ -84,11 +84,12 @@ class ListingsViewController: BaseViewController, UITableViewDataSource, UITable
         let listingRef = ref.childByAppendingPath(listingID)
         // Attach a closure to read the data at our posts reference
         listingRef.observeEventType(.Value, withBlock: { snapshot in   // Use observeEventType if want to update in real time as database updates
-//            print(snapshot.value)
-            let tempdict = (snapshot.value as! NSDictionary)
-            let listing = Listing(listingID: listingID, lat: "\(tempdict["Lat"] as! Float)", lon: "\(tempdict["Lon"] as! Float)", address: "\(tempdict["Address"]!)")
-            self.usersSpots.append(listing)
-            self.listingsTableView.reloadData()
+            if snapshot.exists() {
+                let tempdict = (snapshot.value as! NSDictionary)
+                let listing = Listing(listingID: listingID, lat: "\(tempdict["Lat"] as! Float)", lon: "\(tempdict["Lon"] as! Float)", address: "\(tempdict["Address"]!)")
+                self.usersSpots.append(listing)
+                self.listingsTableView.reloadData()
+            }
         }, withCancelBlock: { error in
             print(error.description)
         })
@@ -131,11 +132,13 @@ class ListingsViewController: BaseViewController, UITableViewDataSource, UITable
 //        return true
 //    }
     
+
+
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == .Delete) {
             // handle delete (by removing the data from your array and updating the tableview)
             let ref = Firebase(url:"https://blinding-fire-154.firebaseio.com")
-            let usersRef = ref.childByAppendingPath(ref.authData.uid)
+            let usersRef = ref.childByAppendingPath("Users/\(ref.authData.uid)")
             let locationsRef = ref.childByAppendingPath("Locations")
             let listing = usersSpots[indexPath.row].listingID
             
