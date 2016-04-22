@@ -31,6 +31,7 @@
 		B313401A1C7D93AC003FD1D7 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31340191C7D93AC003FD1D7 /* SearchResultsController.swift */; };
 		B35DDB6B1C7C441F0099BFBC /* DrivewayMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35DDB6A1C7C441F0099BFBC /* DrivewayMarker.swift */; };
 		B35DDB6F1C7D45480099BFBC /* MapTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35DDB6E1C7D45480099BFBC /* MapTasks.swift */; };
+		B38F46881CBF2CCB00F5D4CC /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F46871CBF2CCB00F5D4CC /* Listing.swift */; };
 		B3A46FB91C6ECB490061A185 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A46FB71C6ECB490061A185 /* Home.storyboard */; };
 		B3A46FBB1C6ECBA10061A185 /* Selling.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A46FBA1C6ECBA10061A185 /* Selling.storyboard */; };
 		B3A46FBE1C6ECBF60061A185 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A46FBC1C6ECBF60061A185 /* Settings.storyboard */; };
@@ -98,6 +99,7 @@
 		B31340191C7D93AC003FD1D7 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		B35DDB6A1C7C441F0099BFBC /* DrivewayMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrivewayMarker.swift; sourceTree = "<group>"; };
 		B35DDB6E1C7D45480099BFBC /* MapTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTasks.swift; sourceTree = "<group>"; };
+		B38F46871CBF2CCB00F5D4CC /* Listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		B3A46FB81C6ECB490061A185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		B3A46FBA1C6ECBA10061A185 /* Selling.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Selling.storyboard; path = Base.lproj/Selling.storyboard; sourceTree = "<group>"; };
 		B3A46FBD1C6ECBF60061A185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				B35DDB6A1C7C441F0099BFBC /* DrivewayMarker.swift */,
+				B38F46871CBF2CCB00F5D4CC /* Listing.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -367,7 +370,7 @@
 				TargetAttributes = {
 					83E89BE51C66D29A00E446FA = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = N93J4S57HA;
+						DevelopmentTeam = SVFLC63M2X;
 					};
 					83E89BF91C66D29A00E446FA = {
 						CreatedOnToolsVersion = 7.2;
@@ -499,6 +502,7 @@
 				B313401A1C7D93AC003FD1D7 /* SearchResultsController.swift in Sources */,
 				83E89BEA1C66D29A00E446FA /* AppDelegate.swift in Sources */,
 				B3E2B29E1C6C2C9900B3FA0C /* BaseViewController.swift in Sources */,
+				B38F46881CBF2CCB00F5D4CC /* Listing.swift in Sources */,
 				83FB0BE91C73338600CEE6EC /* ParkingType.swift in Sources */,
 				0DD830ED1C86A490001D0673 /* LoginViewController.swift in Sources */,
 				0DD830F21C86BF71001D0673 /* SellerEditMenu.swift in Sources */,
@@ -698,7 +702,7 @@
 				INFOPLIST_FILE = Spotter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chris.Spotter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.42jumpstreet.Spotter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotter/Spotter-Bridging-Header.h";
@@ -717,7 +721,7 @@
 				INFOPLIST_FILE = Spotter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chris.Spotter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.42jumpstreet.Spotter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotter/Spotter-Bridging-Header.h";

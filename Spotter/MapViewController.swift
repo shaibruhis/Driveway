@@ -192,6 +192,7 @@ class MapViewController: BaseViewController {
                 let lat = spot["Lat"] as! Double
                 let lon = spot["Lon"] as! Double
                 let marker = GMSMarker(position:CLLocationCoordinate2DMake(lat, lon))
+                
 //                let marker = GMSMarker(position:)
                 marker.map = self.mapView
                 

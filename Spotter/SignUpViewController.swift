@@ -20,11 +20,6 @@ class SignUpViewController : UIViewController{
     
     let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/")
     
-    
-    
-
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,7 +52,7 @@ class SignUpViewController : UIViewController{
                                 //catch error
                             }
                             else{
-                                let newUser = ["First Name": self.firstName.text!, "Last Name": self.lastName.text!, "Phone Number": self.phoneNumber.text!, "Email": self.emailAddress.text!]
+                                let newUser = ["First Name": self.firstName.text!, "Last Name": self.lastName.text!, "Phone Number": self.phoneNumber.text!, "Email": self.emailAddress.text!, "SpotsOwned":""]
                                 self.ref.childByAppendingPath("Users")
                                 .childByAppendingPath(authData.uid).setValue(newUser)
                                 self.performSegueWithIdentifier("Save and Back to Login Segue", sender: nil)
