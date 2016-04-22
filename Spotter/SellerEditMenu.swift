@@ -65,7 +65,7 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
             let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/")
                 //Get the data from the Text Box and putting them into Firebase
                 
-            let newLocation = ["Lat": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.latitude, "Lon": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.longitude, "Price": SellerEditMenuSingleton.sharedInstance.price!, "Owner": ref.authData.uid]
+            let newLocation = ["Lat": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.latitude, "Lon": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.longitude, "Price": SellerEditMenuSingleton.sharedInstance.price!, "Owner": ref.authData.uid, "Address":SellerEditMenuSingleton.sharedInstance.address!]
                 //Make the branch "Users" in the database
             let locationsRef = ref.childByAppendingPath("Locations")
                 //Auto-Generate a User ID
