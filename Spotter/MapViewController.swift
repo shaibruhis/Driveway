@@ -103,7 +103,7 @@ class MapViewController: BaseViewController {
         geocodeAddress(spotAddress, withCompletionHandler: nil)
         let coordinates = CLLocationCoordinate2DMake(fetchedAddressLatitude, fetchedAddressLongitude)
         let marker = GMSMarker(position: coordinates)
-        marker.title = "hello"  // title will be price in ParkingSpot Model
+//        marker.setInfo()
         marker.map = mapView
         
     }
@@ -191,8 +191,12 @@ class MapViewController: BaseViewController {
 //                print ("\(spot["Lat"]!, spot["Lon"]!)")
                 let lat = spot["Lat"] as! Double
                 let lon = spot["Lon"] as! Double
+                let firstName = spot["First Name"] as! String
+                let price = spot["Price"] as! String
+                let phoneNumber = spot["Phone Number"] as! String
                 let marker = GMSMarker(position:CLLocationCoordinate2DMake(lat, lon))
-                marker.title = "hello"
+                var markerInfo = MarkerInfo(inputFirstName: firstName, inputLat: lat, inputLon: lon, inputPrice: price, inputPhone: phoneNumber)
+                marker.userData = markerInfo
                 marker.map = self.mapView
                 
             }
@@ -249,8 +253,8 @@ extension MapViewController: CLLocationManagerDelegate {
 // MARK: - GMSMapViewDelegate
 extension MapViewController: GMSMapViewDelegate {
     func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
-        print("hey")
-        performSegueWithIdentifier("spotListing", sender: self)
+        print( (marker.userData as! MarkerInfo).ownerFirstName )
+        performSegueWithIdentifier("Spot Listing Segue", sender: self)
         return true
     }
     
