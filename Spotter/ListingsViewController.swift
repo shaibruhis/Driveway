@@ -16,16 +16,11 @@ class ListingsViewController: BaseViewController, UITableViewDataSource, UITable
     
     var usersSpots = [Listing]()
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        getUsersListingsIDs()
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         listingsTableView.delegate = self;
         listingsTableView.dataSource = self;
+        getUsersListingsIDs()
 
         // Do any additional setup after loading the view.
     }
@@ -43,15 +38,6 @@ class ListingsViewController: BaseViewController, UITableViewDataSource, UITable
         // TODO: add code to add listing to database.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     func convertJSONToDictionary(snapshot: FDataSnapshot) -> [NSDictionary]? {
         var tempItems = [NSDictionary]()
@@ -106,6 +92,7 @@ class ListingsViewController: BaseViewController, UITableViewDataSource, UITable
         // Attach a closure to read the data at our posts reference
         usersSpotsRef.observeEventType(.Value, withBlock: { snapshot in   // Use observeEventType if want to update in real time as database updates
             print(snapshot.value)
+            self.usersSpots.removeAll()
             if snapshot.exists() {
                 let tempdict = (snapshot.value as! NSDictionary)
                 for listingID in tempdict.allKeys as! [String] {
