@@ -23,7 +23,7 @@ class SellerEditAddressViewController: UIViewController {
     var resultsArray = [String]()
     let baseURLGeocode = "https://maps.googleapis.com/maps/api/geocode/json?"
     var lookupAddressResults = [String: AnyObject]()
-    var fetchedFormattedAddress = String()
+    var fetchedFormattedAddress = ""
     var fetchedAddressLongitude = Double()
     var fetchedAddressLatitude = Double()
 
@@ -39,12 +39,13 @@ class SellerEditAddressViewController: UIViewController {
         searchResultController.delegate = self
     }
     
-        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            if saveButton === sender{
-                SellerEditMenuSingleton.sharedInstance.parkingCoordinates = spotLocation
-            }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if saveButton === sender{
+            SellerEditMenuSingleton.sharedInstance.parkingCoordinates = spotLocation
+            SellerEditMenuSingleton.sharedInstance.address = fetchedFormattedAddress
         }
-    
+    }
+
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        if saveButton === sender{
 //            let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/")
@@ -94,6 +95,13 @@ extension SellerEditAddressViewController: CLLocationManagerDelegate{
         let marker = GMSMarker(position:spotLocation!)
         marker.title = "Placed marker here"
         marker.map = self.mapView
+        if fetchedFormattedAddress == "" {
+            //geocode
+            let geocode = GMSGeocoder()
+            geocode.reverseGeocodeCoordinate(spotLocation!, completionHandler: { (response, error) in
+                self.fetchedFormattedAddress = response.firstResult().lines[0] as! String
+            })
+        }
         self.saveButton.enabled = true
     }
     

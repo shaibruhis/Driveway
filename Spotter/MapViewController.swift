@@ -197,6 +197,7 @@ class MapViewController: BaseViewController {
                 let marker = GMSMarker(position:CLLocationCoordinate2DMake(lat, lon))
                 var markerInfo = MarkerInfo(inputFirstName: firstName, inputLat: lat, inputLon: lon, inputPrice: price, inputPhone: phoneNumber)
                 marker.userData = markerInfo
+
                 marker.map = self.mapView
                 
             }
