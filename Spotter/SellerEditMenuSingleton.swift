@@ -22,6 +22,7 @@ class SellerEditMenuSingleton{
     var phoneNumber: String?
     var startTime: String?
     var endTime: String?
+    var rentedUntil: String?
     
     func resetValues(){
         address = nil
@@ -29,6 +30,7 @@ class SellerEditMenuSingleton{
         parkingCoordinates = nil
         startTime = nil
         endTime = nil
+        rentedUntil = nil
     }
     
     
@@ -62,7 +64,8 @@ class SellerEditMenuSingleton{
     }
     
     func checkAllCompletion() -> Bool{
-        if(checkAddressCompletion() && checkPriceCompletion()  &&
+        if(checkAddressCompletion() &&
+            checkPriceCompletion()  &&
             checkTimeCompletion(startTime) &&
             checkTimeCompletion(endTime)){
             return true

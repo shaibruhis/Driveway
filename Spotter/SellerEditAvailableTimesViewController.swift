@@ -33,6 +33,10 @@ class SellerEditAvailableTimesViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if saveTimesButton === sender{
+            //TODO: check if end time is after begin time
+            
+            //TODO: convert to UTC
+            
 //            SellerEditMenuSingleton.sharedInstance.startTime = NSString(format: "%.2f", NSString(string: userPriceInput.text!).floatValue) as String
 //            print(SellerEditMenuSingleton.sharedInstance.startTime)
 //            SellerEditMenuSingleton.sharedInstance.endTime = NSString(format: "%.2f", NSString(string: userPriceInput.text!).floatValue) as String
