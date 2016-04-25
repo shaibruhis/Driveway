@@ -71,7 +71,9 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
                 SellerEditMenuSingleton.sharedInstance.firstName = snapshot.value["First Name"] as? String
                 SellerEditMenuSingleton.sharedInstance.lastName = snapshot.value["Last Name"] as? String
                 SellerEditMenuSingleton.sharedInstance.phoneNumber = snapshot.value["Phone Number"] as? String
-                let newLocation = ["Lat": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.latitude, "Lon": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.longitude, "Price": SellerEditMenuSingleton.sharedInstance.price!, "Owner": ref.authData.uid, "First Name" :  SellerEditMenuSingleton.sharedInstance.firstName!, "Phone Number" :  SellerEditMenuSingleton.sharedInstance.phoneNumber!]
+                let newLocation = ["Lat": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.latitude, "Lon": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.longitude, "Price": SellerEditMenuSingleton.sharedInstance.price!, "Owner": ref.authData.uid, "First Name" :  SellerEditMenuSingleton.sharedInstance.firstName!, "Phone Number" :  SellerEditMenuSingleton.sharedInstance.phoneNumber!, "Address":SellerEditMenuSingleton.sharedInstance.address!]
+                //Get the data from the Text Box and putting them into Firebase
+                
                 //Make the branch "Users" in the database
                 let locationsRef = ref.childByAppendingPath("Locations")
                 //Auto-Generate a User ID
@@ -88,8 +90,7 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
                 SellerEditMenuSingleton.sharedInstance.resetValues()
 
             })
-            print(SellerEditMenuSingleton.sharedInstance.firstName)
-                //Get the data from the Text Box and putting them into Firebase
+
                 
             
         }//need to also post to database

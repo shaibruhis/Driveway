@@ -15,12 +15,14 @@ class SellerEditMenuSingleton{
     private init(){} //Prevents this class from being initialized as it is a singleton
     
     var parkingCoordinates: CLLocationCoordinate2D?
+    var address: String?
     var price: String?
     var firstName: String?
     var lastName: String?
     var phoneNumber: String?
     
     func resetValues(){
+        address = nil
         price = nil
         parkingCoordinates = nil
     }
