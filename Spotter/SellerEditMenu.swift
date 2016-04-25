@@ -63,33 +63,36 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         if sender === saveListingButton{
             let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/")
-                //Get the data from the Text Box and putting them into Firebase
-                
-            let newLocation = ["Lat": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.latitude, "Lon": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.longitude, "Price": SellerEditMenuSingleton.sharedInstance.price!, "Owner": ref.authData.uid, "Address":SellerEditMenuSingleton.sharedInstance.address!]
-                //Make the branch "Users" in the database
-            let locationsRef = ref.childByAppendingPath("Locations")
-                //Auto-Generate a User ID
-            let newLocationRef = locationsRef.childByAutoId()
-                //write the values to the database
-            newLocationRef.setValue(newLocation)
-            
-            //then get the auto generated uid and save it to that user's list of owned spots.
-            
             let userref = Firebase(url: "https://blinding-fire-154.firebaseio.com/Users/" + ref.authData.uid)
 
+            
+            userref.observeSingleEventOfType(.Value, withBlock: { snapshot in
+                //Setting the text boxes to display their respective attributes (First, Last, and Phone Number
+                SellerEditMenuSingleton.sharedInstance.firstName = snapshot.value["First Name"] as? String
+                SellerEditMenuSingleton.sharedInstance.lastName = snapshot.value["Last Name"] as? String
+                SellerEditMenuSingleton.sharedInstance.phoneNumber = snapshot.value["Phone Number"] as? String
+                let newLocation = ["Lat": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.latitude, "Lon": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.longitude, "Price": SellerEditMenuSingleton.sharedInstance.price!, "Owner": ref.authData.uid, "First Name" :  SellerEditMenuSingleton.sharedInstance.firstName!, "Phone Number" :  SellerEditMenuSingleton.sharedInstance.phoneNumber!, "Address":SellerEditMenuSingleton.sharedInstance.address!]
+                //Get the data from the Text Box and putting them into Firebase
+                
+                //Make the branch "Users" in the database
+                let locationsRef = ref.childByAppendingPath("Locations")
+                //Auto-Generate a User ID
+                let newLocationRef = locationsRef.childByAutoId()
+                //write the values to the database
+                newLocationRef.setValue(newLocation)
+                
+                //then get the auto generated uid and save it to that user's list of owned spots
+                
+                
+                userref.childByAppendingPath("SpotsOwned").childByAppendingPath(newLocationRef.key).setValue(newLocationRef.key)
+                
+                
+                SellerEditMenuSingleton.sharedInstance.resetValues()
 
-            userref.childByAppendingPath("SpotsOwned").childByAppendingPath(newLocationRef.key).setValue(newLocationRef.key)
+            })
 
+                
             
-//            let newUser = ["First Name": self.firstName.text!, "Last Name": self.lastName.text!, "Phone Number": self.phoneNumber.text!, "Email": self.emailAddress.text!]
-//            self.ref.childByAppendingPath("Users")
-//                .childByAppendingPath(authData.uid).setValue(newUser)
-//            self.performSegueWithIdentifier("Save and Back to Login Segue", sender: nil)
-            
-            
-            
-            
-            SellerEditMenuSingleton.sharedInstance.resetValues()
         }//need to also post to database
     }
 

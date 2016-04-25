@@ -24,12 +24,13 @@
 		83E89BFF1C66D29A00E446FA /* SpotterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E89BFE1C66D29A00E446FA /* SpotterTests.swift */; };
 		83E89C0A1C66D29A00E446FA /* SpotterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E89C091C66D29A00E446FA /* SpotterUITests.swift */; };
 		83E89C1B1C66D3CF00E446FA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E89C1A1C66D3CF00E446FA /* SWRevealViewController.m */; };
+		83F836981CBF1562006858C8 /* BuySpotListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F836971CBF1562006858C8 /* BuySpotListingViewController.swift */; };
+		83F8369A1CC8376B006858C8 /* MarkerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F836991CC8376B006858C8 /* MarkerInfo.swift */; };
 		83FB0BE91C73338600CEE6EC /* ParkingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BE81C73338600CEE6EC /* ParkingType.swift */; };
 		83FB0BED1C7D719D00CEE6EC /* SellerEditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */; };
 		83FD768C1C7F0346004FAA5A /* SellerEditMenuSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD768B1C7F0346004FAA5A /* SellerEditMenuSingleton.swift */; };
 		83FEB1B61C81B6220086150F /* SellerEditPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FEB1B51C81B6220086150F /* SellerEditPrice.swift */; };
 		B313401A1C7D93AC003FD1D7 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31340191C7D93AC003FD1D7 /* SearchResultsController.swift */; };
-		B35DDB6B1C7C441F0099BFBC /* DrivewayMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35DDB6A1C7C441F0099BFBC /* DrivewayMarker.swift */; };
 		B35DDB6F1C7D45480099BFBC /* MapTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35DDB6E1C7D45480099BFBC /* MapTasks.swift */; };
 		B38F46881CBF2CCB00F5D4CC /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F46871CBF2CCB00F5D4CC /* Listing.swift */; };
 		B3A46FB91C6ECB490061A185 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A46FB71C6ECB490061A185 /* Home.storyboard */; };
@@ -90,6 +91,8 @@
 		83E89C181C66D3CF00E446FA /* Spotter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spotter-Bridging-Header.h"; sourceTree = "<group>"; };
 		83E89C191C66D3CF00E446FA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		83E89C1A1C66D3CF00E446FA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		83F836971CBF1562006858C8 /* BuySpotListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuySpotListingViewController.swift; sourceTree = "<group>"; };
+		83F836991CC8376B006858C8 /* MarkerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerInfo.swift; sourceTree = "<group>"; };
 		83FB0BE61C71BF6100CEE6EC /* SellerEditMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditMenu.swift; sourceTree = "<group>"; };
 		83FB0BE81C73338600CEE6EC /* ParkingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingType.swift; sourceTree = "<group>"; };
 		83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditAddressViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +100,6 @@
 		83FEB1B51C81B6220086150F /* SellerEditPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditPrice.swift; sourceTree = "<group>"; };
 		848CCE3F8AE4E3108DFA2DCA /* Pods_Spotter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spotter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B31340191C7D93AC003FD1D7 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
-		B35DDB6A1C7C441F0099BFBC /* DrivewayMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrivewayMarker.swift; sourceTree = "<group>"; };
 		B35DDB6E1C7D45480099BFBC /* MapTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTasks.swift; sourceTree = "<group>"; };
 		B38F46871CBF2CCB00F5D4CC /* Listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		B3A46FB81C6ECB490061A185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				8360AC801C67103600D9747C /* HistoryViewController.swift */,
 				0DD566FD1C699FC40016643D /* FirebaseTest.swift */,
 				0D2847801C7429040014E10D /* SignUpViewController.swift */,
+				83F836971CBF1562006858C8 /* BuySpotListingViewController.swift */,
 				83E6964E1C66F19A007EB221 /* BackTableViewController.swift */,
 				B3A46FCA1C6ECFB80061A185 /* ReservationsViewController.swift */,
 				B3A46FCC1C6ECFD00061A185 /* PaymentViewController.swift */,
@@ -258,7 +261,7 @@
 		B35DDB691C7C44050099BFBC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B35DDB6A1C7C441F0099BFBC /* DrivewayMarker.swift */,
+				83F836991CC8376B006858C8 /* MarkerInfo.swift */,
 				B38F46871CBF2CCB00F5D4CC /* Listing.swift */,
 			);
 			name = Model;
@@ -370,7 +373,7 @@
 				TargetAttributes = {
 					83E89BE51C66D29A00E446FA = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = SVFLC63M2X;
+						DevelopmentTeam = N93J4S57HA;
 					};
 					83E89BF91C66D29A00E446FA = {
 						CreatedOnToolsVersion = 7.2;
@@ -496,10 +499,12 @@
 				83E2FA9E1C88549B00284620 /* UserInfoSingleton.swift in Sources */,
 				8360AC811C67103600D9747C /* HistoryViewController.swift in Sources */,
 				83FB0BED1C7D719D00CEE6EC /* SellerEditAddressViewController.swift in Sources */,
+				83F836981CBF1562006858C8 /* BuySpotListingViewController.swift in Sources */,
 				83FD768C1C7F0346004FAA5A /* SellerEditMenuSingleton.swift in Sources */,
 				83E6964F1C66F19A007EB221 /* BackTableViewController.swift in Sources */,
 				83E89BEC1C66D29A00E446FA /* MapViewController.swift in Sources */,
 				B313401A1C7D93AC003FD1D7 /* SearchResultsController.swift in Sources */,
+				83F8369A1CC8376B006858C8 /* MarkerInfo.swift in Sources */,
 				83E89BEA1C66D29A00E446FA /* AppDelegate.swift in Sources */,
 				B3E2B29E1C6C2C9900B3FA0C /* BaseViewController.swift in Sources */,
 				B38F46881CBF2CCB00F5D4CC /* Listing.swift in Sources */,
@@ -510,7 +515,6 @@
 				B3A46FCF1C6ECFE30061A185 /* ProfileViewController.swift in Sources */,
 				B3A46FCD1C6ECFD00061A185 /* PaymentViewController.swift in Sources */,
 				B3A46FD31C6ED3920061A185 /* SoldSpotsViewController.swift in Sources */,
-				B35DDB6B1C7C441F0099BFBC /* DrivewayMarker.swift in Sources */,
 				83E89C1B1C66D3CF00E446FA /* SWRevealViewController.m in Sources */,
 				B3A46FCB1C6ECFB80061A185 /* ReservationsViewController.swift in Sources */,
 				83FEB1B61C81B6220086150F /* SellerEditPrice.swift in Sources */,
@@ -702,7 +706,7 @@
 				INFOPLIST_FILE = Spotter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.42jumpstreet.Spotter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chris.Spotter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotter/Spotter-Bridging-Header.h";
@@ -721,7 +725,7 @@
 				INFOPLIST_FILE = Spotter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.42jumpstreet.Spotter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chris.Spotter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotter/Spotter-Bridging-Header.h";

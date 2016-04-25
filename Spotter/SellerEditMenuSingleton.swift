@@ -17,6 +17,9 @@ class SellerEditMenuSingleton{
     var parkingCoordinates: CLLocationCoordinate2D?
     var address: String?
     var price: String?
+    var firstName: String?
+    var lastName: String?
+    var phoneNumber: String?
     
     func resetValues(){
         address = nil
