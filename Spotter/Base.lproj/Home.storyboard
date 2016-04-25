@@ -45,15 +45,53 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGZ-nf-8xb">
+                                <rect key="frame" x="279" y="187" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddS-Hv-GRs">
+                                <rect key="frame" x="279" y="226" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4N6-fQ-Jcu">
+                                <rect key="frame" x="279" y="264" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grv-a1-RI3">
+                                <rect key="frame" x="279" y="143" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hPb-1I-aPs" firstAttribute="leading" secondItem="GgM-Wf-ZQz" secondAttribute="leading" id="9ke-2o-eOg"/>
+                            <constraint firstItem="4N6-fQ-Jcu" firstAttribute="top" secondItem="ddS-Hv-GRs" secondAttribute="bottom" constant="17" id="ADI-Dh-kIT"/>
+                            <constraint firstItem="ddS-Hv-GRs" firstAttribute="leading" secondItem="4N6-fQ-Jcu" secondAttribute="leading" id="DgK-Tb-ET3"/>
+                            <constraint firstItem="Grv-a1-RI3" firstAttribute="leading" secondItem="oGZ-nf-8xb" secondAttribute="leading" id="GI4-bG-1eB"/>
+                            <constraint firstItem="Grv-a1-RI3" firstAttribute="centerX" secondItem="hPb-1I-aPs" secondAttribute="centerX" id="GhY-gS-VGE"/>
                             <constraint firstItem="hPb-1I-aPs" firstAttribute="top" secondItem="GgM-Wf-ZQz" secondAttribute="top" id="Qsq-7h-7Y4"/>
+                            <constraint firstItem="oGZ-nf-8xb" firstAttribute="top" secondItem="Grv-a1-RI3" secondAttribute="bottom" constant="23" id="ayh-xW-S2b"/>
                             <constraint firstAttribute="trailing" secondItem="hPb-1I-aPs" secondAttribute="trailing" id="lcY-Z4-8U8"/>
+                            <constraint firstItem="ddS-Hv-GRs" firstAttribute="top" secondItem="oGZ-nf-8xb" secondAttribute="bottom" constant="18" id="oRN-Q0-Mv6"/>
+                            <constraint firstItem="ddS-Hv-GRs" firstAttribute="leading" secondItem="oGZ-nf-8xb" secondAttribute="leading" id="omU-nf-r98"/>
+                            <constraint firstItem="Grv-a1-RI3" firstAttribute="top" secondItem="hPb-1I-aPs" secondAttribute="bottom" constant="99" id="vnf-WV-OKl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="wAk-YO-bQd"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="oGZ-nf-8xb" id="zIM-2q-MDv"/>
+                        <outlet property="firstNameLabel" destination="Grv-a1-RI3" id="cO8-Op-MdS"/>
+                        <outlet property="phoneLabel" destination="4N6-fQ-Jcu" id="C7r-Kc-Zm1"/>
+                        <outlet property="priceLabel" destination="ddS-Hv-GRs" id="jxR-dM-A9g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeX-J2-o1V" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="dks-Zl-Qc6" userLabel="Exit" sceneMemberID="exit"/>

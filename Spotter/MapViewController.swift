@@ -218,7 +218,7 @@ class MapViewController: BaseViewController {
                 let spotFirstName = spot["First Name"] as! String
                 let spotPrice = spot["Price"] as! String
                 let spotPhoneNumber = spot["Phone Number"] as! String
-                let marker = GMSMarker(position:CLLocationCoordinate2DMake(lat, lon))
+                let marker = GMSMarker(position:CLLocationCoordinate2DMake(spotLat, spotLon))
                 let markerInfo = MarkerInfo(inputAddress: spotAddress, inputFirstName: spotFirstName, inputLat: spotLat, inputLon: spotLon, inputPrice: spotPrice, inputPhone: spotPhoneNumber)
                 marker.userData = markerInfo
 

@@ -16,6 +16,12 @@ class BuySpotListingViewController : UIViewController{
 //    @IBOutlet weak var phoneNumber: UITextField!
 
     
+    @IBOutlet weak var firstNameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    
+    
     var lat : Double?
     var lon : Double?
     var address : String?
@@ -25,7 +31,12 @@ class BuySpotListingViewController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(lat)
+        
+        firstNameLabel.text = firstName
+        addressLabel.text = address
+        priceLabel.text = price
+        phoneLabel.text = phoneNumber
+        
         
     }
 
