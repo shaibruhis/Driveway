@@ -17,9 +17,11 @@ class MarkerInfo {
     var lon : Double?
     var price : String = "null"
     var phone : String = "null"
+    var address : String = "null"
     
-    init(inputFirstName: String, inputLat: Double, inputLon: Double, inputPrice: String, inputPhone: String){
+    init(inputAddress: String, inputFirstName: String, inputLat: Double, inputLon: Double, inputPrice: String, inputPhone: String){
         ownerFirstName = inputFirstName
+        address = inputAddress
         lat = inputLat
         lon = inputLon
         price = inputPrice
