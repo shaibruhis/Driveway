@@ -171,6 +171,7 @@
                         <outlet property="saveListingButton" destination="0Ot-iH-jlh" id="1y8-cg-kdc"/>
                         <segue destination="1jH-hT-11f" kind="show" identifier="Seller Price Segue" id="Lgt-tQ-3kc"/>
                         <segue destination="mqw-6Z-rBs" kind="show" identifier="Seller Address Segue" id="bih-Ve-VuG"/>
+                        <segue destination="a9x-Ig-PJO" kind="show" identifier="Seller Available Times Segue" id="PHJ-ae-tDm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1W1-1r-gDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -243,7 +244,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YBq-wF-MvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="TQE-jO-kyb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4411" y="-680"/>
+            <point key="canvasLocation" x="4449" y="-644"/>
         </scene>
         <!--Address-->
         <scene sceneID="acg-Nn-7wN">
@@ -347,6 +348,97 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSI-yP-wSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3325" y="795"/>
+        </scene>
+        <!--Available Times-->
+        <scene sceneID="scm-nq-Ac4">
+            <objects>
+                <viewController id="a9x-Ig-PJO" customClass="SellerEditAvailableTimesViewController" customModule="Spotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aCq-Q6-Itt"/>
+                        <viewControllerLayoutGuide type="bottom" id="Oik-zd-Hbk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aus-sP-P9D">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qyg-f8-7Bf">
+                                <rect key="frame" x="-20" y="14" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" id="18t-ug-cOg"/>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time when spot begins availability:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzZ-sH-UE3">
+                                <rect key="frame" x="20" y="72" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="H78-df-9iY">
+                                <rect key="frame" x="0.0" y="101" width="600" height="135"/>
+                                <date key="date" timeIntervalSinceReferenceDate="483314441.87105">
+                                    <!--2016-04-25 22:00:41 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="timePickerChanged:" destination="a9x-Ig-PJO" eventType="valueChanged" id="zIq-3S-6rb"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time when spot ends availability:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehF-Vn-5uo">
+                                <rect key="frame" x="20" y="272" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="0GD-0H-0Sv">
+                                <rect key="frame" x="0.0" y="301" width="600" height="135"/>
+                                <date key="date" timeIntervalSinceReferenceDate="483314441.87105">
+                                    <!--2016-04-25 22:00:41 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="timePickerChanged:" destination="a9x-Ig-PJO" eventType="valueChanged" id="a3l-ca-uyL"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qyg-f8-7Bf" firstAttribute="leading" secondItem="aus-sP-P9D" secondAttribute="leadingMargin" constant="-40" id="11d-zc-qvY"/>
+                            <constraint firstItem="RzZ-sH-UE3" firstAttribute="leading" secondItem="aus-sP-P9D" secondAttribute="leadingMargin" id="AUF-wF-YiD"/>
+                            <constraint firstItem="H78-df-9iY" firstAttribute="top" secondItem="RzZ-sH-UE3" secondAttribute="bottom" constant="8" id="KuT-Kc-XZ4"/>
+                            <constraint firstItem="0GD-0H-0Sv" firstAttribute="leading" secondItem="aus-sP-P9D" secondAttribute="leadingMargin" constant="-20" id="MUU-Ea-45L"/>
+                            <constraint firstItem="0GD-0H-0Sv" firstAttribute="top" secondItem="ehF-Vn-5uo" secondAttribute="bottom" constant="8" id="OdD-cF-zHA"/>
+                            <constraint firstItem="RzZ-sH-UE3" firstAttribute="top" secondItem="aCq-Q6-Itt" secondAttribute="bottom" constant="8" id="P2I-ha-qa0"/>
+                            <constraint firstItem="Qyg-f8-7Bf" firstAttribute="top" secondItem="aus-sP-P9D" secondAttribute="topMargin" constant="14" id="bgO-du-cyW"/>
+                            <constraint firstItem="RzZ-sH-UE3" firstAttribute="trailing" secondItem="aus-sP-P9D" secondAttribute="trailingMargin" id="cxJ-aw-nFi"/>
+                            <constraint firstItem="H78-df-9iY" firstAttribute="leading" secondItem="aus-sP-P9D" secondAttribute="leadingMargin" constant="-20" id="iq9-vW-9mJ"/>
+                            <constraint firstItem="ehF-Vn-5uo" firstAttribute="top" secondItem="H78-df-9iY" secondAttribute="bottom" constant="36" id="izU-Dz-0KQ"/>
+                            <constraint firstItem="Qyg-f8-7Bf" firstAttribute="trailing" secondItem="aus-sP-P9D" secondAttribute="trailingMargin" id="l2g-g4-SXM"/>
+                            <constraint firstItem="ehF-Vn-5uo" firstAttribute="trailing" secondItem="aus-sP-P9D" secondAttribute="trailingMargin" id="lDT-cF-MBy"/>
+                            <constraint firstItem="ehF-Vn-5uo" firstAttribute="leading" secondItem="aus-sP-P9D" secondAttribute="leadingMargin" id="mz8-SN-qCz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H78-df-9iY" secondAttribute="trailing" constant="-20" id="nta-0y-rZn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0GD-0H-0Sv" secondAttribute="trailing" constant="-20" id="sg9-Ht-SvI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Available Times" id="YhI-1p-fMF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="par-4c-9U9">
+                            <connections>
+                                <segue destination="Z2t-Jj-zXh" kind="unwind" unwindAction="returnToSellerEditMenu:" id="8sQ-bX-Uqm"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="QBg-CE-IHb">
+                            <connections>
+                                <segue destination="Z2t-Jj-zXh" kind="unwind" unwindAction="returnToSellerEditMenu:" id="ze0-QA-M1E"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="endTimePicker" destination="0GD-0H-0Sv" id="xwf-Nx-yhR"/>
+                        <outlet property="saveTimesButton" destination="QBg-CE-IHb" id="Rq9-w9-vhb"/>
+                        <outlet property="startTimePicker" destination="H78-df-9iY" id="XCK-PJ-aZH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZOI-WX-GTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Z2t-Jj-zXh" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="5191" y="-630"/>
         </scene>
     </scenes>
 </document>

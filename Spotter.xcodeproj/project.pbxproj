@@ -32,6 +32,7 @@
 		83FEB1B61C81B6220086150F /* SellerEditPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FEB1B51C81B6220086150F /* SellerEditPrice.swift */; };
 		B313401A1C7D93AC003FD1D7 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31340191C7D93AC003FD1D7 /* SearchResultsController.swift */; };
 		B35DDB6F1C7D45480099BFBC /* MapTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35DDB6E1C7D45480099BFBC /* MapTasks.swift */; };
+		B372C7941CCECC8B00C0094D /* SellerEditAvailableTimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372C7931CCECC8B00C0094D /* SellerEditAvailableTimesViewController.swift */; };
 		B38F46881CBF2CCB00F5D4CC /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F46871CBF2CCB00F5D4CC /* Listing.swift */; };
 		B3A46FB91C6ECB490061A185 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A46FB71C6ECB490061A185 /* Home.storyboard */; };
 		B3A46FBB1C6ECBA10061A185 /* Selling.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A46FBA1C6ECBA10061A185 /* Selling.storyboard */; };
@@ -101,6 +102,7 @@
 		848CCE3F8AE4E3108DFA2DCA /* Pods_Spotter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spotter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B31340191C7D93AC003FD1D7 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		B35DDB6E1C7D45480099BFBC /* MapTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTasks.swift; sourceTree = "<group>"; };
+		B372C7931CCECC8B00C0094D /* SellerEditAvailableTimesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditAvailableTimesViewController.swift; sourceTree = "<group>"; };
 		B38F46871CBF2CCB00F5D4CC /* Listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		B3A46FB81C6ECB490061A185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		B3A46FBA1C6ECBA10061A185 /* Selling.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Selling.storyboard; path = Base.lproj/Selling.storyboard; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */,
 				83FD768B1C7F0346004FAA5A /* SellerEditMenuSingleton.swift */,
 				83FEB1B51C81B6220086150F /* SellerEditPrice.swift */,
+				B372C7931CCECC8B00C0094D /* SellerEditAvailableTimesViewController.swift */,
 			);
 			name = Selling;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				83F836981CBF1562006858C8 /* BuySpotListingViewController.swift in Sources */,
 				83FD768C1C7F0346004FAA5A /* SellerEditMenuSingleton.swift in Sources */,
 				83E6964F1C66F19A007EB221 /* BackTableViewController.swift in Sources */,
+				B372C7941CCECC8B00C0094D /* SellerEditAvailableTimesViewController.swift in Sources */,
 				83E89BEC1C66D29A00E446FA /* MapViewController.swift in Sources */,
 				B313401A1C7D93AC003FD1D7 /* SearchResultsController.swift in Sources */,
 				83F8369A1CC8376B006858C8 /* MarkerInfo.swift in Sources */,

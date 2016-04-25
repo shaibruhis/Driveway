@@ -20,11 +20,15 @@ class SellerEditMenuSingleton{
     var firstName: String?
     var lastName: String?
     var phoneNumber: String?
+    var startTime: String?
+    var endTime: String?
     
     func resetValues(){
         address = nil
         price = nil
         parkingCoordinates = nil
+        startTime = nil
+        endTime = nil
     }
     
     
@@ -50,8 +54,17 @@ class SellerEditMenuSingleton{
         return true
     }
     
+    func checkTimeCompletion(time: String?) -> Bool {
+        if time?.isEmpty == nil {
+            return false
+        }
+        return true
+    }
+    
     func checkAllCompletion() -> Bool{
-        if(checkAddressCompletion() && checkPriceCompletion()){
+        if(checkAddressCompletion() && checkPriceCompletion()  &&
+            checkTimeCompletion(startTime) &&
+            checkTimeCompletion(endTime)){
             return true
         }
         else{
