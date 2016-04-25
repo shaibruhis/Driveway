@@ -12,6 +12,13 @@ import GoogleMaps
 
 //let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
+var lat : Double = 0
+var lon : Double = 0
+var address : String = "null"
+var firstName : String = "null"
+var price : String = "null"
+var phoneNumber : String = "null"
+
 class MapViewController: BaseViewController {
 
     var mapView = GMSMapView()
@@ -27,6 +34,22 @@ class MapViewController: BaseViewController {
     var fetchedAddressLongitude = Double()
     var fetchedAddressLatitude = Double()
     
+    
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+
+
+
+        var secondVC: BuySpotListingViewController = segue.destinationViewController as! BuySpotListingViewController
+        
+        secondVC.lat = lat
+        secondVC.lon = lon
+        secondVC.address = address
+        secondVC.price = price
+        secondVC.firstName = firstName
+        secondVC.phoneNumber = phoneNumber
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
@@ -189,13 +212,14 @@ class MapViewController: BaseViewController {
 //                print ("\(spotAddress)")
 //                self.placeMarker(spotAddress, mapView: self.mapView)
 //                print ("\(spot["Lat"]!, spot["Lon"]!)")
-                let lat = spot["Lat"] as! Double
-                let lon = spot["Lon"] as! Double
-                let firstName = spot["First Name"] as! String
-                let price = spot["Price"] as! String
-                let phoneNumber = spot["Phone Number"] as! String
+                let spotLat = spot["Lat"] as! Double
+                let spotLon = spot["Lon"] as! Double
+                let spotAddress = spot["Address"] as! String
+                let spotFirstName = spot["First Name"] as! String
+                let spotPrice = spot["Price"] as! String
+                let spotPhoneNumber = spot["Phone Number"] as! String
                 let marker = GMSMarker(position:CLLocationCoordinate2DMake(lat, lon))
-                var markerInfo = MarkerInfo(inputFirstName: firstName, inputLat: lat, inputLon: lon, inputPrice: price, inputPhone: phoneNumber)
+                let markerInfo = MarkerInfo(inputAddress: spotAddress, inputFirstName: spotFirstName, inputLat: spotLat, inputLon: spotLon, inputPrice: spotPrice, inputPhone: spotPhoneNumber)
                 marker.userData = markerInfo
 
                 marker.map = self.mapView
@@ -254,8 +278,17 @@ extension MapViewController: CLLocationManagerDelegate {
 // MARK: - GMSMapViewDelegate
 extension MapViewController: GMSMapViewDelegate {
     func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
-        print( (marker.userData as! MarkerInfo).ownerFirstName )
+       // print( (marker.userData as! MarkerInfo).ownerFirstName )
+
+        lat = (marker.userData as! MarkerInfo).lat!
+        lon = (marker.userData as! MarkerInfo).lon!
+        address = (marker.userData as! MarkerInfo).address
+        firstName = (marker.userData as! MarkerInfo).ownerFirstName
+        price = (marker.userData as! MarkerInfo).price
+        phoneNumber = (marker.userData as! MarkerInfo).phone
         performSegueWithIdentifier("Spot Listing Segue", sender: self)
+        
+        //gabe note here
         return true
     }
     
