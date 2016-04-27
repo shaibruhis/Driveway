@@ -17,7 +17,7 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
 //        menuArray = ["Parking Type", "Address", "Parking Dimensions", "Price", "Availability"]
-        menuArray = ["Address", "Price"]
+        menuArray = ["Address", "Price", "Available Times"]
 
     }
     
