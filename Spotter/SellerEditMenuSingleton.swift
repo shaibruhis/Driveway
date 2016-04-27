@@ -23,6 +23,7 @@ class SellerEditMenuSingleton{
     var startTime: String?
     var endTime: String?
     var rentedUntil: String?
+    var isAvailabile: Bool?
     
     func resetValues(){
         address = nil
@@ -31,6 +32,7 @@ class SellerEditMenuSingleton{
         startTime = nil
         endTime = nil
         rentedUntil = nil
+        isAvailabile = nil
     }
     
     

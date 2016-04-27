@@ -65,19 +65,20 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
             let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/")
             let userref = Firebase(url: "https://blinding-fire-154.firebaseio.com/Users/" + ref.authData.uid)
 
+            //Make the branch "Users" in the database
+            let locationsRef = ref.childByAppendingPath("Locations")
+            //Auto-Generate a User ID
+            let newLocationRef = locationsRef.childByAutoId()
             
             userref.observeSingleEventOfType(.Value, withBlock: { snapshot in
                 //Setting the text boxes to display their respective attributes (First, Last, and Phone Number
                 SellerEditMenuSingleton.sharedInstance.firstName = snapshot.value["First Name"] as? String
                 SellerEditMenuSingleton.sharedInstance.lastName = snapshot.value["Last Name"] as? String
                 SellerEditMenuSingleton.sharedInstance.phoneNumber = snapshot.value["Phone Number"] as? String
-                let newLocation = ["Lat": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.latitude, "Lon": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.longitude, "Price": SellerEditMenuSingleton.sharedInstance.price!, "Owner": ref.authData.uid, "First Name" :  SellerEditMenuSingleton.sharedInstance.firstName!, "Phone Number" :  SellerEditMenuSingleton.sharedInstance.phoneNumber!, "Address":SellerEditMenuSingleton.sharedInstance.address!]
+                let newLocation = ["Lat": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.latitude, "Lon": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.longitude, "Price": SellerEditMenuSingleton.sharedInstance.price!, "Owner": ref.authData.uid, "First Name" :  SellerEditMenuSingleton.sharedInstance.firstName!, "Phone Number" :  SellerEditMenuSingleton.sharedInstance.phoneNumber!, "Address":SellerEditMenuSingleton.sharedInstance.address!, "Start Time":SellerEditMenuSingleton.sharedInstance.startTime!, "End Time":SellerEditMenuSingleton.sharedInstance.endTime!, "Is Available":"True", "Rented Until":"-1", "SpotID":newLocationRef.key!]
                 //Get the data from the Text Box and putting them into Firebase
                 
-                //Make the branch "Users" in the database
-                let locationsRef = ref.childByAppendingPath("Locations")
-                //Auto-Generate a User ID
-                let newLocationRef = locationsRef.childByAutoId()
+                
                 //write the values to the database
                 newLocationRef.setValue(newLocation)
                 
