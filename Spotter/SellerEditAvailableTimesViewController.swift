@@ -37,6 +37,10 @@ class SellerEditAvailableTimesViewController: UIViewController {
             
             //TODO: convert to UTC
             
+            SellerEditMenuSingleton.sharedInstance.startTime = timeFormatter.stringFromDate(startTimePicker.date)
+            
+            SellerEditMenuSingleton.sharedInstance.endTime = timeFormatter.stringFromDate(endTimePicker.date)
+            
 //            SellerEditMenuSingleton.sharedInstance.startTime = NSString(format: "%.2f", NSString(string: userPriceInput.text!).floatValue) as String
 //            print(SellerEditMenuSingleton.sharedInstance.startTime)
 //            SellerEditMenuSingleton.sharedInstance.endTime = NSString(format: "%.2f", NSString(string: userPriceInput.text!).floatValue) as String
