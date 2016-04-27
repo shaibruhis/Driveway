@@ -423,7 +423,7 @@
                                 <segue destination="Z2t-Jj-zXh" kind="unwind" unwindAction="returnToSellerEditMenu:" id="8sQ-bX-Uqm"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="QBg-CE-IHb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="QBg-CE-IHb">
                             <connections>
                                 <segue destination="Z2t-Jj-zXh" kind="unwind" unwindAction="returnToSellerEditMenu:" id="ze0-QA-M1E"/>
                             </connections>
