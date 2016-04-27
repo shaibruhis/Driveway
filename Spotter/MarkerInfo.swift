@@ -20,6 +20,7 @@ class MarkerInfo {
     var address : String = "null"
     
     init(inputAddress: String, inputFirstName: String, inputLat: Double, inputLon: Double, inputPrice: String, inputPhone: String){
+        
         ownerFirstName = inputFirstName
         address = inputAddress
         lat = inputLat
