@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qsa-z9-3wC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qsa-z9-3wC">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -30,11 +30,11 @@
                         <viewControllerLayoutGuide type="bottom" id="ktA-8g-MQm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GgM-Wf-ZQz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPb-1I-aPs">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPb-1I-aPs">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="uis-Pu-AJt">
                                         <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="gEc-et-ExG">
@@ -120,14 +120,8 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="hPb-1I-aPs" firstAttribute="leading" secondItem="GgM-Wf-ZQz" secondAttribute="leading" id="9ke-2o-eOg"/>
-                            <constraint firstItem="hPb-1I-aPs" firstAttribute="top" secondItem="GgM-Wf-ZQz" secondAttribute="top" id="Qsq-7h-7Y4"/>
-                            <constraint firstAttribute="trailing" secondItem="hPb-1I-aPs" secondAttribute="trailing" id="lcY-Z4-8U8"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="wAk-YO-bQd"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="addressLabel" destination="oGZ-nf-8xb" id="zIM-2q-MDv"/>
                         <outlet property="firstNameLabel" destination="Grv-a1-RI3" id="cO8-Op-MdS"/>
@@ -140,7 +134,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeX-J2-o1V" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="dks-Zl-Qc6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2535" y="-180"/>
+            <point key="canvasLocation" x="2537" y="-190"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="tab-Dn-Xco">

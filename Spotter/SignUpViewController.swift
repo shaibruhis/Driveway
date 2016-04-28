@@ -52,7 +52,7 @@ class SignUpViewController : UIViewController{
                                 //catch error
                             }
                             else{
-                                let newUser = ["First Name": self.firstName.text!, "Last Name": self.lastName.text!, "Phone Number": self.phoneNumber.text!, "Email": self.emailAddress.text!, "SpotsOwned":""]
+                                let newUser = ["First Name": self.firstName.text!, "Last Name": self.lastName.text!, "Phone Number": self.phoneNumber.text!, "Email": self.emailAddress.text!]
                                 self.ref.childByAppendingPath("Users")
                                 .childByAppendingPath(authData.uid).setValue(newUser)
                                 self.performSegueWithIdentifier("Save and Back to Login Segue", sender: nil)

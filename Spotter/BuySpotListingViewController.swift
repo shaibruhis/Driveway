@@ -27,11 +27,20 @@ class BuySpotListingViewController : UIViewController{
     var firstName : String?
     var price : String?
     var phoneNumber : String?
+    var spotId : String?
     
 
     @IBAction func bookButton(sender: AnyObject) {
         
-        print(timeLabel.text!)
+        let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/Locations")
+        let spotRef = ref.childByAppendingPath(spotId)
+        // wait for update in database before showing map again
+        spotRef.updateChildValues(["Is Available": "False"]) { (error, firebase) in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+  
+        
+       // print(timeLabel.text!)
     }
     func timeChange(sender: UIDatePicker) {
         let formatter = NSDateFormatter()
@@ -42,7 +51,7 @@ class BuySpotListingViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/")
+        print(spotId)
         
         timePicker.datePickerMode = UIDatePickerMode.Time
         

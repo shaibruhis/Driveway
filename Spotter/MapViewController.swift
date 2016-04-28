@@ -18,6 +18,7 @@ var address : String = "null"
 var firstName : String = "null"
 var price : String = "null"
 var phoneNumber : String = "null"
+var spotId : String = "null"
 
 class MapViewController: BaseViewController {
 
@@ -49,6 +50,7 @@ class MapViewController: BaseViewController {
         secondVC.price = price
         secondVC.firstName = firstName
         secondVC.phoneNumber = phoneNumber
+        secondVC.spotId = spotId
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +59,11 @@ class MapViewController: BaseViewController {
         searchResultController.delegate = self
 
         
+//        loadMap()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         loadMap()
     }
     
@@ -208,22 +215,27 @@ class MapViewController: BaseViewController {
             drivewayList = self.convertJSONToDictionary(snapshot)!
 //            print("\(drivewayList)")
             for spot in drivewayList {
+                if(spot["Is Available"] as! String == "True"){
 //                let spotAddress = self.makeAddress(spot)
 //                print ("\(spotAddress)")
 //                self.placeMarker(spotAddress, mapView: self.mapView)
 //                print ("\(spot["Lat"]!, spot["Lon"]!)")
-                let spotLat = spot["Lat"] as! Double
-                let spotLon = spot["Lon"] as! Double
-                let spotAddress = spot["Address"] as! String
-                let spotFirstName = spot["First Name"] as! String
-                let spotPrice = spot["Price"] as! String
-                let spotPhoneNumber = spot["Phone Number"] as! String
-                let marker = GMSMarker(position:CLLocationCoordinate2DMake(spotLat, spotLon))
-                let markerInfo = MarkerInfo(inputAddress: spotAddress, inputFirstName: spotFirstName, inputLat: spotLat, inputLon: spotLon, inputPrice: spotPrice, inputPhone: spotPhoneNumber)
-                marker.userData = markerInfo
+                    print (spot)
+                    let spotLat = spot["Lat"] as! Double
+                    let spotLon = spot["Lon"] as! Double
+                    let spotAddress = spot["Address"] as! String
+                    let spotFirstName = spot["First Name"] as! String
+                    let spotPrice = spot["Price"] as! String
+                    let spotPhoneNumber = spot["Phone Number"] as! String
+                    let spotId = spot["SpotID"] as! String
+                    print (spotId)
+                    let marker = GMSMarker(position:CLLocationCoordinate2DMake(spotLat, spotLon))
+                    let markerInfo = MarkerInfo(inputAddress: spotAddress, inputFirstName: spotFirstName, inputLat: spotLat, inputLon: spotLon, inputPrice: spotPrice, inputPhone: spotPhoneNumber, inputSpotId: spotId)
+                    marker.userData = markerInfo
 
-                marker.map = self.mapView
+                    marker.map = self.mapView
                 
+                }
             }
             }, withCancelBlock: { error in
                 print(error.description)
@@ -286,6 +298,7 @@ extension MapViewController: GMSMapViewDelegate {
         firstName = (marker.userData as! MarkerInfo).ownerFirstName
         price = (marker.userData as! MarkerInfo).price
         phoneNumber = (marker.userData as! MarkerInfo).phone
+        spotId = (marker.userData as! MarkerInfo).spotId
         performSegueWithIdentifier("Spot Listing Segue", sender: self)
         
         //gabe note here
