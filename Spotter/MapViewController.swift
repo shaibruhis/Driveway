@@ -142,7 +142,7 @@ class MapViewController: BaseViewController {
     func loadMap() {
         mapView = GMSMapView(frame: CGRectZero)
         // Available map types: kGMSTypeNormal, kGMSTypeSatellite, kGMSTypeHybrid, kGMSTypeTerrain, kGMSTypeNone
-        mapView.mapType = kGMSTypeHybrid
+        mapView.mapType = kGMSTypeNormal
         
         if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
             
