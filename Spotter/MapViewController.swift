@@ -210,7 +210,8 @@ class MapViewController: BaseViewController {
         let ref = Firebase(url:"https://blinding-fire-154.firebaseio.com/Locations")
         // Attach a closure to read the data at our posts reference
         ref.observeEventType(.Value, withBlock: { snapshot in   // Use observeEventType if want to update in real time as database updates
-//                        print("\(snapshot.value)")
+            self.mapView.clear();
+            //                        print("\(snapshot.value)")
 //            let drivewayDict = self.convertJSONToDictionary(String(snapshot.value))
             drivewayList = self.convertJSONToDictionary(snapshot)!
 //            print("\(drivewayList)")
