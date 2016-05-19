@@ -13,7 +13,7 @@ class BackTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         // remove Reservations, History for MVP
-        menuArray = ["Profile", "Home", "Reservations", "Selling", "Payment", "History", "Settings"]
+        menuArray = ["Profile", "Home", "Selling", "Payment"]
     }
     
     override func tableView(tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
