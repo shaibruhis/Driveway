@@ -45,7 +45,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ke1-Wt-Umz">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Sign Up" id="aTU-R1-BXP">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="v3j-BG-oEH">
@@ -66,19 +66,19 @@
                         <constraints>
                             <constraint firstItem="gsu-6x-Ijy" firstAttribute="top" secondItem="uPf-OJ-nT7" secondAttribute="bottom" constant="16" id="2q6-rA-5sd"/>
                             <constraint firstItem="egI-SF-WGW" firstAttribute="centerX" secondItem="Ke1-Wt-Umz" secondAttribute="centerX" id="3bF-Yd-POI"/>
+                            <constraint firstItem="Ke1-Wt-Umz" firstAttribute="top" secondItem="N4l-MN-Ba7" secondAttribute="bottom" id="Ab0-nd-vPf"/>
                             <constraint firstItem="kaL-GC-pQu" firstAttribute="top" secondItem="gsu-6x-Ijy" secondAttribute="bottom" constant="18" id="ECQ-VG-sNu"/>
                             <constraint firstItem="lGf-GD-ib1" firstAttribute="top" secondItem="egI-SF-WGW" secondAttribute="bottom" constant="21" id="M3U-5F-h20"/>
                             <constraint firstItem="gsu-6x-Ijy" firstAttribute="leading" secondItem="kaL-GC-pQu" secondAttribute="leading" id="MjO-Ac-FMb"/>
                             <constraint firstItem="egI-SF-WGW" firstAttribute="leading" secondItem="lGf-GD-ib1" secondAttribute="leading" id="O5U-K5-nIT"/>
                             <constraint firstItem="gsu-6x-Ijy" firstAttribute="leading" secondItem="uPf-OJ-nT7" secondAttribute="leading" id="ON8-Cm-S1U"/>
                             <constraint firstItem="lGf-GD-ib1" firstAttribute="trailing" secondItem="uPf-OJ-nT7" secondAttribute="trailing" id="OXx-RH-mPZ"/>
+                            <constraint firstItem="egI-SF-WGW" firstAttribute="top" secondItem="N4l-MN-Ba7" secondAttribute="bottom" constant="70" id="VHs-ZP-np4"/>
                             <constraint firstAttribute="trailing" secondItem="Ke1-Wt-Umz" secondAttribute="trailing" id="XRR-NF-oP2"/>
                             <constraint firstItem="uPf-OJ-nT7" firstAttribute="trailing" secondItem="gsu-6x-Ijy" secondAttribute="trailing" id="Ykm-8l-8It"/>
                             <constraint firstItem="Ke1-Wt-Umz" firstAttribute="leading" secondItem="Xmo-KY-Tyi" secondAttribute="leading" id="aJP-rC-ola"/>
-                            <constraint firstItem="Ke1-Wt-Umz" firstAttribute="top" secondItem="Xmo-KY-Tyi" secondAttribute="top" id="bhh-Ig-sHt"/>
                             <constraint firstItem="uPf-OJ-nT7" firstAttribute="top" secondItem="lGf-GD-ib1" secondAttribute="bottom" constant="15" id="dln-Yn-4O4"/>
                             <constraint firstItem="lGf-GD-ib1" firstAttribute="leading" secondItem="uPf-OJ-nT7" secondAttribute="leading" id="ocK-7a-VY5"/>
-                            <constraint firstItem="egI-SF-WGW" firstAttribute="top" secondItem="Ke1-Wt-Umz" secondAttribute="bottom" constant="46" id="rlu-Oe-O9O"/>
                             <constraint firstItem="gsu-6x-Ijy" firstAttribute="trailing" secondItem="kaL-GC-pQu" secondAttribute="trailing" id="rxG-rd-6Kj"/>
                             <constraint firstItem="egI-SF-WGW" firstAttribute="trailing" secondItem="lGf-GD-ib1" secondAttribute="trailing" id="s7w-9k-ecR"/>
                         </constraints>
@@ -87,6 +87,7 @@
                         <outlet property="emailAddress" destination="uPf-OJ-nT7" id="0m8-Iu-ydO"/>
                         <outlet property="firstName" destination="egI-SF-WGW" id="OYh-le-IaC"/>
                         <outlet property="lastName" destination="lGf-GD-ib1" id="I8y-Sv-gbt"/>
+                        <outlet property="navBar" destination="Ke1-Wt-Umz" id="X61-yf-peD"/>
                         <outlet property="password" destination="gsu-6x-Ijy" id="gSx-Y9-rk8"/>
                         <outlet property="phoneNumber" destination="kaL-GC-pQu" id="ACq-AU-a6x"/>
                         <segue destination="eVx-Qd-27o" kind="unwind" identifier="Save and Back to Login Segue" unwindAction="returnToLoginPage:" id="oIV-hG-YfC"/>
