@@ -10,19 +10,25 @@ import Foundation
 import Firebase
 
 
-class SignUpViewController : UIViewController{
+class SignUpViewController : UIViewController, UINavigationBarDelegate, UIBarPositioningDelegate{
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var emailAddress: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
 
+    @IBOutlet weak var navBar: UINavigationBar!
     
     let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navBar.delegate = self
 
+    }
+    
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition  {
+        return UIBarPosition.TopAttached
     }
     
     
