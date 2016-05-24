@@ -26,7 +26,6 @@
 		83E89C1B1C66D3CF00E446FA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E89C1A1C66D3CF00E446FA /* SWRevealViewController.m */; };
 		83F836981CBF1562006858C8 /* BuySpotListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F836971CBF1562006858C8 /* BuySpotListingViewController.swift */; };
 		83F8369A1CC8376B006858C8 /* MarkerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F836991CC8376B006858C8 /* MarkerInfo.swift */; };
-		83FB0BE91C73338600CEE6EC /* ParkingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BE81C73338600CEE6EC /* ParkingType.swift */; };
 		83FB0BED1C7D719D00CEE6EC /* SellerEditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */; };
 		83FD768C1C7F0346004FAA5A /* SellerEditMenuSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD768B1C7F0346004FAA5A /* SellerEditMenuSingleton.swift */; };
 		83FEB1B61C81B6220086150F /* SellerEditPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FEB1B51C81B6220086150F /* SellerEditPrice.swift */; };
@@ -44,7 +43,6 @@
 		B3A46FCB1C6ECFB80061A185 /* ReservationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A46FCA1C6ECFB80061A185 /* ReservationsViewController.swift */; };
 		B3A46FCD1C6ECFD00061A185 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A46FCC1C6ECFD00061A185 /* PaymentViewController.swift */; };
 		B3A46FCF1C6ECFE30061A185 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A46FCE1C6ECFE30061A185 /* ProfileViewController.swift */; };
-		B3A46FD31C6ED3920061A185 /* SoldSpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A46FD21C6ED3920061A185 /* SoldSpotsViewController.swift */; };
 		B3A46FD51C6ED39D0061A185 /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A46FD41C6ED39D0061A185 /* ListingsViewController.swift */; };
 		B3E2B29E1C6C2C9900B3FA0C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E2B29D1C6C2C9900B3FA0C /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
@@ -95,7 +93,6 @@
 		83F836971CBF1562006858C8 /* BuySpotListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuySpotListingViewController.swift; sourceTree = "<group>"; };
 		83F836991CC8376B006858C8 /* MarkerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerInfo.swift; sourceTree = "<group>"; };
 		83FB0BE61C71BF6100CEE6EC /* SellerEditMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditMenu.swift; sourceTree = "<group>"; };
-		83FB0BE81C73338600CEE6EC /* ParkingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingType.swift; sourceTree = "<group>"; };
 		83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditAddressViewController.swift; sourceTree = "<group>"; };
 		83FD768B1C7F0346004FAA5A /* SellerEditMenuSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditMenuSingleton.swift; sourceTree = "<group>"; };
 		83FEB1B51C81B6220086150F /* SellerEditPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerEditPrice.swift; sourceTree = "<group>"; };
@@ -114,7 +111,6 @@
 		B3A46FCA1C6ECFB80061A185 /* ReservationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationsViewController.swift; sourceTree = "<group>"; };
 		B3A46FCC1C6ECFD00061A185 /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		B3A46FCE1C6ECFE30061A185 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		B3A46FD21C6ED3920061A185 /* SoldSpotsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoldSpotsViewController.swift; sourceTree = "<group>"; };
 		B3A46FD41C6ED39D0061A185 /* ListingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
 		B3E2B29D1C6C2C9900B3FA0C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -230,9 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				B3A46FD41C6ED39D0061A185 /* ListingsViewController.swift */,
-				B3A46FD21C6ED3920061A185 /* SoldSpotsViewController.swift */,
 				83FB0BE61C71BF6100CEE6EC /* SellerEditMenu.swift */,
-				83FB0BE81C73338600CEE6EC /* ParkingType.swift */,
 				83FB0BEC1C7D719D00CEE6EC /* SellerEditAddressViewController.swift */,
 				83FD768B1C7F0346004FAA5A /* SellerEditMenuSingleton.swift */,
 				83FEB1B51C81B6220086150F /* SellerEditPrice.swift */,
@@ -512,13 +506,11 @@
 				83E89BEA1C66D29A00E446FA /* AppDelegate.swift in Sources */,
 				B3E2B29E1C6C2C9900B3FA0C /* BaseViewController.swift in Sources */,
 				B38F46881CBF2CCB00F5D4CC /* Listing.swift in Sources */,
-				83FB0BE91C73338600CEE6EC /* ParkingType.swift in Sources */,
 				0DD830ED1C86A490001D0673 /* LoginViewController.swift in Sources */,
 				0DD830F21C86BF71001D0673 /* SellerEditMenu.swift in Sources */,
 				0D2847811C7429040014E10D /* SignUpViewController.swift in Sources */,
 				B3A46FCF1C6ECFE30061A185 /* ProfileViewController.swift in Sources */,
 				B3A46FCD1C6ECFD00061A185 /* PaymentViewController.swift in Sources */,
-				B3A46FD31C6ED3920061A185 /* SoldSpotsViewController.swift in Sources */,
 				83E89C1B1C66D3CF00E446FA /* SWRevealViewController.m in Sources */,
 				B3A46FCB1C6ECFB80061A185 /* ReservationsViewController.swift in Sources */,
 				83FEB1B61C81B6220086150F /* SellerEditPrice.swift in Sources */,
