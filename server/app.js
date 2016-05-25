@@ -118,6 +118,7 @@ var checkFirebase = function() {
   snapshot.child("Locations").forEach(function(childSnapshot) {
       var startTime = childSnapshot.child("Start Time").val();
       var endTime = childSnapshot.child("End Time").val();
+      var isRented = childSnapshot.child("Rented Until");
       var currentTime = getTimeStr();
    
       if(startTime == currentTime) {
@@ -129,6 +130,13 @@ var checkFirebase = function() {
         console.log("inside end time");
         childSnapshot.child("Is Available").ref().set('False');
       }
+      
+      if(isRented == currentTime) {
+        console.log("inside isRented");
+        childSnapshot.child("Is Available").ref().set('True');
+        childSnapshot.child("Rented Until").ref().set('-1');
+      }
+
     });
   });     
 };
