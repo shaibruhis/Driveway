@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xbo-Fr-smF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xbo-Fr-smF">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -138,11 +138,8 @@
                     <connections>
                         <segue destination="hbE-v1-xhd" kind="custom" identifier="Selling Segue" customClass="SWRevealViewControllerSeguePushController" id="ULI-7T-uik"/>
                         <segue destination="z9g-Lh-YnP" kind="custom" identifier="Home Segue" customClass="SWRevealViewControllerSeguePushController" id="VPx-db-oSC"/>
-                        <segue destination="ihn-HJ-HOg" kind="custom" identifier="Settings Segue" customClass="SWRevealViewControllerSeguePushController" id="yZH-tz-jWx"/>
                         <segue destination="feB-Ue-xqX" kind="custom" identifier="Profile Segue" customClass="SWRevealViewControllerSeguePushController" id="jYj-Pa-yYF"/>
-                        <segue destination="jq3-Cr-PhR" kind="custom" identifier="Reservations Segue" customClass="SWRevealViewControllerSeguePushController" id="gyc-s9-q1I"/>
                         <segue destination="oLl-0F-nQT" kind="custom" identifier="Payment Segue" customClass="SWRevealViewControllerSeguePushController" id="tGZ-Fl-Fp3"/>
-                        <segue destination="anS-Xc-hig" kind="custom" identifier="History Segue" customClass="SWRevealViewControllerSeguePushController" id="dJP-oe-S3b"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnK-of-d25" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -164,14 +161,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dU8-Xg-Nef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1143" y="512"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="VMS-e9-Xjg">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Settings" id="ihn-HJ-HOg" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mUz-g5-JPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1148.5" y="686"/>
         </scene>
         <!--SignUp-->
         <scene sceneID="OD5-eA-gN6">
@@ -230,14 +219,6 @@
             </objects>
             <point key="canvasLocation" x="1142" y="335"/>
         </scene>
-        <!--Reservations-->
-        <scene sceneID="iMF-bb-2Ml">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Reservations" id="jq3-Cr-PhR" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lpu-LP-rfr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1161.5" y="455"/>
-        </scene>
         <!--Payment-->
         <scene sceneID="IWs-fD-IXZ">
             <objects>
@@ -245,14 +226,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggB-5b-WHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1148.5" y="573"/>
-        </scene>
-        <!--History-->
-        <scene sceneID="gDz-pp-sIv">
-            <objects>
-                <viewControllerPlaceholder storyboardName="History" id="anS-Xc-hig" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Mt-SP-AeT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1145.5" y="627"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
