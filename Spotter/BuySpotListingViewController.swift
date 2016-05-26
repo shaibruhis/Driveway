@@ -16,7 +16,6 @@ class BuySpotListingViewController : UIViewController, UINavigationBarDelegate, 
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timePicker: UIDatePicker!
 
     @IBOutlet weak var navBar: UINavigationBar!
@@ -47,11 +46,11 @@ class BuySpotListingViewController : UIViewController, UINavigationBarDelegate, 
         
        // print(timeLabel.text!)
     }
-    func timeChange(sender: UIDatePicker) {
-        let formatter = NSDateFormatter()
-        formatter.timeStyle = .ShortStyle
-        timeLabel.text = formatter.stringFromDate(sender.date)
-    }
+//    func timeChange(sender: UIDatePicker) {
+//        let formatter = NSDateFormatter()
+//        formatter.timeStyle = .ShortStyle
+//        timeLabel.text = formatter.stringFromDate(sender.date)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +69,7 @@ class BuySpotListingViewController : UIViewController, UINavigationBarDelegate, 
         let secondFour = phoneNumber!.substringFromIndex(endIndex)
         phoneLabel.text = "(\(areacode)) \(firstThree)-\(secondFour)"
         
-        timePicker.addTarget(self, action: Selector("timeChange:"), forControlEvents: UIControlEvents.ValueChanged)
+//        timePicker.addTarget(self, action: Selector("timeChange:"), forControlEvents: UIControlEvents.ValueChanged)
 
     }
     
