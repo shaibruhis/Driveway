@@ -20,15 +20,14 @@ class ListingsViewController: BaseViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         listingsTableView.delegate = self;
         listingsTableView.dataSource = self;
-        getUsersListingsIDs()
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(animated: Bool) {
+        getUsersListingsIDs()
     }
+    
     
     @IBAction func returnToListingsViewController(segue:UIStoryboardSegue){
         // Do nothing as we transition back to here when user cancels the "add new listing"
@@ -48,28 +47,14 @@ class ListingsViewController: BaseViewController, UITableViewDataSource, UITable
         }
         return tempItems
     }
-    
-//    func addAddressToListing(listing: Listing)
-//    {
-//        let lat = CLLocationDegrees(listing.lat)!
-//        let lon = CLLocationDegrees(listing.lon)!
-//        let coords = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-//        
-//        let geocoder = GMSGeocoder()
-//        geocoder.reverseGeocodeCoordinate(coords, completionHandler: { (response: GMSReverseGeocodeResponse!, error: NSError!) in
-//            print(response.firstResult().lines[0],response.firstResult().lines[1])
-//            listing.address = response.firstResult().lines[0] as! String
-//            self.usersSpots.append(listing)
-//            self.listingsTableView.reloadData()
-//        })
-//    }
+
     
     func getInfoForLisingID(listingID: String)
     {
         let ref = Firebase(url:"https://blinding-fire-154.firebaseio.com/Locations")
         let listingRef = ref.childByAppendingPath(listingID)
         // Attach a closure to read the data at our posts reference
-        listingRef.observeEventType(.Value, withBlock: { snapshot in   // Use observeEventType if want to update in real time as database updates
+        listingRef.observeSingleEventOfType(.Value, withBlock: { snapshot in   // Use observeEventType if want to update in real time as database updates
             if snapshot.exists() {
                 let tempdict = (snapshot.value as! NSDictionary)
                 let listing = Listing(listingID: listingID, lat: "\(tempdict["Lat"] as! Float)", lon: "\(tempdict["Lon"] as! Float)", address: "\(tempdict["Address"]!)")
@@ -88,10 +73,8 @@ class ListingsViewController: BaseViewController, UITableViewDataSource, UITable
         let ref = Firebase(url:"https://blinding-fire-154.firebaseio.com/Users")
         let usersRef = ref.childByAppendingPath(ref.authData.uid)
         let usersSpotsRef = usersRef.childByAppendingPath("SpotsOwned")
-//        print(usersSpotsRef)
         // Attach a closure to read the data at our posts reference
-        usersSpotsRef.observeEventType(.Value, withBlock: { snapshot in   // Use observeEventType if want to update in real time as database updates
-            print(snapshot.value)
+        usersSpotsRef.observeSingleEventOfType(.Value, withBlock: { snapshot in   // Use observeEventType if want to update in real time as database updates
             self.usersSpots.removeAll()
             if snapshot.exists() {
                 let tempdict = (snapshot.value as! NSDictionary)
@@ -114,11 +97,6 @@ class ListingsViewController: BaseViewController, UITableViewDataSource, UITable
         cell.textLabel?.text = usersSpots[indexPath.row].address
         return cell
     }
-    
-//    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-//        return true
-//    }
-    
 
 
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
