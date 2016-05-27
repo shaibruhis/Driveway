@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class LoginViewController : UIViewController{
+class LoginViewController : UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -17,8 +17,8 @@ class LoginViewController : UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Create a reference to a Firebase location
-        
+        username.delegate = self
+        password.delegate = self
     }
     
 
@@ -27,10 +27,7 @@ class LoginViewController : UIViewController{
         
     }
 
-
-    @IBAction func loginButton(sender: AnyObject) {
-
-        
+    func login() {
         let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/")
         // Link to Firebase
         
@@ -50,22 +47,42 @@ class LoginViewController : UIViewController{
             } else {
                 // user is logged in, check authData for data
                 ref.childByAppendingPath("Users")
-                .childByAppendingPath(authData.uid)
-                .observeEventType(.Value, withBlock: { snapshot in
-                    print(snapshot.value)
-                })
+                    .childByAppendingPath(authData.uid)
+                    .observeEventType(.Value, withBlock: { snapshot in
+                        print(snapshot.value)
+                    })
                 self.performSegueWithIdentifier("Login To Main Segue", sender: nil)
             }
-            
-        
         }
-        
+    }
+
+    @IBAction func loginButton(sender: AnyObject) {
+        login()
     }
     
     @IBAction func returnToLoginPage(Segue: UIStoryboardSegue){
 
     }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if textField == password {
+            textField.returnKeyType = .Go
+        }
+        else if textField == username {
+            textField.returnKeyType = .Next
+        }
+    }
 
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == self.username {
+            self.password.becomeFirstResponder()
+        }
+        else if textField == self.password {
+            textField.resignFirstResponder()
+            login()
+        }
+        return true
+    }
     
     
 }
