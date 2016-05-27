@@ -10,15 +10,15 @@ import Foundation
 import Firebase
 
 
-class BuySpotListingViewController : UIViewController{
+class BuySpotListingViewController : UIViewController, UINavigationBarDelegate, UIBarPositioningDelegate{
     
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timePicker: UIDatePicker!
 
+    @IBOutlet weak var navBar: UINavigationBar!
     
     
     var lat : Double?
@@ -30,6 +30,10 @@ class BuySpotListingViewController : UIViewController{
     var spotId : String?
     
 
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition  {
+        return UIBarPosition.TopAttached
+    }
+    
     @IBAction func bookButton(sender: AnyObject) {
         
         let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/Locations")
@@ -42,25 +46,30 @@ class BuySpotListingViewController : UIViewController{
         
        // print(timeLabel.text!)
     }
-    func timeChange(sender: UIDatePicker) {
-        let formatter = NSDateFormatter()
-        formatter.timeStyle = .ShortStyle
-        timeLabel.text = formatter.stringFromDate(sender.date)
-    }
+//    func timeChange(sender: UIDatePicker) {
+//        let formatter = NSDateFormatter()
+//        formatter.timeStyle = .ShortStyle
+//        timeLabel.text = formatter.stringFromDate(sender.date)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(spotId)
+        navBar.delegate = self
         
         timePicker.datePickerMode = UIDatePickerMode.Time
         
         firstNameLabel.text = firstName
         addressLabel.text = address
-        priceLabel.text = price
-        phoneLabel.text = phoneNumber
+        priceLabel.text = "$\(price!)"
         
-        timePicker.addTarget(self, action: Selector("timeChange:"), forControlEvents: UIControlEvents.ValueChanged)
+        let startIndex = phoneNumber!.startIndex.advancedBy(3)
+        let endIndex = phoneNumber!.endIndex.advancedBy(-4)
+        let areacode = phoneNumber!.substringToIndex(startIndex)
+        let firstThree = phoneNumber!.substringWithRange(startIndex...endIndex)
+        let secondFour = phoneNumber!.substringFromIndex(endIndex)
+        phoneLabel.text = "(\(areacode)) \(firstThree)-\(secondFour)"
+        
+//        timePicker.addTarget(self, action: Selector("timeChange:"), forControlEvents: UIControlEvents.ValueChanged)
 
     }
     
