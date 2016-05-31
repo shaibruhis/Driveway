@@ -25,7 +25,6 @@ class ProfileViewController: BaseViewController {
             self.firstName.text = snapshot.childSnapshotForPath(self.ref.authData.uid).value["First Name"] as? String
             self.lastName.text = snapshot.childSnapshotForPath(self.ref.authData.uid).value["Last Name"] as? String
             self.phoneNumber.text = snapshot.childSnapshotForPath(self.ref.authData.uid).value["Phone Number"] as? String
-            
         })
         // Do any additional setup after loading the view.
     }
@@ -34,9 +33,8 @@ class ProfileViewController: BaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func updateButton(sender: AnyObject) {
-        
+    
+    func update() {
         //Letting the user type in the text box to update their name
         let userRef = self.ref.childByAppendingPath(self.ref.authData.uid)
         let newFirstName = ["First Name": self.firstName.text!]
@@ -58,6 +56,15 @@ class ProfileViewController: BaseViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
 
+    @IBAction func updateButton(sender: AnyObject) {
+        update()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        update()
+        return true
+    }
     
     /*
     // MARK: - Navigation
