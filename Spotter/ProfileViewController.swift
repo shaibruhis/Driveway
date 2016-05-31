@@ -35,10 +35,23 @@ class ProfileViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func convertJSONToDictionary(snapshot: FDataSnapshot) -> [NSDictionary]? {
+
+        var tempItems = [NSDictionary]()
+        for item in snapshot.children {
+            let child = item as! FDataSnapshot
+            let dict = child.value as! NSDictionary
+            tempItems.append(dict)
+        }
+        return tempItems
+    }
+    
+    
     @IBAction func updateButton(sender: AnyObject) {
         
         //Letting the user type in the text box to update their name
         let userRef = self.ref.childByAppendingPath(self.ref.authData.uid)
+        let locationRef = Firebase(url: "https://blinding-fire-154.firebaseio.com/Locations")
         let newFirstName = ["First Name": self.firstName.text!]
         let newLastName = ["Last Name": self.lastName.text!]
         let newPhoneNumber = ["Phone Number": self.phoneNumber.text!]
@@ -47,6 +60,24 @@ class ProfileViewController: BaseViewController {
         userRef.updateChildValues(newFirstName)
         userRef.updateChildValues(newLastName)
         userRef.updateChildValues(newPhoneNumber)
+        
+        
+        var locationList = [NSDictionary]()
+
+        
+        locationRef.observeEventType(.Value, withBlock: { snapshot in
+            
+            locationList = self.convertJSONToDictionary(snapshot)!
+            for location in locationList {
+                if(self.ref.authData.uid == location["Owner"]! as! String){
+                    locationRef.childByAppendingPath(location["SpotID"] as! String).updateChildValues(newFirstName)
+                    locationRef.childByAppendingPath(location["SpotID"] as! String).updateChildValues(newPhoneNumber)
+                }
+            }
+            
+        })//snapshot
+
+        
         
         //Display box to show the user that it updated
         let title = "Profile Updated"
