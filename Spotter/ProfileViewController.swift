@@ -25,7 +25,6 @@ class ProfileViewController: BaseViewController {
             self.firstName.text = snapshot.childSnapshotForPath(self.ref.authData.uid).value["First Name"] as? String
             self.lastName.text = snapshot.childSnapshotForPath(self.ref.authData.uid).value["Last Name"] as? String
             self.phoneNumber.text = snapshot.childSnapshotForPath(self.ref.authData.uid).value["Phone Number"] as? String
-            
         })
         // Do any additional setup after loading the view.
     }
@@ -49,6 +48,8 @@ class ProfileViewController: BaseViewController {
     
     @IBAction func updateButton(sender: AnyObject) {
         
+    
+    func update() {
         //Letting the user type in the text box to update their name
         let userRef = self.ref.childByAppendingPath(self.ref.authData.uid)
         let locationRef = Firebase(url: "https://blinding-fire-154.firebaseio.com/Locations")
@@ -90,6 +91,12 @@ class ProfileViewController: BaseViewController {
     }
 
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        update()
+        return true
+    }
+    update()
     /*
     // MARK: - Navigation
 
@@ -100,4 +107,5 @@ class ProfileViewController: BaseViewController {
     }
     */
 
+}
 }

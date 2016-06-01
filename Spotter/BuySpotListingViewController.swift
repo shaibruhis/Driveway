@@ -42,7 +42,7 @@ class BuySpotListingViewController : UIViewController, UINavigationBarDelegate, 
         let spotRef = ref.childByAppendingPath(spotId)
 
         spotRef.updateChildValues(["Is Available": "False", "Rented Until": timeFormatter.stringFromDate(timePicker.date)]) { (error, firebase) in
-            self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
         }
   
         
