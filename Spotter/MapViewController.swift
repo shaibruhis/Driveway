@@ -220,7 +220,6 @@ class MapViewController: BaseViewController {
 //                let spotAddress = self.makeAddress(spot)
 //                print ("\(spotAddress)")
 //                self.placeMarker(spotAddress, mapView: self.mapView)
-//                print ("\(spot["Lat"]!, spot["Lon"]!)")
                     print (spot)
                     let spotLat = spot["Lat"] as! Double
                     let spotLon = spot["Lon"] as! Double
@@ -229,7 +228,6 @@ class MapViewController: BaseViewController {
                     let spotPrice = spot["Price"] as! String
                     let spotPhoneNumber = spot["Phone Number"] as! String
                     let spotId = spot["SpotID"] as! String
-                    print (spotId)
                     let marker = GMSMarker(position:CLLocationCoordinate2DMake(spotLat, spotLon))
                     let markerInfo = MarkerInfo(inputAddress: spotAddress, inputFirstName: spotFirstName, inputLat: spotLat, inputLon: spotLon, inputPrice: spotPrice, inputPhone: spotPhoneNumber, inputSpotId: spotId)
                     marker.userData = markerInfo
