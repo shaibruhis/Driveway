@@ -78,7 +78,8 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
         let endHour = endComponents.hour
         let endMinute = endComponents.minute + 60 * endHour
         let nowHour = nowComponents.hour
-        let nowMinute = nowComponents.hour + 60 * nowHour
+        let nowMinute = nowComponents.minute + 60 * nowHour
+        
         
         if(startMinute < endMinute){
             if(nowMinute >= startMinute && nowMinute < endMinute){
