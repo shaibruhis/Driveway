@@ -68,7 +68,7 @@ class MapViewController: BaseViewController {
     }
     
     @IBAction func returnToMapView(segue:UIStoryboardSegue){
-        // Do nothing as we transition back to here when user cancels the "add new listing"
+    
     }
 
 
