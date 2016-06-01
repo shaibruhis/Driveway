@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ProfileViewController: BaseViewController {
+class ProfileViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
@@ -19,6 +19,10 @@ class ProfileViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        firstName.delegate = self
+        lastName.delegate = self
+        // ^^^^^^^^^^^ LAST LINE OF CODE WRITTEN AS A UCD STUDENT. BYE FELICIA
         
         ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
             //Setting the text boxes to display their respective attributes (First, Last, and Phone Number
@@ -47,7 +51,9 @@ class ProfileViewController: BaseViewController {
     
     
     @IBAction func updateButton(sender: AnyObject) {
-        
+        update()
+    }
+    
     
     func update() {
         //Letting the user type in the text box to update their name
@@ -89,23 +95,11 @@ class ProfileViewController: BaseViewController {
         alert.addAction(okayButton)
         self.presentViewController(alert, animated: true, completion: nil)
     }
-
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         update()
         return true
     }
-    update()
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
 }
