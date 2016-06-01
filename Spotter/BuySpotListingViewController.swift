@@ -34,16 +34,20 @@ class BuySpotListingViewController : UIViewController, UINavigationBarDelegate, 
     var braintreeClient: BTAPIClient?
     var BTnavigationController: UINavigationController?
 
+    let timeFormatter = NSDateFormatter()
+    
     func positionForBar(bar: UIBarPositioning) -> UIBarPosition  {
         return UIBarPosition.TopAttached
     }
     
     @IBAction func bookButton(sender: AnyObject) {
         
+        
         let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/Locations")
         let spotRef = ref.childByAppendingPath(spotId)
-        // wait for update in database before showing map again
-        spotRef.updateChildValues(["Is Available": "False"]) { (error, firebase) in
+
+
+        spotRef.updateChildValues(["Is Available": "False", "Rented Until": timeFormatter.stringFromDate(timePicker.date)]) { (error, firebase) in
             self.presentViewController(self.BTnavigationController!, animated: true, completion: nil)
         }
     }
@@ -51,6 +55,7 @@ class BuySpotListingViewController : UIViewController, UINavigationBarDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        timeFormatter.timeStyle = .ShortStyle
         navBar.delegate = self
         
         timePicker.datePickerMode = UIDatePickerMode.Time

@@ -9,7 +9,6 @@
 import Foundation
 import Firebase
 
-
 class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelegate{
     var menuArray = [String]()
     @IBOutlet var saveListingButton: UIBarButtonItem!
@@ -57,6 +56,70 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    func getCurrentTimeAndCheck() -> String{
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        
+        
+        let startTime = SellerEditMenuSingleton.sharedInstance.startTime!
+        let endTime = SellerEditMenuSingleton.sharedInstance.endTime!
+        
+        let spotTimeFormatter = NSDateFormatter()
+        spotTimeFormatter.dateFormat = "h:mm a"
+        let startTimeDate = spotTimeFormatter.dateFromString(startTime)
+        let endTimeDate = spotTimeFormatter.dateFromString(endTime)
+        
+        let startComponents = calendar.components([.Hour, .Minute], fromDate: startTimeDate!)
+        let endComponents = calendar.components([.Hour, .Minute], fromDate: endTimeDate!)
+        let nowComponents = calendar.components([.Hour, .Minute], fromDate: date)
+        
+        let startHour = startComponents.hour
+        let startMinute = startComponents.minute
+        let endHour = endComponents.hour
+        let endMinute = endComponents.minute
+        let nowHour = nowComponents.hour
+        let nowMinute = nowComponents.hour
+        
+
+        if((startHour < endHour) || (startHour == endHour && startMinute < endMinute)){
+            if(nowHour > startHour && nowHour < endHour){
+                return "True"
+            }
+            else if(nowHour ==  startHour && nowMinute > startMinute){
+                return "True"
+            }// ex: start: 12:05 now: 12:06
+            else if(nowHour == endHour && nowMinute < endMinute){
+                return "True"
+            }// ex: end: 12:07 now: 12:06
+            else{
+                return "False"
+            }
+        }//if the end time doesn't go into the next day
+        else if(startHour == endHour && startMinute == endMinute){
+            return "True"
+        }//no end time
+        else{
+            if(nowHour > startHour && nowHour > endHour){
+                return "True"
+            }
+            else if(nowHour < startHour && nowHour < endHour){
+                return "True"
+            }
+            else if(nowHour ==  startHour && nowMinute > startMinute){
+                return "True"
+            }
+            else if(nowHour == endHour && nowMinute < endMinute){
+                return "True"
+            }
+            else{
+                return "False"
+            }
+        }// else the end time goes into the next day
+        // ex: start: 12:00AM end: 10:00AM
+        
+        
+    } //gets current time and checks if its past starttime and before endtime
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if sender === cancelListingButton{
             SellerEditMenuSingleton.sharedInstance.resetValues()
@@ -72,10 +135,13 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
             
             userref.observeSingleEventOfType(.Value, withBlock: { snapshot in
                 //Setting the text boxes to display their respective attributes (First, Last, and Phone Number
+                
+                let isAvailable = self.getCurrentTimeAndCheck()
+                
                 SellerEditMenuSingleton.sharedInstance.firstName = snapshot.value["First Name"] as? String
                 SellerEditMenuSingleton.sharedInstance.lastName = snapshot.value["Last Name"] as? String
                 SellerEditMenuSingleton.sharedInstance.phoneNumber = snapshot.value["Phone Number"] as? String
-                let newLocation = ["Lat": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.latitude, "Lon": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.longitude, "Price": SellerEditMenuSingleton.sharedInstance.price!, "Owner": ref.authData.uid, "First Name" :  SellerEditMenuSingleton.sharedInstance.firstName!, "Phone Number" :  SellerEditMenuSingleton.sharedInstance.phoneNumber!, "Address":SellerEditMenuSingleton.sharedInstance.address!, "Start Time":SellerEditMenuSingleton.sharedInstance.startTime!, "End Time":SellerEditMenuSingleton.sharedInstance.endTime!, "Is Available":"True", "Rented Until":"-1", "SpotID":newLocationRef.key!]
+                let newLocation = ["Lat": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.latitude, "Lon": SellerEditMenuSingleton.sharedInstance.parkingCoordinates!.longitude, "Price": SellerEditMenuSingleton.sharedInstance.price!, "Owner": ref.authData.uid, "First Name" :  SellerEditMenuSingleton.sharedInstance.firstName!, "Phone Number" :  SellerEditMenuSingleton.sharedInstance.phoneNumber!, "Address":SellerEditMenuSingleton.sharedInstance.address!, "Start Time":SellerEditMenuSingleton.sharedInstance.startTime!, "End Time":SellerEditMenuSingleton.sharedInstance.endTime!, "Is Available": isAvailable, "Rented Until":"-1", "SpotID":newLocationRef.key!]
                 //Get the data from the Text Box and putting them into Firebase
                 
                 
