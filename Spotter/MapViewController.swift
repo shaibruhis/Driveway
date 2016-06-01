@@ -58,8 +58,6 @@ class MapViewController: BaseViewController {
         locationManager.requestWhenInUseAuthorization()
         searchResultController.delegate = self
 
-        
-//        loadMap()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -118,15 +116,6 @@ class MapViewController: BaseViewController {
         }
     }
     
-    func reverseGeocodeCoordinates(coordinate: CLLocationCoordinate2D) {
-        let geocoder = GMSGeocoder()
-        geocoder.reverseGeocodeCoordinate(coordinate) { response, error in
-            if let address = response?.firstResult() {
-//                print("\(address)")
-            }
-        }
-    }
-    
     // If you are creating several markers with the same image, use the same instance of UIImage for each of the markers. This helps improve the performance of your application when displaying many markers.
     // This image may have multiple frames. Additionally, the alignmentRectInsets property is respected, which is useful if a marker has a shadow or other unusable region.
     func placeMarker(spotAddress: String, mapView: GMSMapView) {
@@ -153,36 +142,14 @@ class MapViewController: BaseViewController {
             mapView.settings.myLocationButton = true
         }
         
-        // Add marker for user's current location
-//        let position = CLLocationCoordinate2DMake(-31.868, 151.208) // position will be current location coordinates
-//        let usersCurrentLocationMarker = GMSMarker(position: position)
-//        usersCurrentLocationMarker.title = "Hello World"    // user's current location pin should have no title?
-////        usersCurrentLocationMarker.icon = UIImage(named: "house")
-//        usersCurrentLocationMarker.opacity = 0.9
-//        usersCurrentLocationMarker.snippet = "I am currently Selected!"
-//        usersCurrentLocationMarker.map = mapView
-        
         self.view = mapView
         self.mapView.delegate = self
         populateDriveways()
     }
     
 
-    // THIS FUNCTION SHOULDN'T BE IN THIS VC
     func convertJSONToDictionary(snapshot: FDataSnapshot) -> [NSDictionary]? {
-//    func convertJSONToDictionary(text: String) -> [String:AnyObject]? {
-        // THIS IS THE PROPER WAY TO DO THIS I BELIEVE
-//        if let data = text.dataUsingEncoding(NSUTF8StringEncoding) {
-//            do {
-//                let json = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as! [String:AnyObject]
-//                return json
-//            } catch {
-//                print("Something went wrong")
-//            }
-//        }
-//        return nil
-        
-        // BUT THIS CURRENTLY WORKS...
+
         var tempItems = [NSDictionary]()
         for item in snapshot.children {
             let child = item as! FDataSnapshot
@@ -211,15 +178,10 @@ class MapViewController: BaseViewController {
         // Attach a closure to read the data at our posts reference
         ref.observeEventType(.Value, withBlock: { snapshot in   // Use observeEventType if want to update in real time as database updates
             self.mapView.clear();
-            //                        print("\(snapshot.value)")
-//            let drivewayDict = self.convertJSONToDictionary(String(snapshot.value))
             drivewayList = self.convertJSONToDictionary(snapshot)!
-//            print("\(drivewayList)")
             for spot in drivewayList {
                 if(spot["Is Available"] as! String == "True"){
-//                let spotAddress = self.makeAddress(spot)
-//                print ("\(spotAddress)")
-//                self.placeMarker(spotAddress, mapView: self.mapView)
+
                     print (spot)
                     let spotLat = spot["Lat"] as! Double
                     let spotLon = spot["Lon"] as! Double
@@ -239,36 +201,12 @@ class MapViewController: BaseViewController {
             }, withCancelBlock: { error in
                 print(error.description)
         })
-        // Use observeSingleEventOfType if we only want to populate once
-//        ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
-//            print(snapshot.value)
-//        })
     }
     
     
-    @IBAction func showSearchBarAction(sender: AnyObject) {
-        let searchController = UISearchController(searchResultsController: searchResultController)
-        searchController.searchBar.delegate = self
-        self.presentViewController(searchController, animated: true, completion: nil)
-    }
+
     
-    
-//    func searchBar(searchBar: UISearchBar, textDidChange searchText: String){
-//        
-//        let placesClient = GMSPlacesClient()
-//        placesClient.autocompleteQuery(searchText, bounds: nil, filter: nil) { (results, error:NSError?) -> Void in
-//            self.resultsArray.removeAll()
-//            if results == nil {
-//                return
-//            }
-//            for result in results!{
-//                if let result = result as? GMSAutocompletePrediction{
-//                    self.resultsArray.append(result.attributedFullText.string)
-//                }
-//            }
-//            self.searchResultController.reloadDataWithArray(self.resultsArray)
-//        }
-//    }
+
 }
 
 
@@ -289,7 +227,6 @@ extension MapViewController: CLLocationManagerDelegate {
 // MARK: - GMSMapViewDelegate
 extension MapViewController: GMSMapViewDelegate {
     func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
-       // print( (marker.userData as! MarkerInfo).ownerFirstName )
 
         lat = (marker.userData as! MarkerInfo).lat!
         lon = (marker.userData as! MarkerInfo).lon!
@@ -299,36 +236,7 @@ extension MapViewController: GMSMapViewDelegate {
         phoneNumber = (marker.userData as! MarkerInfo).phone
         spotId = (marker.userData as! MarkerInfo).spotId
         performSegueWithIdentifier("Spot Listing Segue", sender: self)
-        
-        //gabe note here
         return true
-    }
-    
-    func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
-        reverseGeocodeCoordinates(position.target)
-    }		
-
-}
-
-
-
-// MARK: - UISeachBarDelegate
-extension MapViewController: UISearchBarDelegate {
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String){
-            
-        let placesClient = GMSPlacesClient()
-        placesClient.autocompleteQuery(searchText, bounds: nil, filter: nil) { (results, error:NSError?) -> Void in
-            self.resultsArray.removeAll()
-            if results == nil {
-                return
-            }
-            for result in results!{
-                if let result = result as? GMSAutocompletePrediction{
-                    self.resultsArray.append(result.attributedFullText.string)
-                }
-            }
-            self.searchResultController.reloadDataWithArray(self.resultsArray)
-        }
     }
 }
 
@@ -341,9 +249,6 @@ extension MapViewController: LocateOnTheMap {
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             let position = CLLocationCoordinate2DMake(lat, lon)
             let marker = GMSMarker(position: position)
-
-            //            let camera  = GMSCameraPosition.cameraWithLatitude(lat, longitude: lon, zoom: 10)
-            //            self.mapView.camera = camera
 
             marker.title = title
             marker.map = self.mapView
