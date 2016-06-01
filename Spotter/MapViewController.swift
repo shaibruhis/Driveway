@@ -122,7 +122,6 @@ class MapViewController: BaseViewController {
         geocodeAddress(spotAddress, withCompletionHandler: nil)
         let coordinates = CLLocationCoordinate2DMake(fetchedAddressLatitude, fetchedAddressLongitude)
         let marker = GMSMarker(position: coordinates)
-//        marker.setInfo()
         marker.map = mapView
         
     }
@@ -212,6 +211,16 @@ class MapViewController: BaseViewController {
 
 // MARK: - CLLocationManagerDelegate
 extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .AuthorizedWhenInUse {
+            
+            locationManager.startUpdatingLocation()
+            
+            mapView.myLocationEnabled = true
+            mapView.settings.myLocationButton = true
+        }
+    }
+    
     // executed when location manager receives new location data
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
