@@ -19,9 +19,11 @@ class MarkerInfo {
     var phone : String = "null"
     var address : String = "null"
     var spotId : String = "null"
+    var startTime : String = "null"
+    var endTime : String = "null"
     
     
-    init(inputAddress: String, inputFirstName: String, inputLat: Double, inputLon: Double, inputPrice: String, inputPhone: String, inputSpotId : String){
+    init(inputAddress: String, inputFirstName: String, inputLat: Double, inputLon: Double, inputPrice: String, inputPhone: String, inputSpotId : String, inputStartTime : String, inputEndTime: String){
         
         ownerFirstName = inputFirstName
         address = inputAddress
@@ -30,6 +32,8 @@ class MarkerInfo {
         price = inputPrice
         phone = inputPhone
         spotId = inputSpotId
+        startTime = inputStartTime
+        endTime = inputEndTime
     }
     
     
