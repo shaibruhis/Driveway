@@ -74,54 +74,75 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
         let nowComponents = calendar.components([.Hour, .Minute], fromDate: date)
         
         let startHour = startComponents.hour
-        let startMinute = startComponents.minute
+        let startMinute = startComponents.minute + 60 * startHour
         let endHour = endComponents.hour
-        let endMinute = endComponents.minute
+        let endMinute = endComponents.minute + 60 * endHour
         let nowHour = nowComponents.hour
-        let nowMinute = nowComponents.hour
+        let nowMinute = nowComponents.hour + 60 * nowHour
         
-
-        if((startHour < endHour) || (startHour == endHour && startMinute < endMinute)){
-            if(nowHour > startHour && nowHour < endHour){
-                return "True"
-            }
-            else if(nowHour == startHour && nowMinute > startMinute && nowHour < endHour){
-                return "True"
-            }
-            else if(nowHour ==  startHour && nowMinute > startMinute && nowHour == endHour && nowMinute < endMinute){
-                return "True"
-            }// ex: start: 12:05 now: 12:06
-            else if(nowHour == endHour && nowMinute < endMinute && nowHour > startHour){
-                return "True"
-            }// ex: end: 12:07 now: 12:06
-            else if(nowHour == endHour && nowMinute < endMinute && nowHour == startHour && nowMinute > startMinute){
+        if(startMinute < endMinute){
+            if(nowMinute >= startMinute && nowMinute < endMinute){
                 return "True"
             }
             else{
                 return "False"
             }
-        }//if the end time doesn't go into the next day
-        else if(startHour == endHour && startMinute == endMinute){
+        }
+        else if(startMinute == endMinute){
             return "True"
-        }//no end time
+        }
         else{
-            if(nowHour > startHour && nowHour > endHour){
+            if(nowMinute > startMinute && nowMinute > endMinute){
                 return "True"
             }
-            
-            else if(nowHour < startHour && nowHour < endHour){
-                return "True"
-            }
-            else if(nowHour ==  startHour && nowMinute > startMinute){
-                return "True"
-            }
-            else if(nowHour == endHour && nowMinute < endMinute){
+            else if(nowMinute < startMinute && nowMinute < endMinute){
                 return "True"
             }
             else{
                 return "False"
             }
-        }// else the end time goes into the next day
+        } //startMinute>endMinute
+//        if((startHour < endHour) || (startHour == endHour && startMinute < endMinute)){
+//            if(nowHour > startHour && nowHour < endHour){
+//                return "True"
+//            }
+//            else if(nowHour == startHour && nowMinute >= startMinute && nowHour < endHour){
+//                return "True"
+//            }
+//            else if(nowHour ==  startHour && nowMinute >= startMinute && nowHour == endHour && nowMinute <= endMinute){
+//                return "True"
+//            }// ex: start: 12:05 now: 12:06
+//            else if(nowHour == endHour && nowMinute < endMinute && nowHour > startHour){
+//                return "True"
+//            }// ex: end: 12:07 now: 12:06
+//            else if(nowHour == endHour && nowMinute < endMinute && nowHour == startHour && nowMinute > startMinute){
+//                return "True"
+//            }
+//            else{
+//                return "False"
+//            }
+//        }//if the end time doesn't go into the next day
+//        else if(startHour == endHour && startMinute == endMinute){
+//            return "True"
+//        }//no end time
+//        else{
+//            if(nowHour > startHour && nowHour > endHour){
+//                return "True"
+//            }
+//            
+//            else if(nowHour < startHour && nowHour < endHour){
+//                return "True"
+//            }
+//            else if(nowHour ==  startHour && nowMinute >= startMinute){
+//                return "True"
+//            }
+//            else if(nowHour == endHour && nowMinute < endMinute){
+//                return "True"
+//            }
+//            else{
+//                return "False"
+//            }
+//        }// else the end time goes into the next day
         // ex: start: 1:30AM end: 1:28AM
         
         
