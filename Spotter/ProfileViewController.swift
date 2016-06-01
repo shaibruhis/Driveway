@@ -56,44 +56,57 @@ class ProfileViewController: BaseViewController, UITextFieldDelegate {
     
     
     func update() {
-        //Letting the user type in the text box to update their name
-        let userRef = self.ref.childByAppendingPath(self.ref.authData.uid)
-        let locationRef = Firebase(url: "https://blinding-fire-154.firebaseio.com/Locations")
-        let newFirstName = ["First Name": self.firstName.text!]
-        let newLastName = ["Last Name": self.lastName.text!]
-        let newPhoneNumber = ["Phone Number": self.phoneNumber.text!]
+        if firstName.text == "" || lastName.text == "" || phoneNumber.text == "" {
+            //Display box to show the user that it has a blank textbox
+            let title = "Profile Unable to Update"
+            let message = "Failure due to empty field."
+            let okText = "OK"
+            let alert = UIAlertController(title: title, message: message, preferredStyle:  UIAlertControllerStyle.Alert)
+            let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.Cancel, handler: nil)
+            alert.addAction(okayButton)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else {
         
-        //Update
-        userRef.updateChildValues(newFirstName)
-        userRef.updateChildValues(newLastName)
-        userRef.updateChildValues(newPhoneNumber)
-        
-        
-        var locationList = [NSDictionary]()
-
-        
-        locationRef.observeEventType(.Value, withBlock: { snapshot in
+            //Letting the user type in the text box to update their name
+            let userRef = self.ref.childByAppendingPath(self.ref.authData.uid)
+            let locationRef = Firebase(url: "https://blinding-fire-154.firebaseio.com/Locations")
+            let newFirstName = ["First Name": self.firstName.text!]
+            let newLastName = ["Last Name": self.lastName.text!]
+            let newPhoneNumber = ["Phone Number": self.phoneNumber.text!]
             
-            locationList = self.convertJSONToDictionary(snapshot)!
-            for location in locationList {
-                if(self.ref.authData.uid == location["Owner"]! as! String){
-                    locationRef.childByAppendingPath(location["SpotID"] as! String).updateChildValues(newFirstName)
-                    locationRef.childByAppendingPath(location["SpotID"] as! String).updateChildValues(newPhoneNumber)
+            //Update
+            userRef.updateChildValues(newFirstName)
+            userRef.updateChildValues(newLastName)
+            userRef.updateChildValues(newPhoneNumber)
+            
+            
+            var locationList = [NSDictionary]()
+
+            
+            locationRef.observeEventType(.Value, withBlock: { snapshot in
+                
+                locationList = self.convertJSONToDictionary(snapshot)!
+                for location in locationList {
+                    if(self.ref.authData.uid == location["Owner"]! as! String){
+                        locationRef.childByAppendingPath(location["SpotID"] as! String).updateChildValues(newFirstName)
+                        locationRef.childByAppendingPath(location["SpotID"] as! String).updateChildValues(newPhoneNumber)
+                    }
                 }
-            }
-            
-        })//snapshot
+                
+            })//snapshot
 
-        
-        
-        //Display box to show the user that it updated
-        let title = "Profile Updated"
-        let message = "Success"
-        let okText = "OK"
-        let alert = UIAlertController(title: title, message: message, preferredStyle:  UIAlertControllerStyle.Alert)
-        let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.Cancel, handler: nil)
-        alert.addAction(okayButton)
-        self.presentViewController(alert, animated: true, completion: nil)
+            
+            
+            //Display box to show the user that it updated
+            let title = "Profile Updated"
+            let message = "Success"
+            let okText = "OK"
+            let alert = UIAlertController(title: title, message: message, preferredStyle:  UIAlertControllerStyle.Alert)
+            let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.Cancel, handler: nil)
+            alert.addAction(okayButton)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
