@@ -85,12 +85,18 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
             if(nowHour > startHour && nowHour < endHour){
                 return "True"
             }
-            else if(nowHour ==  startHour && nowMinute > startMinute){
+            else if(nowHour == startHour && nowMinute > startMinute && nowHour < endHour){
+                return "True"
+            }
+            else if(nowHour ==  startHour && nowMinute > startMinute && nowHour == endHour && nowMinute < endMinute){
                 return "True"
             }// ex: start: 12:05 now: 12:06
-            else if(nowHour == endHour && nowMinute < endMinute){
+            else if(nowHour == endHour && nowMinute < endMinute && nowHour > startHour){
                 return "True"
             }// ex: end: 12:07 now: 12:06
+            else if(nowHour == endHour && nowMinute < endMinute && nowHour == startHour && nowMinute > startMinute){
+                return "True"
+            }
             else{
                 return "False"
             }
@@ -102,6 +108,7 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
             if(nowHour > startHour && nowHour > endHour){
                 return "True"
             }
+            
             else if(nowHour < startHour && nowHour < endHour){
                 return "True"
             }
@@ -115,7 +122,7 @@ class SellerEditMenu: UIViewController, UITableViewDataSource, UITableViewDelega
                 return "False"
             }
         }// else the end time goes into the next day
-        // ex: start: 12:00AM end: 10:00AM
+        // ex: start: 1:30AM end: 1:28AM
         
         
     } //gets current time and checks if its past starttime and before endtime
