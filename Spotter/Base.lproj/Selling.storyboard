@@ -62,7 +62,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="cSC-pm-dqD">
-                        <barButtonItem key="leftBarButtonItem" title="Menu Icon" id="9w9-HC-00j"/>
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="9w9-HC-00j"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="X2d-qK-qgI">
                             <connections>
                                 <segue destination="ckd-OM-bu6" kind="presentation" id="YxF-za-i34"/>

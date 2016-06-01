@@ -19,7 +19,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="V1j-zC-kvp">
-                        <barButtonItem key="leftBarButtonItem" title="Menu Icon" id="J4o-Rf-nTh"/>
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="J4o-Rf-nTh"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

@@ -148,7 +148,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="KlQ-It-gar">
-                        <barButtonItem key="leftBarButtonItem" title="Menu Icon" id="HRv-ZV-LRg"/>
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="HRv-ZV-LRg"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="LbG-7Z-AI6">
                             <connections>
                                 <action selector="showSearchBarAction:" destination="74H-W0-2ME" id="Son-Lz-Zao"/>
