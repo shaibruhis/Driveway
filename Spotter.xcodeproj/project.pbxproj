@@ -346,7 +346,7 @@
 				TargetAttributes = {
 					83E89BE51C66D29A00E446FA = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = C45P5N37MF;
+						DevelopmentTeam = SVFLC63M2X;
 					};
 					83E89BF91C66D29A00E446FA = {
 						CreatedOnToolsVersion = 7.2;
@@ -646,7 +646,7 @@
 				INFOPLIST_FILE = Spotter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gabe.Spotter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shai.Spotter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotter/Spotter-Bridging-Header.h";
@@ -665,7 +665,7 @@
 				INFOPLIST_FILE = Spotter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gabe.Spotter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shai.Spotter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spotter/Spotter-Bridging-Header.h";

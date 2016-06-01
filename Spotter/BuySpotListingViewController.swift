@@ -128,7 +128,7 @@ class BuySpotListingViewController : UIViewController, UINavigationBarDelegate, 
         let secondFour = phoneNumber!.substringFromIndex(endIndex)
         phoneLabel.text = "(\(areacode)) \(firstThree)-\(secondFour)"
         
-        availableLabel.text = "Available: \(startTime) - \(endTime)"term
+        availableLabel.text = "Available: \(startTime!) - \(endTime!)"
         
 //        timePicker.addTarget(self, action: Selector("timeChange:"), forControlEvents: UIControlEvents.ValueChanged)
         

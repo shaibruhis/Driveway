@@ -194,7 +194,7 @@ class MapViewController: BaseViewController {
                     let spotPhoneNumber = spot["Phone Number"] as! String
                     let spotId = spot["SpotID"] as! String
                     let startTime = spot["Start Time"] as! String
-                    let endTime = spot["Stop Time"] as! String!
+                    let endTime = spot["End Time"] as! String!
                     let marker = GMSMarker(position:CLLocationCoordinate2DMake(spotLat, spotLon))
                     let markerInfo = MarkerInfo(inputAddress: spotAddress, inputFirstName: spotFirstName, inputLat: spotLat, inputLon: spotLon, inputPrice: spotPrice, inputPhone: spotPhoneNumber, inputSpotId: spotId, inputStartTime: startTime, inputEndTime: endTime)
                     marker.userData = markerInfo
