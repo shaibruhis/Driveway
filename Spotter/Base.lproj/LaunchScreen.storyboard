@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -20,20 +20,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background Launch Image" translatesAutoresizingMaskIntoConstraints="NO" id="bGr-PR-s65">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Logo Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Flu-cy-9v7">
-                                <rect key="frame" x="100" y="100" width="400" height="400"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="CTu-Iy-w18"/>
-                                    <constraint firstAttribute="width" constant="400" id="qgq-0C-rSL"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Flu-cy-9v7">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bGr-PR-s65" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="55D-oK-u6A"/>
+                            <constraint firstItem="Flu-cy-9v7" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9oh-gg-zyp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bGr-PR-s65" secondAttribute="trailing" constant="-20" id="LCu-Ti-TPz"/>
                             <constraint firstItem="bGr-PR-s65" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="NqB-y7-cZM"/>
+                            <constraint firstItem="Flu-cy-9v7" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SBp-2X-wUX"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="bGr-PR-s65" secondAttribute="bottom" id="Xcc-qo-kzi"/>
+                            <constraint firstItem="bGr-PR-s65" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qUF-zc-HM6"/>
+                            <constraint firstItem="bGr-PR-s65" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="wIC-YV-3cq"/>
                         </constraints>
                     </view>
                 </viewController>
