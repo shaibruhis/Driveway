@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qsa-z9-3wC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qsa-z9-3wC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -70,8 +70,20 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5lK-gT-YNP">
+                                <rect key="frame" x="0.0" y="224" width="600" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="485946954.854877">
+                                    <!--2016-05-26 09:15:54 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubd-jl-6at">
+                                <rect key="frame" x="20" y="195" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQw-Ws-udB">
-                                <rect key="frame" x="20" y="419" width="560" height="30"/>
+                                <rect key="frame" x="20" y="448" width="560" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="at6-LJ-ENJ"/>
                                 </constraints>
@@ -80,17 +92,12 @@
                                     <action selector="bookButton:" destination="Ew1-S2-h7O" eventType="touchUpInside" id="kjW-95-wEN"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5lK-gT-YNP">
-                                <rect key="frame" x="0.0" y="195" width="600" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="485946954.854877">
-                                    <!--2016-05-26 09:15:54 +0000-->
-                                </date>
-                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4N6-fQ-Jcu" firstAttribute="trailing" secondItem="GgM-Wf-ZQz" secondAttribute="trailingMargin" id="0EH-3J-aRv"/>
                             <constraint firstItem="5lK-gT-YNP" firstAttribute="leading" secondItem="GgM-Wf-ZQz" secondAttribute="leadingMargin" constant="-20" id="3FQ-XB-KS4"/>
+                            <constraint firstItem="ubd-jl-6at" firstAttribute="leading" secondItem="GgM-Wf-ZQz" secondAttribute="leadingMargin" id="5QT-Vz-PSj"/>
                             <constraint firstItem="hPb-1I-aPs" firstAttribute="leading" secondItem="GgM-Wf-ZQz" secondAttribute="leading" id="5UT-ck-L06"/>
                             <constraint firstItem="Grv-a1-RI3" firstAttribute="trailing" secondItem="GgM-Wf-ZQz" secondAttribute="trailingMargin" id="70z-uk-28C"/>
                             <constraint firstItem="Grv-a1-RI3" firstAttribute="leading" secondItem="GgM-Wf-ZQz" secondAttribute="leadingMargin" id="743-e5-61l"/>
@@ -107,11 +114,14 @@
                             <constraint firstItem="ddS-Hv-GRs" firstAttribute="top" secondItem="oGZ-nf-8xb" secondAttribute="bottom" constant="8" id="QvN-6V-IXS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5lK-gT-YNP" secondAttribute="trailing" constant="-20" id="Rrp-tF-Dja"/>
                             <constraint firstItem="ddS-Hv-GRs" firstAttribute="trailing" secondItem="GgM-Wf-ZQz" secondAttribute="trailingMargin" id="TwG-6H-bdQ"/>
+                            <constraint firstItem="ubd-jl-6at" firstAttribute="top" secondItem="4N6-fQ-Jcu" secondAttribute="bottom" constant="8" id="WYh-OH-F3s"/>
                             <constraint firstAttribute="trailing" secondItem="hPb-1I-aPs" secondAttribute="trailing" id="e8G-xn-QDL"/>
                             <constraint firstItem="LQw-Ws-udB" firstAttribute="leading" secondItem="GgM-Wf-ZQz" secondAttribute="leadingMargin" id="khT-SS-WE7"/>
                             <constraint firstItem="4N6-fQ-Jcu" firstAttribute="leading" secondItem="GgM-Wf-ZQz" secondAttribute="leadingMargin" id="m3e-ip-Bkm"/>
-                            <constraint firstItem="5lK-gT-YNP" firstAttribute="top" secondItem="4N6-fQ-Jcu" secondAttribute="bottom" constant="8" id="pGE-zF-pkn"/>
+                            <constraint firstItem="5lK-gT-YNP" firstAttribute="top" secondItem="ubd-jl-6at" secondAttribute="bottom" constant="8" id="nY6-GK-rPN"/>
+                            <constraint firstItem="5lK-gT-YNP" firstAttribute="top" secondItem="4N6-fQ-Jcu" secondAttribute="bottom" constant="37" id="pGE-zF-pkn"/>
                             <constraint firstItem="hPb-1I-aPs" firstAttribute="top" secondItem="Kj1-uO-4bc" secondAttribute="bottom" id="qfv-nh-uVy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ubd-jl-6at" secondAttribute="trailing" id="rkt-W0-b4B"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -122,6 +132,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressLabel" destination="oGZ-nf-8xb" id="zIM-2q-MDv"/>
+                        <outlet property="availableLabel" destination="ubd-jl-6at" id="J32-Je-bOa"/>
                         <outlet property="firstNameLabel" destination="Grv-a1-RI3" id="cO8-Op-MdS"/>
                         <outlet property="navBar" destination="hPb-1I-aPs" id="DjZ-sk-4QT"/>
                         <outlet property="phoneLabel" destination="4N6-fQ-Jcu" id="C7r-Kc-Zm1"/>

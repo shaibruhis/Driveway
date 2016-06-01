@@ -19,6 +19,8 @@ var firstName : String = "null"
 var price : String = "null"
 var phoneNumber : String = "null"
 var spotId : String = "null"
+var startTime : String = "null"
+var endTime : String = "null"
 
 class MapViewController: BaseViewController {
 
@@ -51,6 +53,8 @@ class MapViewController: BaseViewController {
         secondVC.firstName = firstName
         secondVC.phoneNumber = phoneNumber
         secondVC.spotId = spotId
+        secondVC.startTime = startTime
+        secondVC.endTime = endTime
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -189,8 +193,10 @@ class MapViewController: BaseViewController {
                     let spotPrice = spot["Price"] as! String
                     let spotPhoneNumber = spot["Phone Number"] as! String
                     let spotId = spot["SpotID"] as! String
+                    let startTime = spot["Start Time"] as! String
+                    let endTime = spot["End Time"] as! String!
                     let marker = GMSMarker(position:CLLocationCoordinate2DMake(spotLat, spotLon))
-                    let markerInfo = MarkerInfo(inputAddress: spotAddress, inputFirstName: spotFirstName, inputLat: spotLat, inputLon: spotLon, inputPrice: spotPrice, inputPhone: spotPhoneNumber, inputSpotId: spotId)
+                    let markerInfo = MarkerInfo(inputAddress: spotAddress, inputFirstName: spotFirstName, inputLat: spotLat, inputLon: spotLon, inputPrice: spotPrice, inputPhone: spotPhoneNumber, inputSpotId: spotId, inputStartTime: startTime, inputEndTime: endTime)
                     marker.userData = markerInfo
 
                     marker.map = self.mapView
@@ -244,6 +250,8 @@ extension MapViewController: GMSMapViewDelegate {
         price = (marker.userData as! MarkerInfo).price
         phoneNumber = (marker.userData as! MarkerInfo).phone
         spotId = (marker.userData as! MarkerInfo).spotId
+        startTime = (marker.userData as! MarkerInfo).startTime
+        endTime = (marker.userData as! MarkerInfo).endTime
         performSegueWithIdentifier("Spot Listing Segue", sender: self)
         return true
     }

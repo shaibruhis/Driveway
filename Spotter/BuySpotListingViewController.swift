@@ -20,6 +20,7 @@ class BuySpotListingViewController : UIViewController, UINavigationBarDelegate, 
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var timePicker: UIDatePicker!
 
+    @IBOutlet weak var availableLabel: UILabel!
     @IBOutlet weak var navBar: UINavigationBar!
     
     
@@ -30,6 +31,8 @@ class BuySpotListingViewController : UIViewController, UINavigationBarDelegate, 
     var price : String?
     var phoneNumber : String?
     var spotId : String?
+    var startTime: String?
+    var endTime: String?
     
     var braintreeClient: BTAPIClient?
     var BTnavigationController: UINavigationController?
@@ -46,10 +49,64 @@ class BuySpotListingViewController : UIViewController, UINavigationBarDelegate, 
         let ref = Firebase(url: "https://blinding-fire-154.firebaseio.com/Locations")
         let spotRef = ref.childByAppendingPath(spotId)
 
-
-        spotRef.updateChildValues(["Is Available": "False", "Rented Until": timeFormatter.stringFromDate(timePicker.date)]) { (error, firebase) in
-            self.presentViewController(self.BTnavigationController!, animated: true, completion: nil)
+        if(checkForValidTime()){
+            spotRef.updateChildValues(["Is Available": "False", "Rented Until": timeFormatter.stringFromDate(timePicker.date)]) { (error, firebase) in
+                self.presentViewController(self.BTnavigationController!, animated: true, completion: nil)
+            }
         }
+        else {
+            //Display box to show the user that it has a booked an invalid time
+            let title = "Invalid Time"
+            let message = "Booking time is out of available time range."
+            let okText = "OK"
+            let alert = UIAlertController(title: title, message: message, preferredStyle:  UIAlertControllerStyle.Alert)
+            let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.Cancel, handler: nil)
+            alert.addAction(okayButton)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func checkForValidTime() -> Bool{
+        let calendar = NSCalendar.currentCalendar()
+
+        let timePickerComponents = calendar.components([.Hour, .Minute], fromDate: timePicker.date)
+        let timePickerHour = timePickerComponents.hour
+        let timePickerMinute = timePickerHour * 60 + timePickerComponents.minute
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        let startDate = dateFormatter.dateFromString(startTime!)
+        let endDate = dateFormatter.dateFromString(endTime!)
+        
+        let startTimeComponents = calendar.components([.Hour, .Minute], fromDate: startDate!)
+        let endTimeComponents = calendar.components([.Hour, .Minute], fromDate: endDate!)
+        
+        let startMinute = startTimeComponents.minute + startTimeComponents.hour * 60
+        let endMinute = endTimeComponents.minute + endTimeComponents.hour * 60
+        
+        if(startMinute == endMinute){
+            return true
+        }
+        else if(startMinute < endMinute){
+            if(timePickerMinute >= startMinute && timePickerMinute < endMinute){
+                return true;
+            }
+            else{
+                return false;
+            }
+        } //spot listing doesn't go past a day
+        else{
+            if(timePickerMinute > startMinute && timePickerMinute > endMinute){
+                return true
+            }
+            else if(timePickerMinute < startMinute && timePickerMinute < endMinute){
+                return true
+            }
+            else{
+                return false
+            }
+        }
+        
     }
 
     
@@ -70,6 +127,8 @@ class BuySpotListingViewController : UIViewController, UINavigationBarDelegate, 
         let firstThree = phoneNumber!.substringWithRange(startIndex..<endIndex)
         let secondFour = phoneNumber!.substringFromIndex(endIndex)
         phoneLabel.text = "(\(areacode)) \(firstThree)-\(secondFour)"
+        
+        availableLabel.text = "Available: \(startTime!) - \(endTime!)"
         
 //        timePicker.addTarget(self, action: Selector("timeChange:"), forControlEvents: UIControlEvents.ValueChanged)
         
