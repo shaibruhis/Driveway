@@ -139,7 +139,6 @@
                         <segue destination="hbE-v1-xhd" kind="custom" identifier="Selling Segue" customClass="SWRevealViewControllerSeguePushController" id="ULI-7T-uik"/>
                         <segue destination="z9g-Lh-YnP" kind="custom" identifier="Home Segue" customClass="SWRevealViewControllerSeguePushController" id="VPx-db-oSC"/>
                         <segue destination="feB-Ue-xqX" kind="custom" identifier="Profile Segue" customClass="SWRevealViewControllerSeguePushController" id="jYj-Pa-yYF"/>
-                        <segue destination="oLl-0F-nQT" kind="custom" identifier="Payment Segue" customClass="SWRevealViewControllerSeguePushController" id="tGZ-Fl-Fp3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnK-of-d25" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -218,14 +217,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0yO-ML-2el" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1142" y="335"/>
-        </scene>
-        <!--Payment-->
-        <scene sceneID="IWs-fD-IXZ">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Payment" id="oLl-0F-nQT" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ggB-5b-WHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1148.5" y="573"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

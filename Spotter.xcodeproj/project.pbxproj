@@ -34,8 +34,6 @@
 		B3A46FB91C6ECB490061A185 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A46FB71C6ECB490061A185 /* Home.storyboard */; };
 		B3A46FBB1C6ECBA10061A185 /* Selling.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A46FBA1C6ECBA10061A185 /* Selling.storyboard */; };
 		B3A46FC11C6ECE660061A185 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A46FBF1C6ECE660061A185 /* Profile.storyboard */; };
-		B3A46FC71C6ECECB0061A185 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A46FC51C6ECECB0061A185 /* Payment.storyboard */; };
-		B3A46FCD1C6ECFD00061A185 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A46FCC1C6ECFD00061A185 /* PaymentViewController.swift */; };
 		B3A46FCF1C6ECFE30061A185 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A46FCE1C6ECFE30061A185 /* ProfileViewController.swift */; };
 		B3A46FD51C6ED39D0061A185 /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A46FD41C6ED39D0061A185 /* ListingsViewController.swift */; };
 		B3E2B29E1C6C2C9900B3FA0C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E2B29D1C6C2C9900B3FA0C /* BaseViewController.swift */; };
@@ -96,8 +94,6 @@
 		B3A46FB81C6ECB490061A185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		B3A46FBA1C6ECBA10061A185 /* Selling.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Selling.storyboard; path = Base.lproj/Selling.storyboard; sourceTree = "<group>"; };
 		B3A46FC01C6ECE660061A185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
-		B3A46FC61C6ECECB0061A185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Payment.storyboard; sourceTree = "<group>"; };
-		B3A46FCC1C6ECFD00061A185 /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		B3A46FCE1C6ECFE30061A185 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B3A46FD41C6ED39D0061A185 /* ListingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
 		B3E2B29D1C6C2C9900B3FA0C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -232,7 +228,6 @@
 				0D2847801C7429040014E10D /* SignUpViewController.swift */,
 				83F836971CBF1562006858C8 /* BuySpotListingViewController.swift */,
 				83E6964E1C66F19A007EB221 /* BackTableViewController.swift */,
-				B3A46FCC1C6ECFD00061A185 /* PaymentViewController.swift */,
 				0DD830EC1C86A490001D0673 /* LoginViewController.swift */,
 				B3A46FCE1C6ECFE30061A185 /* ProfileViewController.swift */,
 				83E2FA9D1C88549B00284620 /* UserInfoSingleton.swift */,
@@ -272,7 +267,6 @@
 			isa = PBXGroup;
 			children = (
 				83E89BED1C66D29A00E446FA /* Main.storyboard */,
-				B3A46FC51C6ECECB0061A185 /* Payment.storyboard */,
 				0D2847841C7429880014E10D /* SignUp.storyboard */,
 				B3A46FBF1C6ECE660061A185 /* Profile.storyboard */,
 				B3A46FBA1C6ECBA10061A185 /* Selling.storyboard */,
@@ -392,7 +386,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D2847851C7429890014E10D /* SignUp.storyboard in Resources */,
-				B3A46FC71C6ECECB0061A185 /* Payment.storyboard in Resources */,
 				83E89BF41C66D29A00E446FA /* LaunchScreen.storyboard in Resources */,
 				83E89BF11C66D29A00E446FA /* Assets.xcassets in Resources */,
 				83E89BEF1C66D29A00E446FA /* Main.storyboard in Resources */,
@@ -487,7 +480,6 @@
 				0DD830F21C86BF71001D0673 /* SellerEditMenu.swift in Sources */,
 				0D2847811C7429040014E10D /* SignUpViewController.swift in Sources */,
 				B3A46FCF1C6ECFE30061A185 /* ProfileViewController.swift in Sources */,
-				B3A46FCD1C6ECFD00061A185 /* PaymentViewController.swift in Sources */,
 				83E89C1B1C66D3CF00E446FA /* SWRevealViewController.m in Sources */,
 				83FEB1B61C81B6220086150F /* SellerEditPrice.swift in Sources */,
 				B35DDB6F1C7D45480099BFBC /* MapTasks.swift in Sources */,
@@ -557,14 +549,6 @@
 				B3A46FC01C6ECE660061A185 /* Base */,
 			);
 			name = Profile.storyboard;
-			sourceTree = "<group>";
-		};
-		B3A46FC51C6ECECB0061A185 /* Payment.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B3A46FC61C6ECECB0061A185 /* Base */,
-			);
-			name = Payment.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
